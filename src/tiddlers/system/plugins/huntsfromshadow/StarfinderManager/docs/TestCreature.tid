@@ -1,0 +1,39 @@
+alignment: N
+cha: -1
+con: +3
+cr: 2
+created: 20200808022558084
+dex: +1
+eac: 13
+fort: +4
+hp: 30
+init: +1
+int: -2
+kac: 15
+languages: Kasatha (can't speak any language)
+melee: bite +10 (1d6+4 P plus 1 Con)
+modified: 20200808025522994
+npc-name: Adolescent Crest-Eater
+npc-type: magical beast
+offensive_abilities: bone eater
+perception: +7
+ranged: venom spit +7 (1 Con)
+reach: 10 ft.
+ref: +4
+senses: bone tracker, darvision 60 ft., low-light vision;
+size: Large
+skills: Stealth +12, Survival +7
+space: 10 ft.
+special_abilities: [{"name":"Bone Eater", "type":"(Su)", "text":"A crest-eater’s bite delivers a magical venom that dissolves certain minerals in its victim’s body, liquefying that creature’s bones. Each bite attack that deals damage also deals 1 Constitution damage. A target can negate this damage with a successful DC 11 Fortitude save."},{"name":"Bone Tracker", "type":"(Ex)", "text": "A crest-eater’s sense of smell is keenly attuned to the minerals it needs to survive. It can sniff out natural deposits of calcium, and it gains blindsense (scent) against creatures that have taken Constitution damage from its attacks in the past hour."},{"name":"Venom Spit", "type":"(Su)", "text":"As a standard action, a crest-eater can make a ranged attack against the KAC of a single target within 30 feet. If struck, the target must succeed at a DC 11 Fortitude save or take 1 Constitution damage."} ]
+speed: 60 ft.
+str: +2
+tactics_before_combat: The adolescent crest-eater spends 4 rounds disentangling itself from its harness before charging the PCs.
+tactics_during_combat: The crest-eater spits venom at the PCs, then it moves into melee range to subdue the closest target with its bite. It moves between each of the PCs in order of proximity.
+tactics_morale: The adolescent crest-eater’s captors starved it, and as a result, the crest-eater fights to the death.",
+tags: 
+title: $:/plugins/huntsfromshadow/StarfinderManager/docs/TestCreature
+type: text/vnd.tiddlywiki
+will: +1
+wis: +1
+
+{{||$:/plugins/huntsfromshadow/StarfinderManager/Templates/NPCTemplate}}

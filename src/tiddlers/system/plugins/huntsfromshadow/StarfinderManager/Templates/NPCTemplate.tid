@@ -1,0 +1,95 @@
+created: 20200808023046960
+modified: 20200808023114804
+tags: 
+title: $:/plugins/huntsfromshadow/StarfinderManager/Templates/NPCTemplate
+type: text/vnd.tiddlywiki
+
+created: 20200804150637389
+modified: 20200808011941294
+tags: 
+title: NPC Template
+type: text/vnd.tiddlywiki
+
+<div id="sf_character">
+    <p class="no_tb_margin" id="name_cr_row">
+        <span>{{!!npc-name}}</span> 
+        <span id="cr">CR {{!!cr}}</span>
+    </p>
+    <p class="no_tb_margin">
+        {{!!alignment}} {{!!size}} {{!!npc-type}}
+    </p>
+    <p class="no_tb_margin hang_indent">
+        <b>Init</b> {{!!init}} <b>Senses</b> {{!!senses}} <b>Perception</b> {{!!perception}}
+    </p>
+    <p class="no_tb_margin section_underline" id="defense_hp_row">
+        <b>DEFENSE</b> 
+        <span id="hp"><b>HP</b> {{!!hp}}</span>
+    </p>
+    <p class="no_tb_margin">
+        <b>EAC</b> {{!!eac}}; <b>KAC</b> {{!!kac}}
+    </p>
+    <p class="no_tb_margin">
+        <b>Fort</b> {{!!fort}}; <b>Ref</b> {{!!ref}}; <b>Will</b> {{!!will}}
+    </p>
+    <p class="no_tb_margin section_underline">
+        <b>OFFENSIVE</b>
+    </p>
+    <p class="no_tb_margin">
+        <b>Speed</b> {{!!speed}}
+    </p>
+    <p class="no_tb_margin">
+        <b>Melee</b> {{!!melee}}
+    </p>
+    <p class="no_tb_margin">
+        <b>Ranged</b> {{!!ranged}}
+    </p>
+    <p class="no_tb_margin">
+        <b>Space</b> {{!!space}}; <b>Reach</b> {{!!reach}}
+    </p>
+    <p class="no_tb_margin">
+        <b>Offensive Abilities</b> {{!!offensive_abilities}}
+    </p>
+    <p class="no_tb_margin section_underline">
+        TACTICS
+    </p>
+    <p class="no_tb_margin hang_indent">
+        <b>Before Combat</b> {{!!tactics_before_combat}}
+    </p>
+    <p class="no_tb_margin hang_indent">
+        <b>During Combat</b> {{!!tactics_during_combat}}
+    </p>
+    <p class="no_tb_margin hang_indent">
+        <b>Morale</b> {{!!tactics_morale}}
+    </p>    
+    <p class="no_tb_margin section_underline">
+        <b>STATISTICS</b>
+    </p>
+    <p class="no_tb_margin">
+        <b>Str</b> {{!!str}};
+        <b>Dex</b> {{!!dex}};
+        <b>Con</b> {{!!con}};
+        <b>Int</b> {{!!int}};
+        <b>Wis</b> {{!!wis}};
+        <b>Cha</b> {{!!cha}}
+    </p>
+    <p class="no_tb_margin">
+        <b>Skills</b> {{!!skills}}
+    </p>
+    <p class="no_tb_margin">
+        <b>Languages</b> {{!!languages}}
+    </p>
+    <p class="no_tb_margin section_underline">
+        <b>SPECIAL ABILITIES</b>
+    </p>    
+    <$macrocall $name="sf-spl-ab-decode" json_dat={{!!special_abilities}}/>
+</div>    
+    
+&nbsp;
+
+<$button>
+    <$action-sendmessage $message="tm-modal"
+        $param="EditNPCModal"
+        tiddler=<<currentTiddler>> />
+    Edit NPC
+</$button>
+

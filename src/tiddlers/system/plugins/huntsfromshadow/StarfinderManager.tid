@@ -1,0 +1,13 @@
+author: huntsfromshadow
+created: 20200808021050855
+description: Starfinder Manager
+list: readme license history
+modified: 20200808021217921
+plugin-type: plugin
+source: https://github.com/huntsfromshadow/tw5-starfinder-manager
+tags: 
+title: $:/plugins/huntsfromshadow/StarfinderManager
+type: application/json
+version: 1.0
+
+{"tiddlers": {}}
