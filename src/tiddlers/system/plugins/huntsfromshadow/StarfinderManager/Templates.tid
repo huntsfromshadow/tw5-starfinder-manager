@@ -1,0 +1,20 @@
+created: 20200809004854387
+list-before: $:/core/ui/ViewTemplate/body
+modified: 20200809011754351
+title: $:/plugins/huntsfromshadow/StarfinderManager/Templates
+type: text/vnd.tiddlywiki
+
+<!-- Check tiddler tag. -->
+<$list filter="[<currentTiddler>tag{$:/plugins/benwebber/dnd/config/Tags/Creatures}]">
+<!-- Check if user enabled view template; don't override <<currentTiddler>>. -->
+<$list
+  filter="[title[$:/plugins/benwebber/dnd/config/ViewTemplates/StatBlock]field:text[true]]"
+  variable="noop"
+>
+
+<<dnd.creature>>
+</$list>
+</$list>
+
+
+

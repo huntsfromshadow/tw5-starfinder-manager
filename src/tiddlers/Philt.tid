@@ -1,0 +1,39 @@
+created: 20200809004232114
+modified: 20200809015525522
+tags: Starfinder-NPC
+title: Philt
+type: text/vnd.tiddlywiki
+
+<<starfinder
+PHILT CR 1
+Male shirren envoy
+N Medium humanoid (shirren)
+Init +2; Senses blindsense (vibration) 30 ft.; Perception +5
+DEFENSE HP 17 RP 3
+EAC 11; KAC 12
+Fort +1; Ref +3; Will +4
+OFFENSE
+Speed 30 ft.
+Melee survival knife +6 (1d4+2 S)
+Ranged azimuth laser pistol +8 (1d4+1 F; crit burn 1d4)
+Offensive Abilities communalism (1/day), envoy improvisation
+(clever feint)
+TACTICS
+Before Combat If the PCs instigate the fight, Philt uses the
+Fast Talk feat against an enemy after combat is announced
+but before initiative is rolled.
+During Combat Philt uses his limited telepathy to coordinate
+with his guards without announcing their plans aloud.
+Against a difficult opponent, he uses clever feint to make
+them flat-footed against himself and his guards. Ideally, he
+remains close to at least one guard to use his communalism
+racial ability.
+Morale If reduced to 5 Hit Points or less, Philt surrenders.
+STATISTICS
+Str +1; Dex +2; Con +0; Int +1; Wis +0; Cha +4
+Feats Fast Talk
+Skills Acrobatics +5, Bluff +10, Diplomacy +10,
+Sense Motive +10
+Languages Common, Shirren, Vesk; limited telepathy 30 ft.
+Gear second skin, azimuth laser pistol with 1 battery (20
+charges), survival knife, credstick (400 credits)

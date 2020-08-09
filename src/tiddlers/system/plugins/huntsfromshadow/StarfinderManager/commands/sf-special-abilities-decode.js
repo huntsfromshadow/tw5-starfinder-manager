@@ -19,7 +19,7 @@ exports.name = "sf-spl-ab-decode";
  * want all supplied macro call parameters to be passed to the run() method.
  */
 exports.params = [
-  [{name: "json_dat"}];
+  [{name: "json_dat"}]
 ];
 
 /* Executes (runs) our macro when it requires evaluation; returns a string
