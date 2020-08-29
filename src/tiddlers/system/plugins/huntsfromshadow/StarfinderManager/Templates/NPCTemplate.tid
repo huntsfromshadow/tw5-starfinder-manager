@@ -4,12 +4,6 @@ tags:
 title: $:/plugins/huntsfromshadow/StarfinderManager/Templates/NPCTemplate
 type: text/vnd.tiddlywiki
 
-created: 20200804150637389
-modified: 20200808011941294
-tags: 
-title: NPC Template
-type: text/vnd.tiddlywiki
-
 <div id="sf_character">
     <p class="no_tb_margin" id="name_cr_row">
         <span>{{!!npc-name}}</span> 
@@ -81,15 +75,15 @@ type: text/vnd.tiddlywiki
     <p class="no_tb_margin section_underline">
         <b>SPECIAL ABILITIES</b>
     </p>    
-    <$macrocall $name="sf-spl-ab-decode" json_dat={{!!special_abilities}}/>
+    <!-- <$macrocall $name="sf-spl-ab-decode" json_dat={{!!special_abilities}}/> -->
 </div>    
     
 &nbsp;
 
 <$button>
     <$action-sendmessage $message="tm-modal"
-        $param="EditNPCModal"
-        tiddler=<<currentTiddler>> />
+        param="EditNPCModal"
+        rootwindow=true />
     Edit NPC
 </$button>
 
