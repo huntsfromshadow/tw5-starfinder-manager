@@ -49,56 +49,84 @@ SfTmpNpcWidget.prototype.refresh = function(changedTiddlers) {
 };
 
 SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
-  console.log("Hey!");
-  console.log(this.npcname);
-  console.log(this.rawblock);
+  var import_array = [
+    ["npc_name", "(.*) CR \\d{1,2}\\n"],
+    ["npc_cr", ".* CR (\\d{1,2})\\n"],
+    ["npc_xp", "XP ([\\d,]*)\\n"],
+    ["npc_alignment", "(LG|NG|CG|LN|N|CN|LE|NE|CE) (?:Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) .* \\(.*\\)\\n"],
+    ["npc_size", "(?:LG|NG|CG|LN|N|CN|LE|NE|CE) (Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) .* \\(.*\\)"],
+    ["npc_type", "(?:LG|NG|CG|LN|N|CN|LE|NE|CE) (?:Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) (.*) \\(.*\\)"],
+    ["npc_subtype", "(?:LG|NG|CG|LN|N|CN|LE|NE|CE) (?:Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) .* (\\(.*\\))"],
+    ["npc_init", "Init ([+|-]\\d{1,2});"],
+    ["npc_senses", "Senses (.*);"],
+    ["npc_perception", "Perception ([+|-]\\d{1,2})"],
+    ["npc_hp", "HP (\\d{1,3})\\n"],
+    ["npc_eac", "EAC (\\d{1,2});"],
+    ["npc_kac", "KAC (\\d{1,2})\n"],
+    ["npc_fort", "Fort ([+|-]\\d{1,2});"],
+    ["npc_ref", "Ref ([+|-]\\d{1,2});"],
+    ["npc_will", "Will ([+|-]\\d{1,2})"],
+    ["npc_dr", "DR (.*);"],
+    ["npc_immunities", "Immunities (.*)\\n"],
+    ["npc_speed", "Speed (.*)\\n"],
+    ["npc_multiattack", "Multiattack (.*)\\n"],
+    ["npc_space", "Space (.*);"],
+    ["npc_reach", "Reach (.*)\\n"],
+    ["npc_str", "Str ([+|-]\\d{1,2});"],
+    ["npc_dex", "Dex ([+|-]\\d{1,2});"],
+    ["npc_con", "Con ([+|-]\\d{1,2});"],
+    ["npc_int", "Int ([+|-]\\d{1,2});"],
+    ["npc_wis", "Wis ([+|-]\\d{1,2});"],
+    ["npc_cha", "Cha ([+|-]\\d{1,2})"],
+    ["npc_skill", "Skills (.*)"],
+  ];
 
-  //Step 1 Lets break down the raw text
-  let re = /^(.*) CR (\d{1,2})\n/;
-  let val = re.exec(this.rawblock);
+  //Extract Data
+  var rb = this.rawblock.replace("−", "-");
 
-  let npc_name = val[1];
-  let npc_cr = val[1];
+  var extracted_data = [];
+  import_array.forEach(elem => {
+    //console.log(elem[1]);
+    var re = new RegExp(elem[1]);
+    re = re.exec(rb);
+    
+    //console.log("Result");
+    //console.log(re);
 
-  re = /XP ([\d,]*)\n/;
-  val = re.exec(this.rawblock);
-  let npc_xp = parseInt(val[1]);
+    if( re != null )
+    {
+      //console.log(re[1]);
+      extracted_data[elem[0]] = re[1];
+    }
+    else {
+      extracted_data[elem[0]] = "NOPE";
+    }
 
-  re = /(\bLG|\bNG|\bCG|\bLN|\bN|\bCN|\bLE|\bNE|\bCE) (\bFine|\bDiminutive|\bTiny|\bSmall|\bMedium|\bLarge|\bHuge|\bGargantuan|\bColossal) (.*) (\(.*\))\n/;
-  val = re.exec(this.rawblock);
-  let npc_alignment = val[1];
-  let npc_size = val[2];
-  let npc_type = val[3];
+    //Time to Update Tiddler
+    //Does the import tiddler exist
+    var tid = this.wiki.getTiddler("NPCImportWS");
+    
+    if(tid === undefined) {
+      var fields = {};
+      var creationFields = this.wiki.getCreationFields();
+      var modificationFields = this.wiki.getModificationFields();      
 
-  re = /Init ([+\-]\d{1,2}); Senses (.*); Perception [+/-]\d{1,2}\n/;
-  val = re.exec(this.rawblock);
-  let npc_init = val[1];
-  let npc_size = val[2];
-  let npc_type = val[3];
+      this.wiki.addTiddler({
+        title: "NPCImportWS",
+        type: "text/vnd.tiddlywiki",
+        text: "SF NPC Import",
+        tags: [],
+        "test": "test"});
+    }
+    else {
+      console.log(tid);
+    }
+  });
 
-  re = /DEFENSE HP (\d+)\n/;
-  val = re.exec(this.rawblock);
-  let npc_hp = val[1];
 
-  re = /EAC (\d+); KAC (\d+)\n/;
-  val = re.exec(this.rawblock);
-  let npc_eac = val[1];
-  let npc_kac = val[2];
+  
+  
 
-  re = /Fort ([+/-]\d+); Ref ([+/-]\d+); Will ([+/-]\d+)\n/;
-  val = re.exec(this.rawblock);
-  let npc_fort = val[1];
-  let npc_ref = val[2];
-  let npc_will = val[3];
-
-  re = /DR (.*); Immunities (.*)\n/;
-  val = re.exec(this.rawblock);
-  let npc_dr = val[1];
-  let npc_immunities = val[2];
-
-  re = /Speed (.*)\n/;
-  val = re.exec(this.rawblock);
-  let npc_speed = val[1];
 
   
 
