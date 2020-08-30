@@ -1,0 +1,20 @@
+created: 20200830155918711
+modified: 20200830155920765
+title: NPCRawBlock
+type: text/vnd.tiddlywiki
+
+ELDER ELEMENTAL CR 11
+XP 12,800
+N Huge outsider (elemental, extraplanar)
+Init +5; Senses darkvision 60 ft.; Perception +20
+DEFENSE HP 145
+EAC 24; KAC 26
+Fort +15; Ref +13; Will +10
+DR 10/—; Immunities elemental immunities
+OFFENSE
+Speed 20 ft.
+Multiattack slam +24 (4d6+11 B)
+Space 15 ft.; Reach 15 ft.
+STATISTICS
+Str +8; Dex +5; Con +3; Int −3; Wis +0; Cha +0
+Skills Acrobatics +20, Athletics +20

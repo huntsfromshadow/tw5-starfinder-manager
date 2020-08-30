@@ -52,6 +52,57 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
   console.log("Hey!");
   console.log(this.npcname);
   console.log(this.rawblock);
+
+  //Step 1 Lets break down the raw text
+  let re = /^(.*) CR (\d{1,2})\n/;
+  let val = re.exec(this.rawblock);
+
+  let npc_name = val[1];
+  let npc_cr = val[1];
+
+  re = /XP ([\d,]*)\n/;
+  val = re.exec(this.rawblock);
+  let npc_xp = parseInt(val[1]);
+
+  re = /(\bLG|\bNG|\bCG|\bLN|\bN|\bCN|\bLE|\bNE|\bCE) (\bFine|\bDiminutive|\bTiny|\bSmall|\bMedium|\bLarge|\bHuge|\bGargantuan|\bColossal) (.*) (\(.*\))\n/;
+  val = re.exec(this.rawblock);
+  let npc_alignment = val[1];
+  let npc_size = val[2];
+  let npc_type = val[3];
+
+  re = /Init ([+\-]\d{1,2}); Senses (.*); Perception [+/-]\d{1,2}\n/;
+  val = re.exec(this.rawblock);
+  let npc_init = val[1];
+  let npc_size = val[2];
+  let npc_type = val[3];
+
+  re = /DEFENSE HP (\d+)\n/;
+  val = re.exec(this.rawblock);
+  let npc_hp = val[1];
+
+  re = /EAC (\d+); KAC (\d+)\n/;
+  val = re.exec(this.rawblock);
+  let npc_eac = val[1];
+  let npc_kac = val[2];
+
+  re = /Fort ([+/-]\d+); Ref ([+/-]\d+); Will ([+/-]\d+)\n/;
+  val = re.exec(this.rawblock);
+  let npc_fort = val[1];
+  let npc_ref = val[2];
+  let npc_will = val[3];
+
+  re = /DR (.*); Immunities (.*)\n/;
+  val = re.exec(this.rawblock);
+  let npc_dr = val[1];
+  let npc_immunities = val[2];
+
+  re = /Speed (.*)\n/;
+  val = re.exec(this.rawblock);
+  let npc_speed = val[1];
+
+  
+
+
   return true;
 };
 

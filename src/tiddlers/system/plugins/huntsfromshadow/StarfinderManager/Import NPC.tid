@@ -1,5 +1,5 @@
 created: 20200829155554872
-modified: 20200830153433046
+modified: 20200830155913071
 title: $:/plugins/huntsfromshadow/StarfinderManager/Import NPC
 type: text/vnd.tiddlywiki
 
@@ -7,11 +7,27 @@ type: text/vnd.tiddlywiki
 
 ! Import NPC from Statblock
 # Fill in These Fields
-|! NPC Name: | <$edit-text tiddler="$:/temp/NPCName"  placeholder="Creature Name" size="30" tag="input" /> |
-|! Plain Text Statblock: | <$edit-text tiddler="$:/temp/NPCRawBlock"  tag="textarea" style="width: 471px;"  /><p/> |
+|! NPC Name: | <$edit-text tiddler="NPCName"  placeholder="Creature Name" size="30" tag="input" 
+default="Elder Air Elemental" /> |
+|! Plain Text Statblock: | <$edit-text tiddler="NPCRawBlock"  tag="textarea" 
+default="ELDER ELEMENTAL CR 11
+XP 12,800
+N Huge outsider (elemental, extraplanar)
+Init +5; Senses darkvision 60 ft.; Perception +20
+DEFENSE HP 145
+EAC 24; KAC 26
+Fort +15; Ref +13; Will +10
+DR 10/—; Immunities elemental immunities
+OFFENSE
+Speed 20 ft.
+Multiattack slam +24 (4d6+11 B)
+Space 15 ft.; Reach 15 ft.
+STATISTICS
+Str +8; Dex +5; Con +3; Int −3; Wis +0; Cha +0
+Skills Acrobatics +20, Athletics +20"  /><p/> |
 
 # Press <<load-new-npc>> to load the NPC to review below.
 <$button tooltip="load npc">
-    <$action-sf-tmp-npc $npcname={{$:/temp/NPCName}} $rawblock={{$:/temp/NPCRawBlock}} />
+    <$action-sf-tmp-npc $npcname={{NPCName}} $rawblock={{NPCRawBlock}} />
 Load NPC      
 </$button>
