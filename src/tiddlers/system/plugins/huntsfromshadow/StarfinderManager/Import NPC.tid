@@ -1,26 +1,17 @@
 created: 20200829155554872
-modified: 20200829171846126
+modified: 20200830153433046
 title: $:/plugins/huntsfromshadow/StarfinderManager/Import NPC
 type: text/vnd.tiddlywiki
 
-\define import-new-npc()
-<$set name="plugin-publisher" value={{$:/temp/PluginPublisher}}>
-  <$set name="plugin-name" value={{$:/temp/PluginName}}>
-	<$button tooltip="create new plugin" class=<<tv-config-toolbar-class>> style=<<button-style>> >
-      <$action-setfield $tiddler="$:/state/tab/sidebar--1835078512" text="$:/core/ui/SideBar/More"/>
-      <$action-setfield $tiddler="$:/state/tab/moresidebar-401116514" text="$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/PluginSources"/>
-      <$action-deletetiddler $tiddler=<<plugin-config-title>> />
-      <$action-createtiddler $basetitle=<<plugin-config-title>> text=<<plugin-filename>> release="yes"/>
-      <$action-sendmessage $message="tm-new-tiddler" title=<<plugin-title>> $param="$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/plugin" />
-      {{$:/core/images/new-button}} new plugin
-	</$button>
-  </$set>
-</$set>
-\end
+\define button-style() border: 1px solid; padding: 2px;
 
 ! Import NPC from Statblock
 # Fill in These Fields
-|! NPC Name: | <$edit-text tiddler="$:/temp/NPCName" default="" placeholder="Creature Name" size="30" tag="input" /> |
-|! Plain Text Statblock: | <$edit-text tiddler="$:/temp/NPCRawBlock" default="" tag="textarea" style="width: 471px;"  /><p/> |
+|! NPC Name: | <$edit-text tiddler="$:/temp/NPCName"  placeholder="Creature Name" size="30" tag="input" /> |
+|! Plain Text Statblock: | <$edit-text tiddler="$:/temp/NPCRawBlock"  tag="textarea" style="width: 471px;"  /><p/> |
 
-# Press <<import-new-npc>> to import the NPC.
+# Press <<load-new-npc>> to load the NPC to review below.
+<$button tooltip="load npc">
+    <$action-sf-tmp-npc $npcname={{$:/temp/NPCName}} $rawblock={{$:/temp/NPCRawBlock}} />
+Load NPC      
+</$button>
