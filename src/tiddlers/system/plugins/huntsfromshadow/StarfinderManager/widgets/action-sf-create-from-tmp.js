@@ -31,8 +31,9 @@ SfCreateFromTmpWidget.prototype.render = function(parent,nextSibling) {
 
 /* Computes the internal state of this widget. */
 SfCreateFromTmpWidget.prototype.execute = function() {
-  this.npcname = this.getAttribute("$npcname");
-  this.rawblock = this.getAttribute("$rawblock");  
+  this.sourcetiddler = this.getAttribute("$source");  
+  this.newtiddlername = this.getAttribute("$newtiddlername");
+  this.overwrite = this.getAttribute("$overwrite", "no");
 };  
   
 /* Selectively refreshes this widget if needed and returns
@@ -49,7 +50,36 @@ SfCreateFromTmpWidget.prototype.refresh = function(changedTiddlers) {
 };
 
 SfCreateFromTmpWidget.prototype.invokeAction = function(triggeringWidget,event) {
-  var import_array = [
+
+  //Okay lets start by grabbing the source Tiddler
+  var source = this.wiki.getTiddler(this.sourcetiddler);
+
+  if(source == null) {
+    console.error("Source Tiddler: " + this.sourcetiddler + " not found.");
+    return true;
+  }
+
+  //Lets see if the tiddler exists  
+  var newtiddler;
+  newtiddler = this.wiki.getTiddler(this.newtiddlername);
+  if(newtiddler == null) {    
+    //Doesen't exist yet. So lets create the basics.
+    
+    newtiddler = this.wiki.addTiddler(
+      new $tw.Tiddler(        
+        this.wiki.getCreationFields(),        
+        this.wiki.getModificationFields(),
+        {title: this.newtiddlername}
+      )
+    );
+
+    console.log(newtiddler);
+  }
+
+  console.log(newtiddler);
+
+
+  /*var import_array = [
     ["npc_name", "(.*) CR \\d{1,2}\\n"],
     ["npc_cr", ".* CR (\\d{1,2})\\n"],
     ["npc_xp", "XP ([\\d,]*)\\n"],
@@ -81,9 +111,7 @@ SfCreateFromTmpWidget.prototype.invokeAction = function(triggeringWidget,event) 
     ["npc_skills", "Skills (.*)"],
   ];
 
-  //Extract Data
-  var rb = this.rawblock.replace("−", "-");
-
+  
   var extracted_data = [];
   import_array.forEach(elem => {
     //console.log(elem[1]);
@@ -109,9 +137,7 @@ SfCreateFromTmpWidget.prototype.invokeAction = function(triggeringWidget,event) 
   
   if(tid === undefined) {
     var fields = {};
-    var creationFields = this.wiki.getCreationFields();
-    var modificationFields = this.wiki.getModificationFields();      
-
+    
     this.wiki.addTiddler({
       title: "NPCImportWS",
       type: "text/vnd.tiddlywiki",
@@ -128,7 +154,7 @@ SfCreateFromTmpWidget.prototype.invokeAction = function(triggeringWidget,event) 
 
   for (const [key, value] of Object.entries(extracted_data)) {
     this.wiki.setText("NPCImportWS", key, undefined, value, {});
-  }
+  }*/
 
   return true;
 };
