@@ -1,81 +1,81 @@
 created: 20200808023046960
-modified: 20200808023114804
+modified: 20200831183051191
 tags: 
 title: $:/plugins/huntsfromshadow/StarfinderManager/Templates/NPCTemplate
 type: text/vnd.tiddlywiki
 
 <div id="sf_character">
     <p class="no_tb_margin" id="name_cr_row">
-        <span>{{!!npc-name}}</span> 
-        <span id="cr">CR {{!!cr}}</span>
+        <span>{{!!npc_name}}</span> 
+        <span id="cr">CR {{!!npc_cr}}</span>
     </p>
     <p class="no_tb_margin">
-        {{!!alignment}} {{!!size}} {{!!npc-type}}
+        {{!!npc_alignment}} {{!!npc_size}} {{!!npc_type}} {{!!npc_subtype}}
     </p>
     <p class="no_tb_margin hang_indent">
-        <b>Init</b> {{!!init}} <b>Senses</b> {{!!senses}} <b>Perception</b> {{!!perception}}
+        <b>Init</b> {{!!npc_init}}; <b>Senses</b> {{!!npc_senses}}; <b>Perception</b> {{!!npc_perception}}
     </p>
     <p class="no_tb_margin section_underline" id="defense_hp_row">
         <b>DEFENSE</b> 
-        <span id="hp"><b>HP</b> {{!!hp}}</span>
+        <span id="hp"><b>HP</b> {{!!npc_hp}}</span>
     </p>
     <p class="no_tb_margin">
-        <b>EAC</b> {{!!eac}}; <b>KAC</b> {{!!kac}}
+        <b>EAC</b> {{!!npc_eac}}; <b>KAC</b> {{!!npc_kac}}
     </p>
     <p class="no_tb_margin">
-        <b>Fort</b> {{!!fort}}; <b>Ref</b> {{!!ref}}; <b>Will</b> {{!!will}}
+        <b>Fort</b> {{!!npc_fort}}; <b>Ref</b> {{!!npc_ref}}; <b>Will</b> {{!!npc_will}}
+    </p>
+    <p class="no_tb_margin">
+        <b>Defensive Abilities</b> {{!!npc_defensive_abilities}}; <b>Immunities</b> {{!!npc_immunities}}
+    </p>
+    <p class="no_tb_margin">
+        <b>Weaknesses</b> {{!!npc_weaknesses}}
     </p>
     <p class="no_tb_margin section_underline">
         <b>OFFENSIVE</b>
     </p>
     <p class="no_tb_margin">
-        <b>Speed</b> {{!!speed}}
-    </p>
-    <p class="no_tb_margin">
-        <b>Melee</b> {{!!melee}}
-    </p>
-    <p class="no_tb_margin">
-        <b>Ranged</b> {{!!ranged}}
-    </p>
-    <p class="no_tb_margin">
-        <b>Space</b> {{!!space}}; <b>Reach</b> {{!!reach}}
-    </p>
-    <p class="no_tb_margin">
-        <b>Offensive Abilities</b> {{!!offensive_abilities}}
-    </p>
-    <p class="no_tb_margin section_underline">
-        TACTICS
-    </p>
-    <p class="no_tb_margin hang_indent">
-        <b>Before Combat</b> {{!!tactics_before_combat}}
-    </p>
-    <p class="no_tb_margin hang_indent">
-        <b>During Combat</b> {{!!tactics_during_combat}}
-    </p>
-    <p class="no_tb_margin hang_indent">
-        <b>Morale</b> {{!!tactics_morale}}
+        <b>Speed</b> {{!!npc_speed}}
     </p>    
+    <p class="no_tb_margin">
+        <b>Melee</b> {{!!npc_melee}}
+    </p>
+    
+    
+        <p class="no_tb_margin">
+            <b>Ranged</b> {{!!npc_ranged}}
+        </p>
+    
+    <$reveal type="nomatch" text="NOPE" state="!!npc_space">
+        <p class="no_tb_margin">
+            <b>Space</b> {{!!npc_space}}; <b>Reach</b> {{!!npc_reach}}
+        </p>
+    </$reveal>
+		
+    <p class="no_tb_margin">
+        <b>Offensive Abilities</b> {{!!npc_offensive_abilities}}
+    </p>  
     <p class="no_tb_margin section_underline">
         <b>STATISTICS</b>
     </p>
     <p class="no_tb_margin">
-        <b>Str</b> {{!!str}};
-        <b>Dex</b> {{!!dex}};
-        <b>Con</b> {{!!con}};
-        <b>Int</b> {{!!int}};
-        <b>Wis</b> {{!!wis}};
-        <b>Cha</b> {{!!cha}}
+        <b>Str</b> {{!!npc_str}};
+        <b>Dex</b> {{!!npc_dex}};
+        <b>Con</b> {{!!npc_con}};
+        <b>Int</b> {{!!npc_int}};
+        <b>Wis</b> {{!!npc_wis}};
+        <b>Cha</b> {{!!npc_cha}}
     </p>
     <p class="no_tb_margin">
-        <b>Skills</b> {{!!skills}}
+        <b>Skills</b> {{!!npc_skills}}
     </p>
     <p class="no_tb_margin">
-        <b>Languages</b> {{!!languages}}
+        <b>Languages</b> {{!!npc_languages}}
     </p>
     <p class="no_tb_margin section_underline">
         <b>SPECIAL ABILITIES</b>
     </p>    
-    <!-- <$macrocall $name="sf-spl-ab-decode" json_dat={{!!special_abilities}}/> -->
+    
 </div>    
     
 &nbsp;

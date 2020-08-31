@@ -66,10 +66,15 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
     ["npc_fort", "Fort ([+|-]\\d{1,2});"],
     ["npc_ref", "Ref ([+|-]\\d{1,2});"],
     ["npc_will", "Will ([+|-]\\d{1,2})"],
-    ["npc_dr", "DR (.*);"],
+    ["npc_defensive_abilities", "Defensive Abilities (.*);"],
+    ["npc_dr", "DR (.*);"],  
     ["npc_immunities", "Immunities (.*)\\n"],
+    ["npc_weaknesses", "Weaknesses (.*)\\n"],
     ["npc_speed", "Speed (.*)\\n"],
+    ["npc_melee", "Melee (.*)\\n"],
     ["npc_multiattack", "Multiattack (.*)\\n"],
+    ["npc_sla_cl", "Spell-Like Abilities \\(CL (\\d{1,2})(?:st|nd|rd|th)\\)\\n"],
+    ["npc_sla", "Spell-Like Abilities \\(CL \\d{1,2}(?:st|nd|rd|th)\\)\\n(.*)STATISTICS\\n", "s"],    
     ["npc_space", "Space (.*);"],
     ["npc_reach", "Reach (.*)\\n"],
     ["npc_str", "Str ([+|-]\\d{1,2});"],
@@ -79,6 +84,11 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
     ["npc_wis", "Wis ([+|-]\\d{1,2});"],
     ["npc_cha", "Cha ([+|-]\\d{1,2})"],
     ["npc_skills", "Skills (.*)"],
+    ["npc_languages", "Languages (.*)\\n"],
+    ["npc_other_abilities", "Other Abilities (.*)\\n"],
+    ["npc_enviornment", "Environment (.*)\\n"],
+    ["npc_organization", "Organization (.*)\\n"],
+    ["npc_special_abilities", "SPECIAL ABILITIES\\n(.*)", "s"]
   ];
 
   //Extract Data
@@ -86,16 +96,25 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
 
   var extracted_data = [];
   import_array.forEach(elem => {
-    //console.log(elem[1]);
-    var re = new RegExp(elem[1]);
+    var re;
+    if(elem.length == 2) {
+      re = new RegExp(elem[1]);
+    }
+    else {
+      //It's 3
+      console.log("It's a bigger rexep");
+      console.log(elem[1]);
+      console.log(elem[2]);
+      re = new RegExp(elem[1], elem[2]);
+    }
     re = re.exec(rb);
     
-    //console.log("Result");
-    //console.log(re);
-
+    console.log("Result");
+    console.log(re);
+    
+    console.log("setting " + elem[0]);
     if( re != null )
-    {
-      //console.log(re[1]);
+    {      
       extracted_data[elem[0]] = re[1];
     }
     else {
@@ -115,17 +134,11 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
     this.wiki.addTiddler({
       title: "NPCImportWS",
       type: "text/vnd.tiddlywiki",
-      text: "SF NPC Import",
+      text: "{{||$:/plugins/huntsfromshadow/StarfinderManager/Templates/NPCTemplate}}",
       tags: [],
       "test": "test"});
   }
-  else {
-    console.log(tid);
-  }
   
-  this.wiki.setText("NPCImportWS", "blah1", undefined, "blah12", {});
-
-
   for (const [key, value] of Object.entries(extracted_data)) {
     this.wiki.setText("NPCImportWS", key, undefined, value, {});
   }
