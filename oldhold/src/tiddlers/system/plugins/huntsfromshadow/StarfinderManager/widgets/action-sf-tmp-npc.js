@@ -101,18 +101,11 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
       re = new RegExp(elem[1]);
     }
     else {
-      //It's 3
-      console.log("It's a bigger rexep");
-      console.log(elem[1]);
-      console.log(elem[2]);
+      //It's 3    
       re = new RegExp(elem[1], elem[2]);
     }
     re = re.exec(rb);
-    
-    console.log("Result");
-    console.log(re);
-    
-    console.log("setting " + elem[0]);
+        
     if( re != null )
     {      
       extracted_data[elem[0]] = re[1];
@@ -122,22 +115,6 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
     }
   });
 
-  //Time to Update Tiddler
-  //Does the import tiddler exist
-  var tid = this.wiki.getTiddler("NPCImportWS");
-  
-  if(tid === undefined) {
-    var fields = {};
-    var creationFields = this.wiki.getCreationFields();
-    var modificationFields = this.wiki.getModificationFields();      
-
-    this.wiki.addTiddler({
-      title: "NPCImportWS",
-      type: "text/vnd.tiddlywiki",
-      text: "{{||$:/plugins/huntsfromshadow/StarfinderManager/Templates/NPCTemplate}}",
-      tags: [],
-      "test": "test"});
-  }
   
   for (const [key, value] of Object.entries(extracted_data)) {
     this.wiki.setText("NPCImportWS", key, undefined, value, {});
@@ -147,7 +124,6 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
 };
 
 /* Finally exports the widget constructor. */
-//exports.foo = FooWidget;
 exports["action-sf-tmp-npc"] = SfTmpNpcWidget;
 
 })();

@@ -1,0 +1,48 @@
+created: 20200831202820166
+modified: 20200831203009872
+tags: 
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/modals/EditNPCModal.tid
+type: text/vnd.tiddlywiki
+
+\define edit-field(npcfld) 
+<$edit-text tiddler=<<sourceTid>> field=$npcfld$ />
+\end
+
+<<sourceTid>>
+
+|! Name         | <<edit-field npc_name>> |
+|! CR           | <<edit-field npc_cr>> |
+|! XP           | <<edit-field npc_xp>> |
+|! Alignment    | <<edit-field npc_alignment>> |
+|! Size         | <<edit-field npc_size>> |
+|! Type         | <<edit-field npc_type>> |
+|! Subtype      | <<edit-field npc_subtype>> |
+|! Init         | <<edit-field npc_init>> |
+|! Senses       | <<edit-field npc_senses>> |
+|! Perception   | <<edit-field npc_perception>> |
+|! HP           | <<edit-field npc_hp>> |
+|! EAC          | <<edit-field npc_eac>> |
+|! KAC          | <<edit-field npc_kac>> |
+|! Fort         | <<edit-field npc_fort>> |
+|! Ref          | <<edit-field npc_ref>> |
+|! Will         | <<edit-field npc_will>> |
+|! Defensive Abilities | <<edit-field npc_defensive_abilities>> |
+|! DR           | <<edit-field npc_dr>> |
+|! Immunities   | <<edit-field npc_immunities>> |
+|! Weaknesses   | <<edit-field npc_weaknesses>> |
+|! Speed        | <<edit-field npc_speed>> |
+|! Melee        | <<edit-field npc_melee>> |
+|! Multiattack  | <<edit-field npc_multiattack>> |
+|! Space        | <<edit-field npc_space>> |
+|! Reach        | <<edit-field npc_reach>> |
+|! Spell-Like Abilities | <<edit-field npc_sla_cl>> |
+|! Spell-Like Abilities | <<edit-field npc_sla>> |
+|! Str          | <<edit-field npc_str>> |
+|! Dex          | <<edit-field npc_dex>> |
+|! Con          | <<edit-field npc_con>> |
+|! Int          | <<edit-field npc_int>> |
+|! Wis          | <<edit-field npc_wis>> |
+|! Cha          | <<edit-field npc_cha>> |
+|! Skills       | <<edit-field npc_skills>> |
+|! Languages    | <<edit-field npc_languages>> |
+|! Other Abilities | <<edit-field npc_other_abilities>> |

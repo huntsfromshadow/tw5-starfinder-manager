@@ -1,7 +1,7 @@
-created: 20200808023046960
-modified: 20200831183051191
+created: 20200831203106349
+modified: 20200831203125490
 tags: 
-title: $:/plugins/huntsfromshadow/StarfinderManager/Templates/NPCTemplate
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/templates/NPCTemplate
 type: text/vnd.tiddlywiki
 
 <div id="sf_character">
@@ -46,11 +46,11 @@ type: text/vnd.tiddlywiki
             <b>Ranged</b> {{!!npc_ranged}}
         </p>
     
-    <$reveal type="nomatch" text="NOPE" state="!!npc_space">
+    <!--<$reveal type="nomatch" text="NOPE" state="!!npc_space"> -->
         <p class="no_tb_margin">
             <b>Space</b> {{!!npc_space}}; <b>Reach</b> {{!!npc_reach}}
         </p>
-    </$reveal>
+    <!-- </$reveal> -->
 		
     <p class="no_tb_margin">
         <b>Offensive Abilities</b> {{!!npc_offensive_abilities}}
@@ -82,8 +82,9 @@ type: text/vnd.tiddlywiki
 
 <$button>
     <$action-sendmessage $message="tm-modal"
-        param="EditNPCModal"
-        rootwindow=true />
+        $param="$:/plugins/huntsfromshadow/StarfinderManager/Modals/EditNPCModal"
+				sourceTid=<<currentTiddler>>
+        $rootwindow="yes" />
     Edit NPC
 </$button>
 

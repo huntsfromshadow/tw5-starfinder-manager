@@ -1,0 +1,18 @@
+created: 20200831203314734
+modified: 20200831203333353
+tags: 
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/Settings
+type: text/vnd.tiddlywiki
+
+\define render-boolean(key)
+<$checkbox tiddler="$:/plugins/huntsfromshadow/StarfinderManager/config/$key$" field="text" checked="true" unchecked="false" default="true" />
+\end
+
+\define edit-setting(key)
+<$edit-text tiddler="$:/plugins/huntsfromshadow/StarfinderManager/config/$key$" field="text" tag="input" />
+\end
+
+
+|Version |{{$:/plugins/huntsfromshadow/StarfinderManager!!version}} |
+|NPC Tag |<<edit-setting "Tags/Creatures">> |
+|Render NPCs with Template | <<render-boolean "ViewTemplates/StatBlock">> |

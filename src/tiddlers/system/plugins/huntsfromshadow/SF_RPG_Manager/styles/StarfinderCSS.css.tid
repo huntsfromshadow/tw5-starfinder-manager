@@ -1,0 +1,44 @@
+created: 20200831202928621
+modified: 20200831202955152
+tags: $:/tags/Stylesheet
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/styles/StarfinderCSS.css
+type: text/css
+
+#sf_character {    
+    max-width: 80%;
+}
+
+#sf_character .no_tb_margin {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#sf_character .hang_indent {
+    margin-left: 1em;
+    text-indent: -1em;
+}
+
+#sf_character .section_underline {
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+#sf_character #name_cr_row {
+    font-size: x-large;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#sf_character #name_cr_row #cr {
+    float: right;
+}
+
+#sf_character #defense_hp_row #hp {
+    float: right;
+}
+
+

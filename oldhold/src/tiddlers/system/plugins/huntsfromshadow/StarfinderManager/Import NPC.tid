@@ -1,5 +1,5 @@
 created: 20200829155554872
-modified: 20200831182430553
+modified: 20200831191649970
 title: $:/plugins/huntsfromshadow/StarfinderManager/Import NPC
 tmpname: Living Hologram
 type: text/vnd.tiddlywiki
@@ -14,7 +14,8 @@ type: text/vnd.tiddlywiki
     <$action-createtiddler 
         $basetitle={{NPCName}}
         $savetitle="!!tmpname"
-        $template="NPCImportWS"
+				$template="NPCImportWS"
+        text="{{||$:/plugins/huntsfromshadow/StarfinderManager/Templates/NPCTemplate}}"
 				$overwrite="yes" />
     <$action-navigate $to={{!!tmpname}} />
     Test Button
@@ -77,6 +78,10 @@ temporarily (see rejuvenation above)."  /><p/> |
 
 # Press <<load-new-npc>> to load the NPC to review below.
 <$button tooltip="load npc">
+     <$action-createtiddler 
+        $basetitle="NPCImportWS"        
+        $template="$:/plugins/huntsfromshadow/StarfinderManager/Templates/NPCImportWSTemplate"
+        $overwrite="yes" />
     <$action-sf-tmp-npc $npcname={{NPCName}} $rawblock={{NPCRawBlock}} />
 Load NPC      
 </$button>
