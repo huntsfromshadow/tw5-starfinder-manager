@@ -1,5 +1,5 @@
 created: 20200831204604256
-modified: 20200831211126713
+modified: 20200831213749763
 tags: 
 title: Try
 type: text/vnd.tiddlywiki
@@ -27,7 +27,7 @@ Create WS NPC
 
 <$button>
 	<!-- <$action-sf-tmp-npc $npcname={{NPCName}} $rawblock={{NPCRawBlock}} />     -->
-	<$action-setfield $tiddler="NPCImportWS" $field="Tryme" $value="Yep" />
+	<$action-setfield $tiddler="NPCImportWS" $field="Tryme" $value="Yep\nLets see" />
 Load
 </$button>
 

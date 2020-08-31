@@ -73,8 +73,8 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
     ["npc_speed", "Speed (.*)\\n"],
     ["npc_melee", "Melee (.*)\\n"],
     ["npc_multiattack", "Multiattack (.*)\\n"],
-    ["npc_sla_cl", "Spell-Like Abilities \\(CL (\\d{1,2})(?:st|nd|rd|th)\\)\\n"],
-    ["npc_sla", "Spell-Like Abilities \\(CL \\d{1,2}(?:st|nd|rd|th)\\)\\n(.*)STATISTICS\\n", "s"],    
+    //["npc_sla_cl", "Spell-Like Abilities \\(CL (\\d{1,2})(?:st|nd|rd|th)\\)\\n"],
+    //["npc_sla", "Spell-Like Abilities \\(CL \\d{1,2}(?:st|nd|rd|th)\\)\\n(.*)STATISTICS\\n", "s"],    
     ["npc_space", "Space (.*);"],
     ["npc_reach", "Reach (.*)\\n"],
     ["npc_str", "Str ([+|-]\\d{1,2});"],
@@ -88,7 +88,7 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
     ["npc_other_abilities", "Other Abilities (.*)\\n"],
     ["npc_enviornment", "Environment (.*)\\n"],
     ["npc_organization", "Organization (.*)\\n"],
-    ["npc_special_abilities", "SPECIAL ABILITIES\\n(.*)", "s"]
+    //["npc_special_abilities", "SPECIAL ABILITIES\\n(.*)", "s"]
   ];
 
   //Extract Data
@@ -116,11 +116,12 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
   });
 
   
-  //for (const [key, value] of Object.entries(extracted_data)) {
-  //  this.wiki.setText("NPCImportWS", key, undefined, value, {});
-  //}
-  console.log("Here");
-  this.wiki.setText("NPCImportWS", "Tryme", undefined, "Yep", {});
+  for (const [key, value] of Object.entries(extracted_data)) {
+    console.log(key + "->" + value);
+    this.wiki.setText("NPCImportWS", key, undefined, value, {});
+  }
+  
+  
 
   return true;
 };

@@ -1,0 +1,44 @@
+created: 20200831214153544
+draft.of: NPCImportWS
+draft.title: NPCImportWS
+modified: 20200831214445353
+npc_alignment: CE
+npc_cha: +4
+npc_con: NOPE
+npc_cr: 8
+npc_defensive_abilities: incorporeal, rejuvenation
+npc_dex: +6
+npc_dr: NOPE
+npc_eac: 20
+npc_enviornment: any
+npc_fort: +5
+npc_hp: 115
+npc_immunities: NOPE
+npc_init: +6
+npc_int: +2
+npc_kac: 21
+npc_languages: one language determined by original creator
+npc_melee: hardlight slam +18 (1d12+8 B; critical dazzled [DC 18])
+npc_multiattack: NOPE
+npc_name: LIVING HOLOGRAM
+npc_organization: solitary
+npc_other_abilities: freeze, unliving
+npc_perception: +16
+npc_reach: NOPE
+npc_ref: +5
+npc_senses: darkvision 60 ft., low-light vision
+npc_size: Medium
+npc_skills: Acrobatics +21 (+29 to fly), Bluff +16, Computers +21,
+npc_space: NOPE
+npc_speed: fly 30 ft. (Su, perfect)
+npc_str: +0
+npc_subtype: (incorporeal, technological)
+npc_type: construct
+npc_weaknesses: tethered
+npc_will: +9
+npc_wis: +1
+npc_xp: 4,800
+testme: "test
+title: Draft of 'NPCImportWS'
+type: text/vnd.tiddlywiki
+
