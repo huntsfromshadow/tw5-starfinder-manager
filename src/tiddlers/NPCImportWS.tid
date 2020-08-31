@@ -1,5 +1,6 @@
+blah1: blah12
 created: 20200830214203110
-modified: 20200830233640832
+modified: 20200831122636535
 npc_alignment: N
 npc_cha: +0
 npc_con: +3
@@ -21,6 +22,7 @@ npc_ref: +13
 npc_senses: darkvision 60 ft.
 npc_size: Huge
 npc_skill: Acrobatics +20, Athletics +20
+npc_skills: Acrobatics +20, Athletics +20
 npc_space: 15 ft.
 npc_speed: 20 ft.
 npc_str: +8

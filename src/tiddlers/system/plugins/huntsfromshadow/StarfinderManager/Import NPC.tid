@@ -5,6 +5,19 @@ type: text/vnd.tiddlywiki
 
 \define button-style() border: 1px solid; padding: 2px;
 
+\define extraFields()
+one="1" two="2"
+\end
+
+\define testCreate()
+<$action-createtiddler $basetitle="Test Me"
+text="Stuff" {{<<extraFields>>}} />
+\end
+
+<$button actions=<<testCreate>> >
+Create Tiddler
+</$button>
+
 ! Import NPC from Statblock
 # Fill in These Fields
 |! NPC Name: | <$edit-text tiddler="NPCName"  placeholder="Creature Name" size="30" tag="input" 
@@ -45,21 +58,23 @@ Load NPC
 |! Senses | <$edit-text tiddler="NPCImportWS" field="npc_senses" /> |
 |! Perception | <$edit-text tiddler="NPCImportWS" field="npc_perception" /> |
 |! HP | <$edit-text tiddler="NPCImportWS" field="npc_hp" /> |
-|! EAC | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! KAC | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! Fort | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! Ref | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! Will | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! DR | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! Immunities | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! Speed | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! Multiattack | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! Space | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! Reach | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! Str | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! Dex | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! Con | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! Int | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! Wis | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! Cha | <$edit-text tiddler="NPCImportWS" field="text" /> |
-|! Skills | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! EAC | <$edit-text tiddler="NPCImportWS" field="npc_eac" /> |
+|! KAC | <$edit-text tiddler="NPCImportWS" field="npc_kac" /> |
+|! Fort | <$edit-text tiddler="NPCImportWS" field="npc_fort" /> |
+|! Ref | <$edit-text tiddler="NPCImportWS" field="npc_ref" /> |
+|! Will | <$edit-text tiddler="NPCImportWS" field="npc_will" /> |
+|! DR | <$edit-text tiddler="NPCImportWS" field="npc_dr" /> |
+|! Immunities | <$edit-text tiddler="NPCImportWS" field="npc_immunities" /> |
+|! Speed | <$edit-text tiddler="NPCImportWS" field="npc_speed" /> |
+|! Multiattack | <$edit-text tiddler="NPCImportWS" field="npc_multiattack" /> |
+|! Space | <$edit-text tiddler="NPCImportWS" field="npc_space" /> |
+|! Reach | <$edit-text tiddler="NPCImportWS" field="npc_reach" /> |
+|! Str | <$edit-text tiddler="NPCImportWS" field="npc_str" /> |
+|! Dex | <$edit-text tiddler="NPCImportWS" field="npc_dex" /> |
+|! Con | <$edit-text tiddler="NPCImportWS" field="npc_con" /> |
+|! Int | <$edit-text tiddler="NPCImportWS" field="npc_int" /> |
+|! Wis | <$edit-text tiddler="NPCImportWS" field="npc_wis" /> |
+|! Cha | <$edit-text tiddler="NPCImportWS" field="npc_cha" /> |
+|! Skills | <$edit-text tiddler="NPCImportWS" field="npc_skills" /> |
+
+
