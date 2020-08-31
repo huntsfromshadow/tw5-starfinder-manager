@@ -1,7 +1,8 @@
 created: 20200831203221268
-modified: 20200831203254973
+modified: 20200831210027388
 tags: 
-title: $:/plugins/huntsfromshadow/SF_RPG_Manager/Import NPC
+title: Import NPC
+tmpname: {{NPCName}}
 type: text/vnd.tiddlywiki
 
 \define button-style() border: 1px solid; padding: 2px;
@@ -17,7 +18,7 @@ type: text/vnd.tiddlywiki
 				$template="NPCImportWS"
         text="{{||$:/plugins/huntsfromshadow/StarfinderManager/Templates/NPCTemplate}}"
 				$overwrite="yes" />
-    <$action-navigate $to={{!!tmpname}} />
+    <!-- <$action-navigate $to={{!!tmpname}} /> -->
     Test Button
 </$button>
 
@@ -79,13 +80,16 @@ temporarily (see rejuvenation above)."  /><p/> |
 # Press <<load-new-npc>> to load the NPC to review below.
 <$button tooltip="load npc">
      <$action-createtiddler 
-        $basetitle="NPCImportWS"        
-        $template="$:/plugins/huntsfromshadow/StarfinderManager/Templates/NPCImportWSTemplate"
-        $overwrite="yes" />
-    <$action-sf-tmp-npc $npcname={{NPCName}} $rawblock={{NPCRawBlock}} />
-Load NPC      
+        $basetitle="NPCImportWS" />		 
+Create WS NPC      
 </$button>
 
+<$button>
+	<$action-sf-tmp-npc $npcname={{NPCName}} $rawblock={{NPCRawBlock}} />     
+Load
+</$button>
+
+$template="$:/plugins/huntsfromshadow/StarfinderManager/Templates/NPCImportWSTemplate"
 <hr />
 
 |! Name         | <<edit-field npc_name>> |

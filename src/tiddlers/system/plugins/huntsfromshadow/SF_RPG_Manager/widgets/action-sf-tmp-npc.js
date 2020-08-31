@@ -116,9 +116,11 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
   });
 
   
-  for (const [key, value] of Object.entries(extracted_data)) {
-    this.wiki.setText("NPCImportWS", key, undefined, value, {});
-  }
+  //for (const [key, value] of Object.entries(extracted_data)) {
+  //  this.wiki.setText("NPCImportWS", key, undefined, value, {});
+  //}
+  console.log("Here");
+  this.wiki.setText("NPCImportWS", "Tryme", undefined, "Yep", {});
 
   return true;
 };

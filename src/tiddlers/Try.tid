@@ -1,0 +1,33 @@
+created: 20200831204604256
+modified: 20200831211126713
+tags: 
+title: Try
+type: text/vnd.tiddlywiki
+
+New button caption: <$edit-text tiddler="$:/state/new-button-caption" tag="input" default=""/>
+
+<$button>
+<$action-createtiddler $basetitle="Homemade Button" tags="$:/tags/PageControls" text={{$:/state/new-button-caption}}/>
+Create non-functional page control button
+</$button>
+
+<$button>
+    <$action-createtiddler 
+        $basetitle={{NPCName!!text}}
+				$template="NPCImportWS"
+				/>
+    Test Button
+</$button>
+
+<$button tooltip="load npc">
+     <$action-createtiddler 
+        $basetitle="NPCImportWS" />		 
+Create WS NPC      
+</$button>
+
+<$button>
+	<!-- <$action-sf-tmp-npc $npcname={{NPCName}} $rawblock={{NPCRawBlock}} />     -->
+	<$action-setfield $tiddler="NPCImportWS" $field="Tryme" $value="Yep" />
+Load
+</$button>
+
