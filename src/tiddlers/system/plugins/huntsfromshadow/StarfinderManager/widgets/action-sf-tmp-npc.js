@@ -101,35 +101,34 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
     else {
       extracted_data[elem[0]] = "NOPE";
     }
-
-    //Time to Update Tiddler
-    //Does the import tiddler exist
-    var tid = this.wiki.getTiddler("NPCImportWS");
-    
-    if(tid === undefined) {
-      var fields = {};
-      var creationFields = this.wiki.getCreationFields();
-      var modificationFields = this.wiki.getModificationFields();      
-
-      this.wiki.addTiddler({
-        title: "NPCImportWS",
-        type: "text/vnd.tiddlywiki",
-        text: "SF NPC Import",
-        tags: [],
-        "test": "test"});
-    }
-    else {
-      console.log(tid);
-    }
   });
 
-
+  //Time to Update Tiddler
+  //Does the import tiddler exist
+  var tid = this.wiki.getTiddler("NPCImportWS");
   
+  if(tid === undefined) {
+    var fields = {};
+    var creationFields = this.wiki.getCreationFields();
+    var modificationFields = this.wiki.getModificationFields();      
+
+    this.wiki.addTiddler({
+      title: "NPCImportWS",
+      type: "text/vnd.tiddlywiki",
+      text: "SF NPC Import",
+      tags: [],
+      "test": "test"});
+  }
+  else {
+    console.log(tid);
+  }
   
+  this.wiki.setText("NPCImportWS", "blah1", undefined, "blah12", {});
 
 
-  
-
+  for (const [key, value] of Object.entries(extracted_data)) {
+    this.wiki.setText("NPCImportWS", key, undefined, value, {});
+  }
 
   return true;
 };

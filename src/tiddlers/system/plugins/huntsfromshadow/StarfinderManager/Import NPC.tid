@@ -1,5 +1,5 @@
 created: 20200829155554872
-modified: 20200830155913071
+modified: 20200831004448280
 title: $:/plugins/huntsfromshadow/StarfinderManager/Import NPC
 type: text/vnd.tiddlywiki
 
@@ -31,3 +31,35 @@ Skills Acrobatics +20, Athletics +20"  /><p/> |
     <$action-sf-tmp-npc $npcname={{NPCName}} $rawblock={{NPCRawBlock}} />
 Load NPC      
 </$button>
+
+<hr />
+
+|! Name | <$edit-text tiddler="NPCImportWS" field="npc_name" /> |
+|! CR | <$edit-text tiddler="NPCImportWS" field="npc_cr" /> |
+|! XP | <$edit-text tiddler="NPCImportWS" field="npc_xp" /> |
+|! Alignment | <$edit-text tiddler="NPCImportWS" field="npc_alignment" /> |
+|! Size | <$edit-text tiddler="NPCImportWS" field="npc_size" /> |
+|! Type | <$edit-text tiddler="NPCImportWS" field="npc_type" /> |
+|! Subtype | <$edit-text tiddler="NPCImportWS" field="npc_subtype" /> |
+|! Init | <$edit-text tiddler="NPCImportWS" field="npc_init" /> |
+|! Senses | <$edit-text tiddler="NPCImportWS" field="npc_senses" /> |
+|! Perception | <$edit-text tiddler="NPCImportWS" field="npc_perception" /> |
+|! HP | <$edit-text tiddler="NPCImportWS" field="npc_hp" /> |
+|! EAC | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! KAC | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! Fort | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! Ref | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! Will | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! DR | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! Immunities | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! Speed | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! Multiattack | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! Space | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! Reach | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! Str | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! Dex | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! Con | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! Int | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! Wis | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! Cha | <$edit-text tiddler="NPCImportWS" field="text" /> |
+|! Skills | <$edit-text tiddler="NPCImportWS" field="text" /> |
