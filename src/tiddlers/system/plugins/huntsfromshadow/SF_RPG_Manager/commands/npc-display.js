@@ -21,7 +21,7 @@ exports.name = "npc-display";
 exports.params = [  ];
 
 function txtOrEmpty(field, txt) {
-  if (field == "NOPE") {
+  if (field != "NOPE") {
     return txt;
   }
   else {
@@ -32,16 +32,10 @@ function txtOrEmpty(field, txt) {
 function genderRaceClassBlock(tid) {
   //Figure out what is present
   if(
-    tid.fields.npc_gender !== "NOPE" ||
-    tld.fields.npc_race !== "NOPE" ||
-    tld.fields.npc_class !== "NOPE" ) {
+    tid.fields.npc_gender != "NOPE" ||
+    tld.fields.npc_race != "NOPE" ||
+    tld.fields.npc_class != "NOPE" ) {
     
-    return `
-    <p class="no_tb_margin">
-      ${txtOrEmpty(tid.fields.npc_gender, "{{!!npc_gender}}")} 
-      ${txtOrEmpty(tid.fields.npc_race, "{{!!npc_race}}")} 
-      ${txtOrEmpty(tid.fields.npc_class, "{{!!npc_class}}")}        
-    </p>`;
   }
 }
 
@@ -80,6 +74,56 @@ function weaknessesBlock(tid) {
 
 }
 
+//Format of datalist
+//[ field name, ...]
+function singleLineNoHeaders(tid, datalist) {
+  var retval = "";
+  datalist.forEach(ele => {
+    var fname = ele;
+
+    if(tid.fields[ele] != "NOPE") {
+      retval = retval + "{{!!" + ele + "}} ";
+    }
+  });
+
+  if(retval != "") {
+    retval = '<p class="no_tb_margin">' + retval + "</p>";
+  }
+
+  return retval;
+}
+
+//Format of datalist
+/* [
+[ fieldname, header, post ]
+]*/
+function singleLineWithHeaders(tid, datalist, hang=false) {
+
+  var retval = "";
+
+  datalist.forEach(ele => {
+    var fieldname = ele[0];
+    var header = ele[1];
+    var post = ele[2];
+  
+    if( tid.fields[fieldname] != "NOPE" ) {
+      retval = retval + " " + header + "{{!!" + 
+        fieldname + "}}" + post;
+    }
+  });
+  
+  if(retval != "") {
+    if(hang == false) {
+      retval = '<p class="no_tb_margin">' + retval + "</p>";
+    }
+    else {
+      retval = '<p class="no_tb_margin hang_indent">' + retval + "</p>";      
+    }
+  }
+
+  return retval;
+}
+
 
 /* Executes (runs) our macro when it requires evaluation; returns a string
  * value.
@@ -98,76 +142,81 @@ exports.run = function() {
     <span>{{!!npc_name}}</span> 
     <span id="cr">CR {{!!npc_cr}}</span>
   </p>
-  <p class="no_tb_margin">
-    <b>XP {{!!npc_xp}}</b>
-  </p>
-  ${genderRaceClassBlock(tid)}
-  <p class="no_tb_margin">
-    {{!!npc_alignment}} {{!!npc_size}} {{!!npc_type}} {{!!npc_subtype}}
-  </p>  
-  <p class="no_tb_margin hang_indent">
-      <b>Init</b> {{!!npc_init}}; 
-      ${txtOrEmpty(tid.fields.npc_senses, "<b>Senses</b> {{!!npc_senses}};")}
-       <b>Perception</b> {{!!npc_perception}}
-  </p>
+  ${singleLineWithHeaders(tid, [["npc_xp", "<b>XP ", "</b>"]])}  
+  ${singleLineNoHeaders(tid, ["npc_gender", "npc_race", "npc_class"] )}
+  ${singleLineNoHeaders(tid, ["npc_alignment", "npc_size", 
+    "npc_type", "npc_subtype"] )}
+  ${singleLineWithHeaders(tid, [
+    ["npc_init", "<b>Init</b> ", ";"],
+    ["npc_senses", "<b>Senses</b>", ";"],
+    ["npc_perception", "<b>Perception</b>", ""]], true)}  
   <p class="no_tb_margin section_underline" id="defense_hp_row">
       <b>DEFENSE</b> 
       <span id="hp"><b>HP</b> {{!!npc_hp}}</span>
   </p>
-  <p class="no_tb_margin">
-      <b>EAC</b> {{!!npc_eac}}; <b>KAC</b> {{!!npc_kac}}
-  </p>
-  <p class="no_tb_margin">
-      <b>Fort</b> {{!!npc_fort}}; <b>Ref</b> {{!!npc_ref}}; <b>Will</b> {{!!npc_will}}
-  </p>
-  ${defensiveAbilitiesImmunitiesBlock(tid)}
-  ${weaknessesBlock(tid)}
+  ${singleLineWithHeaders(tid, [
+    ["npc_eac", "<b>EAC</b> ", ";"],
+    ["npc_kac", "<b>KAC</b>", ""]] )}  
+  ${singleLineWithHeaders(tid, [
+      ["npc_fort", "<b>Fort</b> ", ";"],
+      ["npc_ref", "<b>Ref</b>", ";"], 
+      ["npc_will", "<b>Will</b>", ""]])}
   <p class="no_tb_margin section_underline">
-      <b>OFFENSIVE</b>
+      <b>OFFENSE</b>
   </p>
-  <p class="no_tb_margin">
-      <b>Speed</b> {{!!npc_speed}}
-  </p>    
-  <p class="no_tb_margin">
-      <b>Melee</b> {{!!npc_melee}}
-  </p>
-        
-  <p class="no_tb_margin">
-      <b>Ranged</b> {{!!npc_ranged}}
-  </p>
-    
-  <p class="no_tb_margin">
-      <b>Space</b> {{!!npc_space}}; <b>Reach</b> {{!!npc_reach}}
-  </p>
-		
-  <p class="no_tb_margin">
-      <b>Offensive Abilities</b> {{!!npc_offensive_abilities}}
-  </p>  
+  ${singleLineWithHeaders(tid, [
+    ["npc_speed", "<b>Speed</b> ", ""] ])}
+  ${singleLineWithHeaders(tid, [
+    ["npc_melee", "<b>Melee</b> ", ""] ])}
+  ${singleLineWithHeaders(tid, [
+      ["npc_offensive_abilities", "<b>Offensive Abilities</b> ", ""] ])}     
   <p class="no_tb_margin section_underline">
       <b>STATISTICS</b>
   </p>
-  <p class="no_tb_margin">
-      <b>Str</b> {{!!npc_str}};
-      <b>Dex</b> {{!!npc_dex}};
-      <b>Con</b> {{!!npc_con}};
-      <b>Int</b> {{!!npc_int}};
-      <b>Wis</b> {{!!npc_wis}};
-      <b>Cha</b> {{!!npc_cha}}
-  </p>
-  <p class="no_tb_margin">
-      <b>Skills</b> {{!!npc_skills}}
-  </p>
-  <p class="no_tb_margin">
-      <b>Languages</b> {{!!npc_languages}}
-  </p>
-  <p class="no_tb_margin section_underline">
-      <b>SPECIAL ABILITIES</b>
-  </p>    
-    
+  ${singleLineWithHeaders(tid, [
+    ["npc_str", "<b>Str</b> ", ";"],
+    ["npc_dex", "<b>Dex</b>", ";"], 
+    ["npc_con", "<b>Con</b>", ";"],
+    ["npc_int", "<b>Int</b> ", ";"],
+    ["npc_wis", "<b>Wis</b>", ";"], 
+    ["npc_cha", "<b>Cha</b>", ""] ])}
+  ${singleLineWithHeaders(tid, [
+    ["npc_skills", "<b>Skills</b> ", ""] ], true)}
+  ${singleLineWithHeaders(tid, [
+    ["npc_feats", "<b>Feats</b> ", ""] ])}
+  ${singleLineWithHeaders(tid, [
+    ["npc_languages", "<b>Languages</b> ", ""] ])}
+  ${singleLineWithHeaders(tid, [
+    ["npc_other_abilities", "<b>Other Abilities</b> ", ""] ])}
+  ${singleLineWithHeaders(tid, [
+    ["npc_gear", "<b>Gear</b> ", ""] ], true)}      
 </div>`;
 
   return outval;
 
+  //Hold some data
+  //<p class="no_tb_margin">
+  //    <b>Ranged</b> {{!!npc_ranged}}
+  //</p>
+  /*
+
+  <p class="no_tb_margin">
+    <b>XP {{!!npc_xp}}</b>
+  </p>
+
+  ${defensiveAbilitiesImmunitiesBlock(tid)}
+  ${weaknessesBlock(tid)}
+
+  <p class="no_tb_margin">
+      <b>Space</b> {{!!npc_space}}; <b>Reach</b> {{!!npc_reach}}
+  </p>
+
+      <p class="no_tb_margin section_underline">
+      <b>SPECIAL ABILITIES</b>
+  </p>    
+        
+
+  */
 
 };
 

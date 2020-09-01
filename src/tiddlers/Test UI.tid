@@ -1,5 +1,5 @@
 created: 20200901172327743
-modified: 20200901182724425
+modified: 20200901213047999
 npc_alignment: CN
 npc_cha: +1
 npc_class: operative
@@ -33,7 +33,7 @@ npc_ref: +6
 npc_rp: NOPE
 npc_senses: NOPE
 npc_size: Medium
-npc_skills: Acrobatics +11, Bluff +11, Engineering
+npc_skills: Acrobatics +11, Bluff +11, Engineering +8, Sense Motive +8, Sleight of Hand +11, Stealth +11
 npc_space: NOPE
 npc_speed: 30 ft.
 npc_str: +0
