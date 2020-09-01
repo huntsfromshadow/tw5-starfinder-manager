@@ -1,54 +1,57 @@
 created: 20200831213432999
-modified: 20200831213434863
+modified: 20200901113233224
 title: NPCRawBlock
 type: text/vnd.tiddlywiki
 
-LIVING HOLOGRAM CR 8
-XP 4,800
-CE Medium construct (incorporeal, technological)
-Init +6; Senses darkvision 60 ft., low-light vision;
-Perception +16
-DEFENSE HP 115
-EAC 20; KAC 21
-Fort +5; Ref +5; Will +9
-Defensive Abilities incorporeal, rejuvenation; Immunities
-construct immunities
-Weaknesses tethered
+MAARBADVAE CR 1
+Female shobhad mystic
+N Large humanoid (shobhad)
+Init +2; Senses darkvision 60 ft.; Perception +5
+DEFENSE HP 16 RP 3
+EAC 12; KAC 13
+Fort +1; Ref +3; Will +4
+Defensive Abilities ferocity, share pain (DC 12); Resistances
+cold 5
 OFFENSE
-Speed fly 30 ft. (Su, perfect)
-Melee hardlight slam +18 (1d12+8 B; critical dazzled [DC 18])
-Spell-Like Abilities (CL 8th)
-At will—holographic image (1st level, DC 16)
+Speed 40 ft.
+Melee battle staff +4 (1d4+2 B; critical knockdown)
+Ranged hunting rifle +6 (1d8+1 P)
+Space 10 ft.; Reach 10 ft.
+Mystic Spells Known (CL 1st; ranged +6)
+1st (2/day)—lesser confusion (DC 14), mind thrust I (DC 14)
+0 (at will)—daze (DC 13), fatigue (DC 13), telekinetic projectile,
+telepathic message
+Connection mindbreaker
+TACTICS
+During Combat Maarbadvae’s primary attack is mind thrust,
+followed by her rifle as a backup. She avoids melee for
+as long as possible, knowing it is not her strength. She
+coordinates with her allies with her mk 1 mindlink circlet.
+Morale Fierce and aggressive, Maarbadvae fights to the
+death. If she is rendered unconscious or helpless without
+getting killed, she calms down and surrenders when she
+stirs to consciousness.
 STATISTICS
-Str +0; Dex +6; Con —; Int +2; Wis +1; Cha +4
-Skills Acrobatics +21 (+29 to fly), Bluff +16, Computers +21,
-Culture +16, Stealth +21
-Languages one language determined by original creator
-Other Abilities freeze, unliving
-ECOLOGY
-Environment any
-Organization solitary
+Str +1; Dex +2; Con +2; Int +0; Wis +4; Cha +1
+Skills Mysticism +10, Sense Motive +10, Stealth +5
+Languages Akitonian, Common, Shobhad
+Other Abilities four-armed
+Gear second skin, battle staff, hunting rifle with 6 rounds,
+mk 1 mindlink circlet, spell gem of remove condition, assorted
+shobhad bangles and charms (worth 300 credits)
 SPECIAL ABILITIES
-Freeze (Ex) A living hologram can hold perfectly still so
-that it appears to be a normal hologram. It can take 20
-on Stealth checks to hide in plain sight as a hologram
-(usually among other holograms).
-Hardlight Slam (Ex) As an attack, a living hologram can
-temporarily cause its fist (or a melee weapon, if it has
-been programmed to have one) to become substantial.
-This functions as a natural weapon that deals
-bludgeoning damage. On a critical hit, the attack creates
-a bright flash of light, and the target must succeed at a
-DC 18 Reflex save or be dazzled for 1 round.
-Rejuvenation (Ex) In most cases, it is difficult to completely
-destroy a living hologram in combat. A living hologram
-reduced to 0 Hit Points vanishes, though its corrupted
-projector reconstructs it in 1d4 hours. The only way
-to permanently destroy a living hologram is to find
-its projector and either repair or destroy it. Living
-holograms are aware that their existences are tied to
-their projectors and protect the machinery at all costs.
-Tethered (Ex) A living hologram can’t travel more
-than 100 feet from its projector. If it is ever forced
-to do so, it is immediately destroyed, though only
-temporarily (see rejuvenation above).
+Ferocity (Ex) When Maarbadvae is brought to 0 Hit Points, she
+can fight on for 1 more round. She can act normally until the
+end of her next turn; if she has 0 HP at that point, she dies.
+If she would lose further Hit Points before this, she ceases
+to be able to act and dies.
+Four-Armed (Ex) A shobhad has four arms. One hand is
+considered its primary hand; all others are considered off
+hands. It can use any of its hands for other purposes that
+require free hands.
+Share Pain (Su) Whenever a foe deals damage to Maarbadvae,
+she can spend 1 Resolve Point as a reaction to shift some
+of the pain back onto that foe. Unless the foe succeeds at a
+DC 12 Will save, she reduces the damage she takes from the
+attack by 1, and the foe takes an equal amount of damage.
+This is a mind-affecting pain effect.

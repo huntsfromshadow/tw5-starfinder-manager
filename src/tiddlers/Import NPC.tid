@@ -1,8 +1,8 @@
 created: 20200831203221268
-modified: 20200901021438050
+modified: 20200901131811303
 tags: 
 title: Import NPC
-tmpname: {{NPCName}}
+tmpname: Maarbadvae
 type: text/vnd.tiddlywiki
 
 \define button-style() border: 1px solid; padding: 2px;
@@ -11,45 +11,11 @@ type: text/vnd.tiddlywiki
 <$edit-text tiddler="NPCImportWS" field=$npcfld$ />
 \end
 
-!!Import Starfinder NPC
-''Step 1:'' Fill In Bellow
+\define act-create-staging() <$action-createtiddler $basetitle="NPCImportWS" $overwrite="yes" />
 
-|! NPC (Tiddler) Name: | <$edit-text tiddler="NPCName"  placeholder="NPC Tiddler Name" size="30" tag="input" /> |
-|! Plain Text Statblock: | <$edit-text tiddler="NPCRawBlock"  tag="textarea" /> |
+\define act-load-npc() <$action-sf-tmp-npc $npcname={{NPCName}} $rawblock={{NPCRawBlock}} />
 
-
-<$button>
-    <$action-createtiddler 
-        $basetitle={{NPCName}}
-        $savetitle="!!tmpname"
-				$template="NPCImportWS"
-        text="{{||$:/plugins/huntsfromshadow/StarfinderManager/Templates/NPCTemplate}}"
-				$overwrite="yes" />
-    <!-- <$action-navigate $to={{!!tmpname}} /> -->
-    Test Button
-</$button>
-
-! Import NPC from Statblock
-# Fill in These Fields
-|! NPC Name: |  |
-|! Plain Text Statblock: | 
-|
-
-# Press <<load-new-npc>> to load the NPC to review below.
-<$button tooltip="load npc">
-     <$action-createtiddler 
-        $basetitle="NPCImportWS" />		 
-Create WS NPC      
-</$button>
-
-<$button>
-	<$action-sf-tmp-npc $npcname={{NPCName}} $rawblock={{NPCRawBlock}} />     
-Load
-</$button>
-
-$template="$:/plugins/huntsfromshadow/StarfinderManager/Templates/NPCImportWSTemplate"
-<hr />
-
+\define checkFields()
 |! Name         | <<edit-field npc_name>> |
 |! CR           | <<edit-field npc_cr>> |
 |! XP           | <<edit-field npc_xp>> |
@@ -86,4 +52,46 @@ $template="$:/plugins/huntsfromshadow/StarfinderManager/Templates/NPCImportWSTem
 |! Skills       | <<edit-field npc_skills>> |
 |! Languages    | <<edit-field npc_languages>> |
 |! Other Abilities | <<edit-field npc_other_abilities>> |
+\end
 
+
+!!Import Starfinder NPC
+''Step 1:'' Fill In Bellow
+
+|! NPC (Tiddler) Name: | <$edit-text tiddler="NPCName"  placeholder="NPC Tiddler Name" size="30" tag="input" /> |
+|! Plain Text Statblock: | <$edit-text tiddler="NPCRawBlock"  tag="textarea" /> |
+
+''Step2:'' 
+
+<$button actions="<<act-create-staging>> <<act-load-npc>>" >
+  Load into Fields Below to Double Check
+</$button>
+
+Then Check What Fields Will be loaded below.
+
+<$reveal type="nomatch" state="$:/plugins/huntsfromshadow/SF_RPG_Manager/states/npcimport_show_fields" text="show">
+  <$button set="$:/plugins/huntsfromshadow/SF_RPG_Manager/states/npcimport_show_fields" setTo="show">Show Fields</$button>
+</$reveal>
+
+<$reveal type="match" state="$:/plugins/huntsfromshadow/SF_RPG_Manager/states/npcimport_show_fields" text="show">
+
+
+  <$button set="$:/plugins/huntsfromshadow/SF_RPG_Manager/states/npcimport_show_fields" setTo="hide">Hide Fields</$button>
+
+
+  <<checkFields>>
+
+
+</$reveal>
+
+''Step 3:''
+<$button>
+    <$action-createtiddler 
+        $basetitle={{NPCName}}
+        $savetitle="!!tmpname"
+				$template="NPCImportWS"
+        text="{{||$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/NPCTemplate}}"
+				$overwrite="yes" />
+    <$action-navigate $to={{!!tmpname}} />
+    Finally import the NPC
+</$button>
