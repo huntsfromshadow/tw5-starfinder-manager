@@ -1,5 +1,5 @@
-created: 20200901131811067
-modified: 20200901131811337
+created: 20200901134731541
+modified: 20200901134731722
 npc_alignment: N
 npc_cha: +1
 npc_con: +2
@@ -39,4 +39,4 @@ npc_xp: NOPE
 title: Maarbadvae
 type: text/vnd.tiddlywiki
 
-{{||$:/plugins/huntsfromshadow/StarfinderManager/Templates/NPCTemplate}}
+{{||$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/NPCTemplate}}

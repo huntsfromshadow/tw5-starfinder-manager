@@ -1,0 +1,26 @@
+created: 20200901141346338
+modified: 20200901152725475
+title: Import NPC - Step 1
+type: text/vnd.tiddlywiki
+
+\define nextstep()
+<$button>
+  <$action-setfield $tiddler=<<tabstate>> $field="text" $value="Import NPC - Step 2" />
+Proceed to Step 2
+</$button>
+\end
+
+<!-- Note button will only work when called from the Import NPC tiddler -->
+''Step 1:'' 
+
+Fill In Below
+
+<<nextstep>>
+
+|! NPC (Tiddler) Name: | <$edit-text tiddler="NPCName"  placeholder="NPC Tiddler Name" size="30" tag="input" /> |
+|! Plain Text Statblock: | <$edit-text tiddler="NPCRawBlock"  tag="textarea" /> |
+
+<<nextstep>>
+
+
+
