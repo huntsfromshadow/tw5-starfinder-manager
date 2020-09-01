@@ -5,10 +5,17 @@ title: $:/plugins/huntsfromshadow/SF_RPG_Manager/templates/NPCTemplate
 type: text/vnd.tiddlywiki
 
 <div id="sf_character">
-    <p class="no_tb_margin" id="name_cr_row">
-        <span>{{!!npc_name}}</span> 
-        <span id="cr">CR {{!!npc_cr}}</span>
-    </p>
+        <p class="no_tb_margin" id="name_cr_row">
+            <span>{{!!npc_name}}</span> 
+            <span id="cr">CR {{!!npc_cr}}</span>
+        </p>
+        
+        <p class="no_tb_margin">
+            <b>XP {{!!npc_xp}}</b>
+        </p>
+
+  
+
     <p class="no_tb_margin">
         {{!!npc_alignment}} {{!!npc_size}} {{!!npc_type}} {{!!npc_subtype}}
     </p>

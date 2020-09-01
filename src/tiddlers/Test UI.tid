@@ -1,8 +1,8 @@
-created: 20200901164830958
-modified: 20200901164830982
+created: 20200901172327743
+modified: 20200901182724425
 npc_alignment: CN
 npc_cha: +1
-npc_class: 
+npc_class: operative
 npc_con: +0
 npc_cr: 1
 npc_defensive_abilities: NOPE
@@ -12,8 +12,8 @@ npc_eac: 11
 npc_enviornment: NOPE
 npc_feats: Mobility
 npc_fort: +1
-npc_gear:  second skin, tactical switchbladeAR, consumer backpack, environmental clothing (cold climates), flashlight
-npc_gender: 
+npc_gear: second skin, tactical switchbladeAR, consumer backpack, environmental clothing (cold climates), flashlight
+npc_gender: female
 npc_hp: 17
 npc_immunities: NOPE
 npc_init: +5
@@ -25,9 +25,9 @@ npc_multiattack: NOPE
 npc_name: ANACIA RENDER
 npc_offensive_abilities: trick attack 1d4
 npc_organization: NOPE
-npc_other_abilities:  operative specialization (thief) 
+npc_other_abilities: operative specialization (thief)
 npc_perception: +8
-npc_race: 
+npc_race: human
 npc_reach: NOPE
 npc_ref: +6
 npc_rp: NOPE
@@ -43,6 +43,8 @@ npc_weaknesses: NOPE
 npc_will: +4
 npc_wis: +1
 npc_xp: 400
-title: NPCImportWS
+tags: 
+title: Test UI
 type: text/vnd.tiddlywiki
 
+<<npc-display>>

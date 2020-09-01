@@ -1,8 +1,8 @@
 created: 20200831203221268
-modified: 20200901152634469
+modified: 20200901164832409
 tags: 
 title: Import NPC
-tmpname: Maarbadvae
+tmpname: Anacia Render
 type: text/vnd.tiddlywiki
 
 !Import Starfinder NPC
@@ -13,5 +13,5 @@ Note this will try to do it's best but you'll need to double check the fields.
 
 <!-- This passes the tabstate tiddler down into the tabs -->
 <$set name="tabstate" value=<<qualify $:/state/sf_rpg_man_importnpc_tab>> >
-	<<tabs "[[Import NPC - Step 1]] [[Import NPC - Step 2]] [[Import NPC - Step 3]]" "[[Import NPC - Step 1]]" "$:/state/sf_rpg_man_importnpc_tab">>
+	<<tabs "[[Import NPC - Step 1]] [[Import NPC - Step 2]] [[Import NPC - Step 3]]" [[Import NPC - Step 1]] "$:/state/sf_rpg_man_importnpc_tab">>
 </$set>

@@ -1,57 +1,40 @@
 created: 20200831213432999
-modified: 20200901113233224
+modified: 20200901154249633
 title: NPCRawBlock
 type: text/vnd.tiddlywiki
 
-MAARBADVAE CR 1
-Female shobhad mystic
-N Large humanoid (shobhad)
-Init +2; Senses darkvision 60 ft.; Perception +5
-DEFENSE HP 16 RP 3
-EAC 12; KAC 13
-Fort +1; Ref +3; Will +4
-Defensive Abilities ferocity, share pain (DC 12); Resistances
-cold 5
+ANACIA RENDER CR 1
+XP 400
+Female human operative
+CN Medium humanoid (human)
+Init +5; Perception +8
+DEFENSE HP 17
+EAC 11; KAC 12
+Fort +1; Ref +6; Will +4
 OFFENSE
-Speed 40 ft.
-Melee battle staff +4 (1d4+2 B; critical knockdown)
-Ranged hunting rifle +6 (1d8+1 P)
-Space 10 ft.; Reach 10 ft.
-Mystic Spells Known (CL 1st; ranged +6)
-1st (2/day)—lesser confusion (DC 14), mind thrust I (DC 14)
-0 (at will)—daze (DC 13), fatigue (DC 13), telekinetic projectile,
-telepathic message
-Connection mindbreaker
+Speed 30 ft.
+Melee tactical switchblade +6 (1d4+1 S)
+Offensive Abilities trick attack 1d4
 TACTICS
-During Combat Maarbadvae’s primary attack is mind thrust,
-followed by her rifle as a backup. She avoids melee for
-as long as possible, knowing it is not her strength. She
-coordinates with her allies with her mk 1 mindlink circlet.
-Morale Fierce and aggressive, Maarbadvae fights to the
-death. If she is rendered unconscious or helpless without
-getting killed, she calms down and surrenders when she
-stirs to consciousness.
+During Combat Anacia tries to flee at the first
+sign of combat, but if cornered she focuses
+her trick attacks on a single opponent.
+Morale If brought below half her Hit Points,
+Anacia surrenders, throwing down her
+blade and putting her hands in the air.
 STATISTICS
-Str +1; Dex +2; Con +2; Int +0; Wis +4; Cha +1
-Skills Mysticism +10, Sense Motive +10, Stealth +5
-Languages Akitonian, Common, Shobhad
-Other Abilities four-armed
-Gear second skin, battle staff, hunting rifle with 6 rounds,
-mk 1 mindlink circlet, spell gem of remove condition, assorted
-shobhad bangles and charms (worth 300 credits)
-SPECIAL ABILITIES
-Ferocity (Ex) When Maarbadvae is brought to 0 Hit Points, she
-can fight on for 1 more round. She can act normally until the
-end of her next turn; if she has 0 HP at that point, she dies.
-If she would lose further Hit Points before this, she ceases
-to be able to act and dies.
-Four-Armed (Ex) A shobhad has four arms. One hand is
-considered its primary hand; all others are considered off
-hands. It can use any of its hands for other purposes that
-require free hands.
-Share Pain (Su) Whenever a foe deals damage to Maarbadvae,
-she can spend 1 Resolve Point as a reaction to shift some
-of the pain back onto that foe. Unless the foe succeeds at a
-DC 12 Will save, she reduces the damage she takes from the
-attack by 1, and the foe takes an equal amount of damage.
-This is a mind-affecting pain effect.
+Str +0; Dex +4; Con +0; Int +2; Wis +1; Cha +1
+Skills Acrobatics +11, Bluff +11, Engineering
++8, Sense Motive +8, Sleight of Hand +11,
+Stealth +11
+Feats Mobility
+Languages Common,
+Shirren, Vesk
+Other Abilities
+operative
+specialization (thief)
+Gear second
+skin, tactical
+switchbladeAR,
+consumer backpack, environmental clothing (cold
+climates), flashlight

@@ -49,6 +49,11 @@ SfTmpNpcWidget.prototype.refresh = function(changedTiddlers) {
 };
 
 SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
+  var workspacetiddler = "NPCImportWS";
+  var emptyfieldtext = "NOPE";
+
+  var empty_fields = [ "npc_gender", "npc_race", "npc_class" ];
+
   var import_array = [
     ["npc_name", "(.*) CR \\d{1,2}\\n"],
     ["npc_cr", ".* CR (\\d{1,2})\\n"],
@@ -60,7 +65,8 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
     ["npc_init", "Init ([+|-]\\d{1,2});"],
     ["npc_senses", "Senses (.*);"],
     ["npc_perception", "Perception ([+|-]\\d{1,2})"],
-    ["npc_hp", "HP (\\d{1,3})\\n"],
+    ["npc_hp", "HP (\\d{1,3})"],
+    ["npc_rp", "RP (\\d{1,2})"],
     ["npc_eac", "EAC (\\d{1,2});"],
     ["npc_kac", "KAC (\\d{1,2})\n"],
     ["npc_fort", "Fort ([+|-]\\d{1,2});"],
@@ -73,6 +79,7 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
     ["npc_speed", "Speed (.*)\\n"],
     ["npc_melee", "Melee (.*)\\n"],
     ["npc_multiattack", "Multiattack (.*)\\n"],
+    ["npc_offensive_abilities", "Offensive Abilities (.*)"],
     //["npc_sla_cl", "Spell-Like Abilities \\(CL (\\d{1,2})(?:st|nd|rd|th)\\)\\n"],
     //["npc_sla", "Spell-Like Abilities \\(CL \\d{1,2}(?:st|nd|rd|th)\\)\\n(.*)STATISTICS\\n", "s"],    
     ["npc_space", "Space (.*);"],
@@ -84,20 +91,27 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
     ["npc_wis", "Wis ([+|-]\\d{1,2});"],
     ["npc_cha", "Cha ([+|-]\\d{1,2})"],
     ["npc_skills", "Skills (.*)"],
+    ["npc_feats", "Feats (.*)"],
     ["npc_languages", "Languages (.*)\\n"],
-    ["npc_other_abilities", "Other Abilities (.*)\\n"],
+    ["npc_other_abilities", "Other Abilities(.*)Gear", "s"],
+    ["npc_gear", "Gear(.*)","s"],
     ["npc_enviornment", "Environment (.*)\\n"],
     ["npc_organization", "Organization (.*)\\n"],
+    
     //["npc_special_abilities", "SPECIAL ABILITIES\\n(.*)", "s"]
   ];
+
+  //Fields we want in the sheet, but we know we can't parse
+  
 
   //Extract Data
   var rb = this.rawblock.replace("−", "-");
 
   var extracted_data = [];
-  import_array.forEach(elem => {
-    var re;
-    if(elem.length == 2) {
+  
+  import_array.forEach(elem => {    
+    var re = null;
+    if(elem.length == 2) {      
       re = new RegExp(elem[1]);
     }
     else {
@@ -105,24 +119,30 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
       re = new RegExp(elem[1], elem[2]);
     }
     re = re.exec(rb);
-        
+    
+    //console.log(re);
+
     if( re != null )
-    {      
-      extracted_data[elem[0]] = re[1];
+    { 
+      var t = re[1];      
+      t = t.replace(/\n/g, " ");      
+      extracted_data[elem[0]] = t;
     }
     else {
-      extracted_data[elem[0]] = "NOPE";
+      extracted_data[elem[0]] = emptyfieldtext;
     }
   });
-
+  
   
   for (const [key, value] of Object.entries(extracted_data)) {
     console.log(key + "->" + value);
-    this.wiki.setText("NPCImportWS", key, undefined, value, {});
+    this.wiki.setText(workspacetiddler, key, undefined, value, {});
   }
   
+  empty_fields.forEach(element => {
+    this.wiki.setText(workspacetiddler, element, undefined, "", {});
+  });
   
-
   return true;
 };
 
