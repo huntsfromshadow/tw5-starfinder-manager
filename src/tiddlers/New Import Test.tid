@@ -1,22 +1,17 @@
-created: 20200901152017405
-modified: 20200902003713323
+created: 20200902155413192
+modified: 20200902170304732
 tags: 
-title: Import NPC - Step 2
+title: New Import Test
 type: text/vnd.tiddlywiki
 
-\define nextstep()
-<$button>
-  <$action-setfield $tiddler=<<tabstate>> $field="text" $value="Import NPC - Step 3" />
-Proceed to Step 3
-</$button>
-\end
 
-\define act-create-staging() <$action-createtiddler $basetitle="NPCImportWS" $overwrite="yes" />
 
-\define act-load-npc() <$action-sf-tmp-npc $npcname={{NPCName}} $rawblock={{NPCRawBlock}} />
+\define act-create-staging() <$action-createtiddler $basetitle="NPCImportWS2" $overwrite="yes" />
+
+\define act-load-npc() <$action-sf-rawtext-import $npcname={{NPCName2}} $rawblock={{NPCRawBlock2}} />
 
 \define edit-field(npcfld) 
-<$edit-text tiddler="NPCImportWS" field=$npcfld$ />
+<$edit-text tiddler="NPCImportWS2" field=$npcfld$ />
 \end
 
 \define checkFields()
@@ -65,6 +60,11 @@ Proceed to Step 3
 |! Other Abilities      | <<edit-field npc_other_abilities>> |
 |! Gear                 | <<edit-field npc_gear>> |
 \end
+
+
+|! NPC (Tiddler) Name: | <$edit-text tiddler="NPCName2"  placeholder="NPC Tiddler Name" size="30" tag="input" /> |
+|! Plain Text Statblock: | <$edit-text tiddler="NPCRawBlock2"  tag="textarea" /> |
+
 
 ''Step 2:'' 
 

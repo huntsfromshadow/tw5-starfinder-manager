@@ -1,52 +1,52 @@
-created: 20200902003424705
-modified: 20200902004155464
+created: 20200902155020868
+modified: 20200902155021005
 npc_alignment: NG
 npc_cha: +1
-npc_class: soldier
-npc_con: +1
-npc_cr: 1
+npc_class: 
+npc_con: +2
+npc_cr: 3
 npc_defensive_abilities: NOPE
-npc_dex: +2
+npc_dex: +0
 npc_dr: NOPE
-npc_eac: 11
+npc_eac: 13
 npc_enviornment: NOPE
 npc_feats: NOPE
-npc_fort: +3
-npc_gear: estex suit I, azimuth laser pistol with 1 battery (20 charges), tactical knife, basic medkit, dermal staplerAR, medpatches (2), mk 1 serum of healing, recovery aegisAR
-npc_gender: Male
-npc_hp: 18
+npc_fort: +2
+npc_gear:  second skin, psychic booster
+npc_gender: 
+npc_hp: 32
 npc_immunities: NOPE
-npc_init: +2
-npc_int: +4
-npc_kac: 13
-npc_languages: Common, Shirren; limited
-npc_melee: survival knife +5 (1d4 S)
+npc_init: +0
+npc_int: +0
+npc_kac: 14
+npc_languages: Common, Shirren; limited telepathy 30 ft.
+npc_melee: NOPE
 npc_multiattack: NOPE
-npc_name: SUSRETH SUSARO
+npc_name: XELONAN
 npc_offensive_abilities: NOPE
 npc_organization: NOPE
-npc_other_abilities: NOPE
-npc_perception: +5
-npc_race: damaya lashunta
-npc_ranged: azimuth laser pistol +8
+npc_other_abilities:  communalism, empathy, greater mindlink 
+npc_perception: +13
+npc_race: 
+npc_ranged: NOPE
 npc_reach: NOPE
-npc_ref: +5
+npc_ref: +2
 npc_rp: NOPE
-npc_senses: NOPE
+npc_senses: blindsense (vibration) 30 ft.
 npc_size: Medium
-npc_skills: Medicine +10, Profession (soldier) +5,
-npc_sla: 1/day—detect thoughts (DC 10) \n At will—daze (DC 9), psychokinetic hand
-npc_sla_cl: 1
-npc_sla_source: Lashunta
+npc_skills: Culture +8, Diplomacy +8, Medicine +13, Mysticism +13,
+npc_sla: 
+npc_sla_cl: 
+npc_sla_source: 
 npc_space: NOPE
 npc_speed: 30 ft.
 npc_str: +0
 npc_subtype: NOPE
-npc_type: humanoid
+npc_type: humanoid (shirren)
 npc_weaknesses: NOPE
-npc_will: +1
-npc_wis: +0
-npc_xp: 400
+npc_will: +6
+npc_wis: +4
+npc_xp: 800
 title: NPCImportWS
 type: text/vnd.tiddlywiki
 
