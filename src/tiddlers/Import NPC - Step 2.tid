@@ -1,5 +1,5 @@
 created: 20200901152017405
-modified: 20200901152655079
+modified: 20200902003713323
 tags: 
 title: Import NPC - Step 2
 type: text/vnd.tiddlywiki
@@ -45,12 +45,14 @@ Proceed to Step 3
 |! Weaknesses           | <<edit-field npc_weaknesses>> |
 |! Speed                | <<edit-field npc_speed>> |
 |! Melee                | <<edit-field npc_melee>> |
+|! Ranged               | <<edit-field npc_ranged>> |
 |! Multiattack          | <<edit-field npc_multiattack>> |
 |! Offensive Abilities  | <<edit-field npc_offensive_abilities>> |
 |! Space                | <<edit-field npc_space>> |
 |! Reach                | <<edit-field npc_reach>> |
-|! Spell-Like Abilities | <<edit-field npc_sla_cl>> |
-|! Spell-Like Abilities | <<edit-field npc_sla>> |
+|! SLA Source | <<edit-field npc_sla_source>> |
+|! SLA CL | <<edit-field npc_sla_cl>> |
+|! SLA | <<edit-field npc_sla>> |
 |! Str                  | <<edit-field npc_str>> |
 |! Dex                  | <<edit-field npc_dex>> |
 |! Con                  | <<edit-field npc_con>> |

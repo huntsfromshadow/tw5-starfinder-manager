@@ -52,16 +52,17 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
   var workspacetiddler = "NPCImportWS";
   var emptyfieldtext = "NOPE";
 
-  var empty_fields = [ "npc_gender", "npc_race", "npc_class" ];
+  var empty_fields = [ "npc_gender", "npc_race", "npc_class",
+    "npc_sla_cl", "npc_sla", "npc_sla_source" ];
 
   var import_array = [
-    ["npc_name", "(.*) CR \\d{1,2}\\n"],
-    ["npc_cr", ".* CR (\\d{1,2})\\n"],
-    ["npc_xp", "XP ([\\d,]*)\\n"],
-    ["npc_alignment", "(LG|NG|CG|LN|N|CN|LE|NE|CE) (?:Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) .* \\(.*\\)\\n"],
-    ["npc_size", "(?:LG|NG|CG|LN|N|CN|LE|NE|CE) (Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) .* \\(.*\\)"],
-    ["npc_type", "(?:LG|NG|CG|LN|N|CN|LE|NE|CE) (?:Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) (.*) \\(.*\\)"],
-    ["npc_subtype", "(?:LG|NG|CG|LN|N|CN|LE|NE|CE) (?:Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) .* (\\(.*\\))"],
+    ["npc_name", "(.*) CR (?:1\\/8|1\\/6|1\\/4|1\\/3|1\\/2|\\d{1,2})"],
+    ["npc_cr", ".* CR (1\\/8|1\\/6|1\\/4|1\\/3|1\\/2|\\d{1,2})"],
+    ["npc_xp", "XP ([\\d,]*)"],
+    ["npc_alignment", "(LG|NG|CG|LN|N|CN|LE|NE|CE) (?:Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) .*(?:\\(.*\\))*"],
+    ["npc_size", "(?:LG|NG|CG|LN|N|CN|LE|NE|CE) (Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) .*(?:\\(.*\\))*"],
+    ["npc_type", "(?:LG|NG|CG|LN|N|CN|LE|NE|CE) (?:Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) (.*)(?:\\(.*\\))*"],
+    ["npc_subtype", "(?:LG|NG|CG|LN|N|CN|LE|NE|CE) (?:Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) .*(\\(.*\\))*"],
     ["npc_init", "Init ([+|-]\\d{1,2});"],
     ["npc_senses", "Senses (.*);"],
     ["npc_perception", "Perception ([+|-]\\d{1,2})"],
@@ -78,10 +79,9 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
     ["npc_weaknesses", "Weaknesses (.*)\\n"],
     ["npc_speed", "Speed (.*)\\n"],
     ["npc_melee", "Melee (.*)\\n"],
+    ["npc_ranged", "Ranged (.*)"],
     ["npc_multiattack", "Multiattack (.*)\\n"],
-    ["npc_offensive_abilities", "Offensive Abilities (.*)"],
-    //["npc_sla_cl", "Spell-Like Abilities \\(CL (\\d{1,2})(?:st|nd|rd|th)\\)\\n"],
-    //["npc_sla", "Spell-Like Abilities \\(CL \\d{1,2}(?:st|nd|rd|th)\\)\\n(.*)STATISTICS\\n", "s"],    
+    ["npc_offensive_abilities", "Offensive Abilities (.*)"],    
     ["npc_space", "Space (.*);"],
     ["npc_reach", "Reach (.*)\\n"],
     ["npc_str", "Str ([+|-]\\d{1,2});"],
@@ -120,13 +120,17 @@ SfTmpNpcWidget.prototype.invokeAction = function(triggeringWidget,event) {
     }
     re = re.exec(rb);
     
-    //console.log(re);
-
+    
     if( re != null )
     { 
-      var t = re[1];      
-      t = t.replace(/\n/g, " ");      
-      extracted_data[elem[0]] = t;
+      if(re[1] !== undefined) {
+        var t = re[1];     
+        t = t.replace(/\n/g, " ");      
+        extracted_data[elem[0]] = t;
+      }
+      else {
+        extracted_data[elem[0]] = emptyfieldtext;  
+      }
     }
     else {
       extracted_data[elem[0]] = emptyfieldtext;

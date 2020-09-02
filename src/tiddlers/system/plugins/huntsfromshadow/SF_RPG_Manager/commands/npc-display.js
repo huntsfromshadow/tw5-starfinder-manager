@@ -124,6 +124,25 @@ function singleLineWithHeaders(tid, datalist, hang=false) {
   return retval;
 }
 
+function spellLikeAbility(tid) {
+  var $val = `
+  <p class="no_tb_margin hang_indent">
+    <b>${tid.fields.npc_sla_source} Spell-Like Abilities</b> (CL ${tid.fields.npc_sla_cl})<br/>
+  `;
+
+  var dat = tid.fields.npc_sla;
+
+  var la = dat.split("|");
+
+  la.forEach(element => {
+    $val = $val + element + "<br />";
+  });
+  $val = $val + "</p>";
+
+  return $val;
+  
+}
+
 
 /* Executes (runs) our macro when it requires evaluation; returns a string
  * value.
@@ -169,7 +188,10 @@ exports.run = function() {
   ${singleLineWithHeaders(tid, [
     ["npc_melee", "<b>Melee</b> ", ""] ])}
   ${singleLineWithHeaders(tid, [
+      ["npc_ranged", "<b>Ranged</b> ", ""] ])}    
+  ${singleLineWithHeaders(tid, [
       ["npc_offensive_abilities", "<b>Offensive Abilities</b> ", ""] ])}     
+  ${spellLikeAbility(tid)}
   <p class="no_tb_margin section_underline">
       <b>STATISTICS</b>
   </p>

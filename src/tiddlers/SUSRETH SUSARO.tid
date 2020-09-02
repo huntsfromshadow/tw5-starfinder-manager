@@ -1,5 +1,5 @@
-created: 20200902003424705
-modified: 20200902004155464
+created: 20200902004242353
+modified: 20200902010120235
 npc_alignment: NG
 npc_cha: +1
 npc_class: soldier
@@ -34,19 +34,20 @@ npc_ref: +5
 npc_rp: NOPE
 npc_senses: NOPE
 npc_size: Medium
-npc_skills: Medicine +10, Profession (soldier) +5,
-npc_sla: 1/day—detect thoughts (DC 10) \n At will—daze (DC 9), psychokinetic hand
+npc_skills: Medicine +10, Profession (soldier) +5, Sense Motive +5
+npc_sla: 1/day—detect thoughts (DC 10) | At will—daze (DC 9), psychokinetic hand
 npc_sla_cl: 1
 npc_sla_source: Lashunta
 npc_space: NOPE
 npc_speed: 30 ft.
 npc_str: +0
-npc_subtype: NOPE
+npc_subtype: (lashunta)
 npc_type: humanoid
 npc_weaknesses: NOPE
 npc_will: +1
 npc_wis: +0
 npc_xp: 400
-title: NPCImportWS
+title: SUSRETH SUSARO
 type: text/vnd.tiddlywiki
 
+{{||$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/NPCTemplate}}

@@ -1,40 +1,37 @@
 created: 20200831213432999
-modified: 20200901154249633
+modified: 20200901233339248
 title: NPCRawBlock
 type: text/vnd.tiddlywiki
 
-ANACIA RENDER CR 1
+SUSRETH SUSARO CR 1
 XP 400
-Female human operative
-CN Medium humanoid (human)
-Init +5; Perception +8
-DEFENSE HP 17
-EAC 11; KAC 12
-Fort +1; Ref +6; Will +4
+Male damaya lashunta soldier
+NG Medium humanoid
+(lashunta)
+Init +2; Perception +5
+DEFENSE HP 18
+EAC 11; KAC 13
+Fort +3; Ref +5; Will +1
 OFFENSE
 Speed 30 ft.
-Melee tactical switchblade +6 (1d4+1 S)
-Offensive Abilities trick attack 1d4
+Melee survival knife +5 (1d4 S)
+Ranged azimuth laser pistol +8
+(1d4 F; critical burn 1d4)
+Lashunta Spell-Like Abilities (CL 1st)
+1/day—detect thoughts (DC 10)
+At will—daze (DC 9), psychokinetic hand
 TACTICS
-During Combat Anacia tries to flee at the first
-sign of combat, but if cornered she focuses
-her trick attacks on a single opponent.
-Morale If brought below half her Hit Points,
-Anacia surrenders, throwing down her
-blade and putting her hands in the air.
+During Combat Susreth acts as described.
+Morale Susreth fights until he is knocked
+out or calmed down.
 STATISTICS
-Str +0; Dex +4; Con +0; Int +2; Wis +1; Cha +1
-Skills Acrobatics +11, Bluff +11, Engineering
-+8, Sense Motive +8, Sleight of Hand +11,
-Stealth +11
-Feats Mobility
-Languages Common,
-Shirren, Vesk
-Other Abilities
-operative
-specialization (thief)
-Gear second
-skin, tactical
-switchbladeAR,
-consumer backpack, environmental clothing (cold
-climates), flashlight
+Str +0; Dex +2; Con +1; Int +4; Wis +0;
+Cha +1
+Skills Medicine +10, Profession (soldier) +5,
+Sense Motive +5
+Languages Common, Shirren; limited
+telepathy
+Gear estex suit I, azimuth laser pistol
+with 1 battery (20 charges), tactical
+knife, basic medkit, dermal staplerAR, medpatches (2), mk
+1 serum of healing, recovery aegisAR
