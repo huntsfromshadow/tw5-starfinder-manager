@@ -1,0 +1,17 @@
+created: 20200903191112916
+modified: 20200903201007374
+tags: 
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/utility/Import NPC
+tmpname: FrakenDragon
+type: text/vnd.tiddlywiki
+
+!Import Starfinder NPC
+
+!!Overview
+Import a starfinder NPC from a copy and paste stat block.
+Note this will try to do it's best but you'll need to double check the fields.
+
+<!-- This passes the tabstate tiddler down into the tabs -->
+<$set name="tabstate" value=<<qualify $:/state/sf_rpg_man_importnpc_tab>> >
+	<<tabs "[[$:/plugins/huntsfromshadow/SF_RPG_Manager/utility/Import NPC - Step 1]] [[$:/plugins/huntsfromshadow/SF_RPG_Manager/utility/Import NPC - Step 2]] [[$:/plugins/huntsfromshadow/SF_RPG_Manager/utility/Import NPC - Step 3]]" [[$:/plugins/huntsfromshadow/SF_RPG_Manager/utility/Import NPC - Step 1]] "$:/state/sf_rpg_man_importnpc_tab">>
+</$set>

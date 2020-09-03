@@ -1,9 +1,8 @@
-created: 20200903192912659
-modified: 20200903192924164
+created: 20200903200934140
+modified: 20200903200934894
 npc_alignment: CE
 npc_aura: frightful presence (170 ft., DC 18)
 npc_cha: +8
-npc_class: envoy
 npc_con: +1
 npc_cr: 11
 npc_defensive_abilities: NOPE
@@ -18,7 +17,7 @@ npc_gear: kasatha microcord IV
 field [15 HP]), LFD sonic pistol with
 2 super-capacity batteries (80
 charges each), ultrathin longsword
-npc_gender: agender
+npc_gender: Drow
 npc_hp: 170
 npc_immunities: sleep
 npc_init: +3
@@ -34,7 +33,7 @@ npc_other_abilities: envoy improvisations (hidden
 agenda, improved get ’em, improved hurry, quick
 dispiriting taunt)
 npc_perception: +26
-npc_race: Drow
+npc_race: envoy
 npc_ranged: LFD sonic pistol +21 (2d8+11 So; critical
 npc_reach: 10 ft. (15 ft. with bite)
 npc_ref: +12
@@ -71,6 +70,6 @@ npc_weaknesses: light blindness
 npc_will: +14
 npc_wis: +2
 npc_xp: 12,800
-title: Var-NPCImportWrkSht
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportWrkSht
 type: text/vnd.tiddlywiki
 

@@ -1,16 +1,16 @@
 created: 20200903191838246
-modified: 20200903193007153
+modified: 20200903201001034
 tags: 
-title: Import NPC - Step 3
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/utility/Import NPC - Step 3
 type: text/vnd.tiddlywiki
 
 ''Step 3:''
 
 <$button>
     <$action-createtiddler 
-        $basetitle={{Var-NPCImportName}}
+        $basetitle={{$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportName}}
         $savetitle="!!tmpname"
-				$template="Var-NPCImportWrkSht"
+				$template="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportWrkSht"
         text="{{||$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/NPCTemplate}}"
 				$overwrite="yes" />
     <$action-navigate $to={{!!tmpname}} />
