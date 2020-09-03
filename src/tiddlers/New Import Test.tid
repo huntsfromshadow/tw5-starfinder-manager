@@ -1,10 +1,8 @@
 created: 20200902155413192
-modified: 20200902170304732
+modified: 20200903190840854
 tags: 
 title: New Import Test
 type: text/vnd.tiddlywiki
-
-
 
 \define act-create-staging() <$action-createtiddler $basetitle="NPCImportWS2" $overwrite="yes" />
 
@@ -24,7 +22,7 @@ type: text/vnd.tiddlywiki
 |! XP                   | <<edit-field npc_xp>> |
 |! Gender               | <<edit-field npc_gender>> |
 |! Race                 | <<edit-field npc_race>> |
-|! Class                | <<edit-field npc_class>> |
+|! Class/Graft          | <<edit-field npc_class>> |
 |! Alignment            | <<edit-field npc_alignment>> |
 |! Size                 | <<edit-field npc_size>> |
 |! Type                 | <<edit-field npc_type>> |
@@ -32,7 +30,9 @@ type: text/vnd.tiddlywiki
 |! Init                 | <<edit-field npc_init>> |
 |! Senses               | <<edit-field npc_senses>> |
 |! Perception           | <<edit-field npc_perception>> |
+|! Aura									| <<edit-field npc_aura>> |
 |! HP                   | <<edit-field npc_hp>> |
+|! RP										| <<edit-field npc_rp>> |
 |! EAC                  | <<edit-field npc_eac>> |
 |! KAC                  | <<edit-field npc_kac>> |
 |! Fort                 | <<edit-field npc_fort>> |
@@ -41,6 +41,7 @@ type: text/vnd.tiddlywiki
 |! Defensive Abilities  | <<edit-field npc_defensive_abilities>> |
 |! DR                   | <<edit-field npc_dr>> |
 |! Immunities           | <<edit-field npc_immunities>> |
+|! SR                   | <<edit-field npc_sr>> |
 |! Weaknesses           | <<edit-field npc_weaknesses>> |
 |! Speed                | <<edit-field npc_speed>> |
 |! Melee                | <<edit-field npc_melee>> |
@@ -49,8 +50,6 @@ type: text/vnd.tiddlywiki
 |! Offensive Abilities  | <<edit-field npc_offensive_abilities>> |
 |! Space                | <<edit-field npc_space>> |
 |! Reach                | <<edit-field npc_reach>> |
-|! SLA Source | <<edit-field npc_sla_source>> |
-|! SLA CL | <<edit-field npc_sla_cl>> |
 |! SLA (Seperate Lines with &#124; Symbol) | <<edit-field npc_sla>> |
 |! Str                  | <<edit-field npc_str>> |
 |! Dex                  | <<edit-field npc_dex>> |
@@ -63,6 +62,7 @@ type: text/vnd.tiddlywiki
 |! Languages            | <<edit-field npc_languages>> |
 |! Other Abilities      | <<edit-field npc_other_abilities>> |
 |! Gear                 | <<edit-field npc_gear>> |
+|! Special Abilities (Seperate Lines with &#124; Symbol)    | <<edit-field npc_special_abilities>> |
 \end
 
 

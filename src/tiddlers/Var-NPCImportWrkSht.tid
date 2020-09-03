@@ -1,0 +1,76 @@
+created: 20200903192912659
+modified: 20200903192924164
+npc_alignment: CE
+npc_aura: frightful presence (170 ft., DC 18)
+npc_cha: +8
+npc_class: envoy
+npc_con: +1
+npc_cr: 11
+npc_defensive_abilities: NOPE
+npc_dex: +3
+npc_dr: 5/magic
+npc_eac: 26
+npc_enviornment: any (Apostae)
+npc_feats: blablabla
+npc_fort: +10
+npc_gear: kasatha microcord IV
+(electrostatic field mk 2, white force
+field [15 HP]), LFD sonic pistol with
+2 super-capacity batteries (80
+charges each), ultrathin longsword
+npc_gender: agender
+npc_hp: 170
+npc_immunities: sleep
+npc_init: +3
+npc_int: +5
+npc_kac: 28
+npc_languages: Abyssal, Aklo, Common, Drow, Eoxian
+npc_melee: ultrathin longsword +19 (4d8+12 S)
+npc_multiattack: bite +18 (4d6+19 P), 2 claws +18 (2d8+19 S),
+npc_name: DROW NOBLE ARMS DEALER
+npc_offensive_abilities: create darkness, limning light
+npc_organization: solitary,
+npc_other_abilities: envoy improvisations (hidden
+agenda, improved get ’em, improved hurry, quick
+dispiriting taunt)
+npc_perception: +26
+npc_race: Drow
+npc_ranged: LFD sonic pistol +21 (2d8+11 So; critical
+npc_reach: 10 ft. (15 ft. with bite)
+npc_ref: +12
+npc_rp: 6
+npc_senses: darkvision
+60 ft., detect magic
+npc_size: Medium
+npc_skills: Bluff +21, Diplomacy +26, Intimidate +26, Sense
+npc_sla: (CL 11th; melee +24)|1/day—dimension door, overload systems (DC 17)|3/day—arcing surge (DC 16), discharge (DC 16), instant
+virus (DC 16), tongues|Constant—detect magic|At will—recharge, see invisibility
+npc_space: 15 ft.
+npc_special_abilities: Limning Light (Su) As a
+standard action, a drow noble
+can cause all creatures and objects
+in a 5-foot-radius burst to shed a
+pale glow. Creatures outlined by
+the limning light take a –20 penalty to
+Stealth checks and don’t benefit from the
+concealment usually provided by darkness. If
+an affected creature is benefiting from an effect
+such as invisibility, all others within line of sight
+of it become aware of its location (see page 260 of
+the Starfinder Core Rulebook). This effect
+lasts for a number of minutes equal to
+the drow noble’s CR (11 minutes for a drow
+noble arms dealer). This ability has a
+range of 100 feet.
+npc_speed: 40 ft., burrow 20 ft., fly 200 ft. (Ex, clumsy)
+npc_sr: 22
+npc_str: +1
+npc_subtype: (elf)
+npc_type: humanoid
+npc_weaknesses: light blindness
+npc_will: +14
+npc_wis: +2
+npc_xp: 12,800
+title: Var-NPCImportWrkSht
+type: text/vnd.tiddlywiki
+

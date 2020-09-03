@@ -17,6 +17,7 @@ var Widget = require("$:/core/modules/widgets/widget.js").widget;
 /* Creates a new <$foo> widget. */
 var RawTextImport = function(parseTreeNode, options) {
   this.initialise(parseTreeNode, options);
+  this.loadKeywordList();
 };
   
 /* "Inherits" from the Widget base "class" in order to get all
@@ -57,117 +58,215 @@ RawTextImport.prototype.saveField = function(fieldName, fieldValue) {
   else {  
     this.wiki.setText(this.fieldtarget, fieldName, undefined, fieldValue.trim(), {});
   }
+};
+
+
+RawTextImport.prototype.handleGenderRaceGraft = function(rb) {
+
+  //Get just that line
+  var ex = /XP [\d,]*[ \n](.*)[ \n]\b(?:LG|NG|CG|LN|N|CN|LE|NE|CE)\b/.exec(rb);
+  
+  //As this is a very flexible line we are just going to split it.
+  var l = ex[1];
+  l = l.replace("\n", "");
+  l = l.split(" ");
+  
+  this.saveField("npc_gender", l[1]);
+  this.saveField("npc_race", l[2]);
+  this.saveField("npc_graftclass", l[3]);
+};
+
+RawTextImport.prototype.handleTypeSubtype = function(rb) {
+  //Get the line
+  var ex = 
+    /(?:LG|NG|CG|LN|N|CN|LE|NE|CE) (?:Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) (.*)/.exec(rb);
+  
+  var l = /(.*)? (\(.*\))?/.exec(ex[1]);
+  this.saveField("npc_type", l[1]);
+  this.saveField("npc_subtype", l[2]);
 }
 
-RawTextImport.prototype.handleIdentityBlock = function(rb) {
-  //Pull out just the identity block
-  var ex = /(.*)DEFENSE HP \d{1,3}/s.exec(rb);
+RawTextImport.prototype.extractKeywords = function(rb) {  
+  this.keyword_list.forEach(elem => {
+    var re = null;
 
-  //Okay lets break up the identity block
-  var r = new RegExp(
-    "(?<namecr>.* CR (?:\\d|1\\/2)[\\n ])" +
-    "(?<xp>XP \\d*[\\n ])" + 
-    "(?<grc>.*[\\n ])?" + 
-    "(?<asts>(?:LG|NG|CG|LN|N|CN|LE|NE|CE) .* \\(.*\\)[\\n ])" +
-    "(?<isp>Init .* Perception .*\\n)" );
-  var lines_match = r.exec(ex[1]);
+    re = new RegExp(elem[1]);
+    re = re.exec(rb);
+    
+    if( re == null )
+    {
+      var val = this.emptyfieldtext;      
+    }
+    else {
+      var val = re[1];
+    }
+    this.saveField(elem[0], val);
+  });
+};
 
-  var l = null;
-  var m = null;
-  //Okay lets handle line at a time
-  //Name Line
-  l = lines_match.groups.namecr;
-  m = /(.*) CR (.*)\n?/.exec(l);  
-  this.saveField("npc_name", m[1]);
-  this.saveField("npc_cr", m[2]);
+RawTextImport.prototype.handleSLA = function(rb) {
+  var ex =
+    /Spell-Like Abilities (.*)STATISTICS/s.exec(rb);
 
-  // XP Line
-  l = lines_match.groups.xp;
-  m = /XP (.*)\n?/.exec(l);
-  this.saveField("npc_xp", m[1]);
+  console.log(ex);
+  var fullstr = ex[1];
 
-  //Gender, Race, class
-  if( lines_match.groups.grc !== undefined) {
-    l = lines_match.groups.grc;
-    m = /(.*) (.*) (.*)\n?/.exec(l);
-    this.saveField("npc_gender", m[1]);
-    this.saveField("npc_race", m[2]);
-    this.saveField("npc_class", m[3]);
-  } else {
-    this.saveField("npc_gender", "");
-    this.saveField("npc_race", "");
-    this.saveField("npc_class", "");
+  var finalstr = "";
+
+  var c =
+    /(\(.*\))/.exec(fullstr);
+  var cl_block = null;
+  cl_block = c[1];
+  fullstr = fullstr.replace(cl_block, "");
+  fullstr = fullstr.trim();
+
+  finalstr = finalstr + cl_block;
+
+  c =
+    /(Constant—.*)/.exec(fullstr);
+  var con_line = null;
+  if(c != null) {
+    con_line = c[1];
+    fullstr = fullstr.replace(con_line, "");
+    fullstr = fullstr.trim();
+  }
+  
+  c = 
+    /(At will—.*)/.exec(fullstr);
+  var at_will_line = null;
+  if(c != null) {
+    at_will_line = c[1];
+    fullstr = fullstr.replace(at_will_line, "");
+    fullstr = fullstr.trim();
   }
 
-  //Alignment, Size, Type, Subtype
-  l = lines_match.groups.asts;
-  r = "(?<alignment>LG|NG|CG|LN|N|CN|LE|NE|CE) " +
-      "(?<size>Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) " +
-      "(?<type>.*?) ?(?<subtype>\\(.*\\))?[\\n ]";
-  var rx = new RegExp(r);
-  m = rx.exec(l);
-  this.saveField("npc_alignment", m.groups.alignment);
-  this.saveField("npc_size", m.groups.size);
-  this.saveField("npc_type", m.groups.type);
-  this.saveField("npc_subtype", m.groups.subtype);
+  fullstr = fullstr.replace("\n", "|");
+  finalstr = finalstr + "|" + fullstr;
 
-  //Init, Senses, Perception
-  l = lines_match.groups.isp;
-  m = /Init (?<init>.*?); (?:Senses (?<senses>.*); )?Perception (?<perception>.*)[\n ]/.exec(l);
-  this.saveField("npc_init", m.groups.init);
-  this.saveField("npc_senses", m.groups.senses);
-  this.saveField("npc_perception", m.groups.perception);
+  if(con_line != null) {
+    finalstr = finalstr + "|" + con_line;
+  }
+
+  if(at_will_line != null) {
+    finalstr = finalstr + "|" + at_will_line;
+  }
+  
+  this.saveField("npc_sla", finalstr);
 };
 
-RawTextImport.prototype.handleDefenseBlock = function(rb) {
-  //Pull out just the Defense block
-  var ex = /(DEFENSE.*)OFFENSE/s.exec(rb);  
-  
-  //Okay lets break up the defense block
-  var r = new RegExp(
-    "(?<hp>HP .*)[\\n ]" + 
-    "(?<acs>EAC .* KAC .*)[\\n ]" +
-    "(?<saves>Fort.*)[\\n ]"
-  );
+RawTextImport.prototype.handleOtherAbilities = function(rb) {
 
-  var lines_match = r.exec(ex[1]);
+  var c = /Other Abilities (.*)Gear/s.exec(rb);
 
-  var l = null;
-  var m = null;
-  
-  //Okay lets handle the hp line
-  l = lines_match.groups.hp;
-  m = /HP \d{1,3}/.exec(l);
-  this.saveField('npc_hp', m[1]);
-
-  //Lets handle the ACs line
-  l = lines_match.groups.acs;  
-  m = /EAC (.*); KAC (.*)/.exec(l);  
-  this.saveField('npc_eac', m[1]);
-  this.saveField('npc_kac', m[2]);
-
-  //Lets handle the save's line
-  l = lines_match.groups.saves;
-  console.log(l);
-  m = /Fort ([+|-]\d{1,2}); Ref ([+|-]\d{1,2}); Will ([+|-]\d{1,2})/.exec(l);
-  console.log(m);
-  this.saveField('npc_fort', m[1]);
-  this.saveField('npc_ref', m[2]);
-  this.saveField('npc_will', m[3]);
+  if(c != null) {
+    var othera = c[1];
+    othera = othera.replace("\r", " ");
+    this.saveField("npc_other_abilities", othera);
+  }
 };
+
+RawTextImport.prototype.handleGear = function(rb) {
+  var c = /Gear (.*)ECOLOGY/s.exec(rb);
+
+  if(c != null) {
+    var othera = c[1];
+    othera = othera.replace("\r", " ");
+    this.saveField("npc_gear", othera);
+  }
+};
+
+RawTextImport.prototype.handleSpecialAbilities = function(rb) {
+  var c = /SPECIAL ABILITIES(.*)/s.exec(rb);
+  console.log(c);
+  if(c != null) {
+    var s = c[1];
+    s = s.replace("\n", " ");
+    this.saveField("npc_special_abilities", s);
+  }
+};
+
 
 RawTextImport.prototype.invokeAction = function(triggeringWidget,event) {
-  console.log("Here");
-
   //Handle any data cleanup
   var rb = this.rawblock.replace("−", "-");
+  //var rb = this.rawblock.replace("—", "-");
 
-  this.handleIdentityBlock(rb);
-  this.handleDefenseBlock(rb);
-  //Offense block
+  //First lets handle all the data that can be keword grabbed
+  this.extractKeywords(rb);
+  
+  //Now their are somethings that are way too complicated for keywords.
+  this.handleGenderRaceGraft(rb);
+  this.handleTypeSubtype(rb);
+  this.handleSLA(rb);
+  this.handleOtherAbilities(rb);
+  this.handleGear(rb);
+  this.handleSpecialAbilities(rb);
 
   return true;
 };
+
+RawTextImport.prototype.loadKeywordList = function() {
+  this.emptyfieldtext = "NOPE";
+  this.keyword_list = [
+    //Identity Block
+    ["npc_name", "(.*) CR (?:1\\/8|1\\/6|1\\/4|1\\/3|1\\/2|\\d{1,2})"],
+    ["npc_cr", ".* CR (1\\/8|1\\/6|1\\/4|1\\/3|1\\/2|\\d{1,2})"],
+    ["npc_xp", "XP ([\\d,]*)"],
+      //gender, race, graft will need to be in custom function
+    ["npc_alignment", "\\b(LG|NG|CG|LN|N|CN|LE|NE|CE)\\b"],
+    ["npc_size", "\\b(Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal)\\b"],
+      //type and subtype will need to be in custom function      
+    ["npc_init", "Init ([+|-]\\d{1,2});"],
+    ["npc_senses", "Senses ([^;]*);"],
+    ["npc_perception", "Perception ([+|-]\\d{1,2})"],
+    ["npc_aura", "Aura (.*)"],
+
+    //Defense Block
+    ["npc_hp", "HP (\\d{1,3})"],
+    ["npc_rp", "RP (\\d{1,2})"],
+    ["npc_eac", "EAC (\\d{1,2});"],
+    ["npc_kac", "KAC (\\d{1,2})\n"],
+    ["npc_fort", "Fort ([+|-]\\d{1,2});"],
+    ["npc_ref", "Ref ([+|-]\\d{1,2});"],
+    ["npc_will", "Will[ \n]?([^;\n]*)"],
+    ["npc_defensive_abilities", "Defensive Abilities (.*);"],
+    ["npc_dr", "\\bDR\\b ([\\w\\/]*);"],  
+    ["npc_immunities", "Immunities (.*)?;"],
+    ["npc_sr", "\\bSR\\b (.*)"],
+    ["npc_weaknesses", "Weaknesses (.*)\\n"],
+
+    //Offense Block
+    ["npc_speed", "Speed (.*)\\n"],
+    ["npc_melee", "Melee (.*)\\n"],
+    ["npc_multiattack", "Multiattack (.*)\\n"],
+    ["npc_ranged", "Ranged (.*)"],
+    ["npc_space", "Space (.*);"],
+    ["npc_reach", "Reach (.*)\\n"],    
+    ["npc_offensive_abilities", "Offensive Abilities (.*)"],    
+      //SLAs have to be their own custom function
+
+    //Statistics Block
+    ["npc_str", "Str ([+|-]\\d{1,2});"],
+    ["npc_dex", "Dex ([+|-]\\d{1,2});"],
+    ["npc_con", "Con ([+|-]\\d{1,2});"],
+    ["npc_int", "Int ([+|-]\\d{1,2});"],
+    ["npc_wis", "Wis ([+|-]\\d{1,2});"],
+    ["npc_cha", "Cha ([+|-]\\d{1,2})"],
+    ["npc_skills", "Skills (.*)"],
+    ["npc_feats", "Feats (.*)"],
+    ["npc_languages", "Languages (.*)\\n"],
+    ["npc_other_abilities", "Other Abilities(.*)Gear"],
+    ["npc_gear", "Gear(.*)"],
+
+    //Ecology Block
+    ["npc_enviornment", "Environment (.*)\\n"],
+    ["npc_organization", "Organization (.*)\\n"],
+
+    //Special Abilities Block is it's own breakout
+  ];
+}
+
+
 
 /* Finally exports the widget constructor. */
 exports["action-sf-rawtext-import"] = RawTextImport;

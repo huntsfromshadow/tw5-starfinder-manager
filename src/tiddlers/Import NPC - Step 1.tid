@@ -1,5 +1,6 @@
-created: 20200901141346338
-modified: 20200901152725475
+created: 20200903191157492
+modified: 20200903192819139
+tags: 
 title: Import NPC - Step 1
 type: text/vnd.tiddlywiki
 
@@ -17,10 +18,12 @@ Fill In Below
 
 <<nextstep>>
 
-|! NPC (Tiddler) Name: | <$edit-text tiddler="NPCName"  placeholder="NPC Tiddler Name" size="30" tag="input" /> |
-|! Plain Text Statblock: | <$edit-text tiddler="NPCRawBlock"  tag="textarea" /> |
+|! NPC (Tiddler) Name: | <$edit-text tiddler="Var-NPCImportName"  placeholder="NPC Tiddler Name" size="30" tag="input" /> |
+|! Plain Text Statblock: | <$edit-text tiddler="Var-NPCImportRawBlock"  tag="textarea" /> |
 
 <<nextstep>>
+
+
 
 
 

@@ -1,0 +1,70 @@
+created: 20200902155633863
+modified: 20200903192816054
+title: Var-NPCImportRawBlock
+type: text/vnd.tiddlywiki
+
+DROW NOBLE ARMS DEALER CR 11
+XP 12,800
+Agender Drow envoy
+CE Medium humanoid (elf)
+Init +3; Senses darkvision
+60 ft., detect magic;
+Perception +26
+Aura frightful presence (170 ft., DC 18)
+DEFENSE HP 170 RP 6
+EAC 26; KAC 28
+Fort +10; Ref +12; Will
++14; +2 vs. enchantments
+DR 5/magic; Immunities sleep; SR 22
+Weaknesses light blindness
+OFFENSE
+Speed 40 ft., burrow 20 ft., fly 200 ft. (Ex, clumsy)
+Melee ultrathin longsword +19 (4d8+12 S)
+Multiattack bite +18 (4d6+19 P), 2 claws +18 (2d8+19 S),
+tail slap +18 (2d6+19 B)
+Ranged LFD sonic pistol +21 (2d8+11 So; critical
+deafen [DC 20])
+Space 15 ft.; Reach 10 ft. (15 ft. with bite)
+Offensive Abilities create darkness, limning light
+Spell-Like Abilities (CL 11th; melee +24)
+1/day—dimension door, overload systems (DC 17)
+3/day—arcing surge (DC 16), discharge (DC 16), instant
+virus (DC 16), tongues
+At will—recharge, see invisibility
+Constant—detect magic
+STATISTICS
+Str +1; Dex +3; Con +1; Int +5; Wis +2; Cha +8
+Skills Bluff +21, Diplomacy +26, Intimidate +26, Sense
+Motive +26, Stealth +21
+Feats blablabla
+Languages Abyssal, Aklo, Common, Drow, Eoxian
+Other Abilities envoy improvisations (hidden
+agenda, improved get ’em, improved hurry, quick
+dispiriting taunt)
+Gear kasatha microcord IV
+(electrostatic field mk 2, white force
+field [15 HP]), LFD sonic pistol with
+2 super-capacity batteries (80
+charges each), ultrathin longsword
+ECOLOGY
+Environment any (Apostae)
+Organization solitary,
+pair, or delegation (1 plus
+5–8 drow enforcers)
+SPECIAL ABILITIES
+Limning Light (Su) As a
+standard action, a drow noble
+can cause all creatures and objects
+in a 5-foot-radius burst to shed a
+pale glow. Creatures outlined by
+the limning light take a –20 penalty to
+Stealth checks and don’t benefit from the
+concealment usually provided by darkness. If
+an affected creature is benefiting from an effect
+such as invisibility, all others within line of sight
+of it become aware of its location (see page 260 of
+the Starfinder Core Rulebook). This effect
+lasts for a number of minutes equal to
+the drow noble’s CR (11 minutes for a drow
+noble arms dealer). This ability has a
+range of 100 feet.
