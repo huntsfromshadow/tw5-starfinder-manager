@@ -125,14 +125,18 @@ function singleLineWithHeaders(tid, datalist, hang=false) {
 }
 
 function spellLikeAbility(tid) {
+  var d = tid.fields.npc_sla;
+  d = d.split("|");
+
   var $val = `
   <p class="no_tb_margin hang_indent">
-    <b>${tid.fields.npc_sla_source} Spell-Like Abilities</b> (CL ${tid.fields.npc_sla_cl})<br/>
+    <b>Spell-Like Abilities</b> (CL ${d[0]})<br/>
   `;
 
   var dat = tid.fields.npc_sla;
 
   var la = dat.split("|");
+  la.shift();
 
   la.forEach(element => {
     $val = $val + element + "<br />";
@@ -143,6 +147,49 @@ function spellLikeAbility(tid) {
   
 }
 
+function defenseHeader(tid) {
+  var retval = `
+  <p class="no_tb_margin section_underline" id="defense_hp_row">
+  <b>DEFENSE</b> 
+  <span id="hp"><b>HP</b> {{!!npc_hp}} `;
+
+  if(tid.fields.npc_rp !== undefined) {
+    retval = retval + "<b>RP</b> {{!!npc_rp}}";
+  }
+
+  retval = retval + "</span></p>";
+  return retval;
+}
+
+function ecologySection(tid) {
+  var retval = "";
+
+  if(tid.fields.npc_enviornment !== undefined) {
+    retval = retval + `<p class="no_tb_margin section_underline">
+    <b>Ecology</b>
+      </p>`;
+
+    retval = retval + singleLineWithHeaders(tid, [
+      ["npc_enviornment", "<b>Enviornment</b> ", ""]
+    ]);    
+    retval = retval + singleLineWithHeaders(tid, [
+      ["npc_organization", "<b>Organization</b> ", ""]
+    ]);        
+  }
+
+  return retval;
+}
+
+function specialAbilities(tid) {
+  var retval = "";
+  if(tid.fields.npc_special_abilities !== undefined) {
+    retval = retval + '<p class="no_tb_margin section_underline" id="defense_hp_row"><b>DEFENSE</b></p>';
+
+    retval = retval + "{{!!npc_special_abilities}}";
+  }
+
+  return retval;
+}
 
 /* Executes (runs) our macro when it requires evaluation; returns a string
  * value.
@@ -167,19 +214,25 @@ exports.run = function() {
     "npc_type", "npc_subtype"] )}
   ${singleLineWithHeaders(tid, [
     ["npc_init", "<b>Init</b> ", ";"],
-    ["npc_senses", "<b>Senses</b>", ";"],
-    ["npc_perception", "<b>Perception</b>", ""]], true)}  
-  <p class="no_tb_margin section_underline" id="defense_hp_row">
-      <b>DEFENSE</b> 
-      <span id="hp"><b>HP</b> {{!!npc_hp}}</span>
-  </p>
+    ["npc_senses", "<b>Senses</b> ", ";"],
+    ["npc_perception", "<b>Perception</b> ", ""]], true)}  
+  ${singleLineWithHeaders(tid, [["npc_aura", "<b>Aura</b> ", ""]])}
+  ${defenseHeader(tid)}
   ${singleLineWithHeaders(tid, [
     ["npc_eac", "<b>EAC</b> ", ";"],
-    ["npc_kac", "<b>KAC</b>", ""]] )}  
+    ["npc_kac", "<b>KAC</b> ", ""]] )}  
   ${singleLineWithHeaders(tid, [
       ["npc_fort", "<b>Fort</b> ", ";"],
       ["npc_ref", "<b>Ref</b>", ";"], 
       ["npc_will", "<b>Will</b>", ""]])}
+  ${singleLineWithHeaders(tid, [
+    ["npc_dr", "<b>DR</b> ", ";"],
+    ["npc_immunities", "<b>Immunities</b> ", ";"],
+    ["npc_sr", "<b>SR</b> ", ""]
+  ])}
+  ${singleLineWithHeaders(tid, [
+    ["npc_weaknesses", "<b>Weaknesses</b> ", ";"],
+  ])}
   <p class="no_tb_margin section_underline">
       <b>OFFENSE</b>
   </p>
@@ -188,7 +241,12 @@ exports.run = function() {
   ${singleLineWithHeaders(tid, [
     ["npc_melee", "<b>Melee</b> ", ""] ])}
   ${singleLineWithHeaders(tid, [
-      ["npc_ranged", "<b>Ranged</b> ", ""] ])}    
+    ["npc_multiattack", "<b>Multiattack</b> ", ""] ])}    
+  ${singleLineWithHeaders(tid, [
+      ["npc_ranged", "<b>Ranged</b> ", ""] ])}  
+  ${singleLineWithHeaders(tid, [
+        ["npc_space", "<b>Space</b> ", ""],
+        ["npc_reach", "<b>Reach</b> ", ""] ])}  
   ${singleLineWithHeaders(tid, [
       ["npc_offensive_abilities", "<b>Offensive Abilities</b> ", ""] ])}     
   ${spellLikeAbility(tid)}
@@ -212,6 +270,8 @@ exports.run = function() {
     ["npc_other_abilities", "<b>Other Abilities</b> ", ""] ])}
   ${singleLineWithHeaders(tid, [
     ["npc_gear", "<b>Gear</b> ", ""] ], true)}      
+  ${ecologySection(tid)}
+  ${specialAbilities(tid)}
 </div>`;
 
   return outval;
