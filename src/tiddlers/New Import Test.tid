@@ -8,7 +8,11 @@ type: text/vnd.tiddlywiki
 
 \define act-create-staging() <$action-createtiddler $basetitle="NPCImportWS2" $overwrite="yes" />
 
-\define act-load-npc() <$action-sf-rawtext-import $npcname={{NPCName2}} $rawblock={{NPCRawBlock2}} />
+\define act-load-npc() 
+<$action-sf-rawtext-import 
+  $npcname={{NPCName2}} $rawblock={{NPCRawBlock2}} $fieldtarget="NPCImportWS2" 
+  />
+\end
 
 \define edit-field(npcfld) 
 <$edit-text tiddler="NPCImportWS2" field=$npcfld$ />
@@ -67,13 +71,10 @@ type: text/vnd.tiddlywiki
 
 
 ''Step 2:'' 
-
 <$button actions="<<act-create-staging>> <<act-load-npc>>" >
   Load into Fields Below to Double Check
 </$button>
 
-Then Check What Fields Will be loaded below.
 
 <<checkFields>>
 
-<<nextstep>>
