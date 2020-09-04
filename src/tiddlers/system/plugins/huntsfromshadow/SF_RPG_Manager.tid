@@ -8,6 +8,6 @@ plugin-type: plugin
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager
 type: application/json
-version: 1.0
+version: 1.01
 
 {"tiddlers": {}}
