@@ -78,8 +78,6 @@ RawTextImport.prototype.handleGenderRaceGraft = function(rb) {
     l = l.replace("\n", "");
     l = l.split(" ");
     
-    console.log(l);
-
     this.saveField("npc_gender", l[0]);
     this.saveField("npc_race", l[1]);
     this.saveField("npc_graftclass", l[2]);
@@ -91,7 +89,8 @@ RawTextImport.prototype.handleTypeSubtype = function(rb) {
   var ex = 
     /(?:LG|NG|CG|LN|N|CN|LE|NE|CE) (?:Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) (.*)/.exec(rb);
   
-  var l = /(.*)? (\(.*\))?/.exec(ex[1]);
+  var l = /(.*) (\(.*\))/.exec(ex[1]);
+  console.log(l);
   this.saveField("npc_type", l[1]);
   this.saveField("npc_subtype", l[2]);
 }

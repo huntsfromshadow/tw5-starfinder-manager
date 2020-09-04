@@ -1,6 +1,6 @@
 caption: Step 2
 created: 20200903191344202
-modified: 20200904165401895
+modified: 20200904171129055
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/utility/Import NPC - Step 2
 type: text/vnd.tiddlywiki
@@ -45,7 +45,7 @@ Proceed to Step 3
 <<tablerow Alignment npc_alignment 30>>
 <<tablerow Size	npc_size 30>>
 <<tablerow Type	npc_type 30>>
-<<tablerow Subtype edit-field npc_subtype 30>>
+<<tablerow Subtype npc_subtype 30>>
 <<tablerow Init	npc_init 30>>
 <<tablerow Senses npc_senses 30>>
 <<tablerow Perception npc_perception 30>>
