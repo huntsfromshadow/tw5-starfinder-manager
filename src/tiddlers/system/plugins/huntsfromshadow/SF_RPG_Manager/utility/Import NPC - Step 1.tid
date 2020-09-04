@@ -1,5 +1,6 @@
+caption: Step 1
 created: 20200903191157492
-modified: 20200903200832355
+modified: 20200904013334681
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/utility/Import NPC - Step 1
 type: text/vnd.tiddlywiki
@@ -18,7 +19,7 @@ Fill In Below
 
 <<nextstep>>
 
-|! NPC (Tiddler) Name: | <$edit-text tiddler="Var-NPCImportName"  placeholder="NPC Tiddler Name" size="30" tag="input" /> |
-|! Plain Text Statblock: | <$edit-text tiddler="Var-NPCImportRawBlock"  tag="textarea" /> |
+|! NPC (Tiddler) Name: | <$edit-text tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportName"  placeholder="NPC Tiddler Name" size="30" tag="input" /> |
+|! Plain Text Statblock: | <$edit-text tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportRawBlock"  tag="textarea" /> |
 
 <<nextstep>>

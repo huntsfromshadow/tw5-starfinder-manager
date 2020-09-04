@@ -1,10 +1,13 @@
 author: huntsfromshadow
+core-version: >= 5.1.22
 created: 20200831202346219
+description: Manager to help GMs organize data for a Starfinder campaign.
 list: readme license history
-modified: 20200831202409070
+modified: 20200904013915203
 plugin-type: plugin
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager
 type: application/json
+version: 1.0
 
 {"tiddlers": {}}
