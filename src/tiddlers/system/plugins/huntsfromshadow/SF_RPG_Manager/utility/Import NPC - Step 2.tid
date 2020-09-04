@@ -1,5 +1,5 @@
 created: 20200903191344202
-modified: 20200903200929364
+modified: 20200904145558015
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/utility/Import NPC - Step 2
 type: text/vnd.tiddlywiki
@@ -14,8 +14,8 @@ type: text/vnd.tiddlywiki
   />
 \end
 
-\define edit-field(npcfld) 
-<$edit-text tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportWrkSht" field=$npcfld$ />
+\define edit-field(npcfld size) 
+<$edit-text tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportWrkSht" field=$npcfld$ size="$size$"/>
 \end
 
 \define nextstep()
@@ -25,57 +25,63 @@ Proceed to Step 3
 </$button>
 \end
 
+\define tablerow(fldname field size)
+<tr><td width="40%"><b>$fldname$</b></td><td><<edit-field $field$ $size$ >></td></tr>
+\end
+
 ''Step 2:'' 
 <$button actions="<<act-create-staging>> <<act-load-npc>>" >
   Load into Fields Below to Double Check
 </$button>
 
-|! Name                 | <<edit-field npc_name>> |
-|! CR                   | <<edit-field npc_cr>> |
-|! XP                   | <<edit-field npc_xp>> |
-|! Gender               | <<edit-field npc_gender>> |
-|! Race                 | <<edit-field npc_race>> |
-|! Class/Graft          | <<edit-field npc_class>> |
-|! Alignment            | <<edit-field npc_alignment>> |
-|! Size                 | <<edit-field npc_size>> |
-|! Type                 | <<edit-field npc_type>> |
-|! Subtype              | <<edit-field npc_subtype>> |
-|! Init                 | <<edit-field npc_init>> |
-|! Senses               | <<edit-field npc_senses>> |
-|! Perception           | <<edit-field npc_perception>> |
-|! Aura									| <<edit-field npc_aura>> |
-|! HP                   | <<edit-field npc_hp>> |
-|! RP										| <<edit-field npc_rp>> |
-|! EAC                  | <<edit-field npc_eac>> |
-|! KAC                  | <<edit-field npc_kac>> |
-|! Fort                 | <<edit-field npc_fort>> |
-|! Ref                  | <<edit-field npc_ref>> |
-|! Will                 | <<edit-field npc_will>> |
-|! Defensive Abilities  | <<edit-field npc_defensive_abilities>> |
-|! DR                   | <<edit-field npc_dr>> |
-|! Immunities           | <<edit-field npc_immunities>> |
-|! SR                   | <<edit-field npc_sr>> |
-|! Weaknesses           | <<edit-field npc_weaknesses>> |
-|! Speed                | <<edit-field npc_speed>> |
-|! Melee                | <<edit-field npc_melee>> |
-|! Ranged               | <<edit-field npc_ranged>> |
-|! Multiattack          | <<edit-field npc_multiattack>> |
-|! Offensive Abilities  | <<edit-field npc_offensive_abilities>> |
-|! Space                | <<edit-field npc_space>> |
-|! Reach                | <<edit-field npc_reach>> |
-|! SLA (Seperate Lines with &#124; Symbol) | <<edit-field npc_sla>> |
-|! Str                  | <<edit-field npc_str>> |
-|! Dex                  | <<edit-field npc_dex>> |
-|! Con                  | <<edit-field npc_con>> |
-|! Int                  | <<edit-field npc_int>> |
-|! Wis                  | <<edit-field npc_wis>> |
-|! Cha                  | <<edit-field npc_cha>> |
-|! Skills               | <<edit-field npc_skills>> |
-|! Feats                | <<edit-field npc_feats>> |
-|! Languages            | <<edit-field npc_languages>> |
-|! Other Abilities      | <<edit-field npc_other_abilities>> |
-|! Gear                 | <<edit-field npc_gear>> |
-|! Special Abilities (Seperate Lines with &#124; Symbol)    | <<edit-field npc_special_abilities>> |
+<table>
+<<tablerow Name npc_name 30>>
+<<tablerow CR npc_cr 30>>
+<<tablerow XP npc_xp 30>>
+<<tablerow Gender npc_gender 30>>
+<<tablerow Race	npc_race 30>>
+<<tablerow Class/Graft npc_class 30>>
+<<tablerow Alignment npc_alignment 30>>
+<<tablerow Size	npc_size 30>>
+<<tablerow Type	npc_type 30>>
+<<tablerow Subtype edit-field npc_subtype 30>>
+<<tablerow Init	npc_init 30>>
+<<tablerow Senses npc_senses 30>>
+<<tablerow Perception npc_perception 30>>
+<<tablerow Aura	npc_aura 30>>
+<<tablerow HP npc_hp 30>>
+<<tablerow RP npc_rp 30>>
+<<tablerow EAC npc_eac 30>>
+<<tablerow KAC npc_kac 30>>
+<<tablerow Fort	npc_fort 30>>
+<<tablerow Ref npc_ref 30>>
+<<tablerow Will	npc_will 30>>
+<<tablerow "Defensive Abilities" npc_defensive_abilities 30>>
+<<tablerow DR npc_dr 30>>
+<<tablerow Immunities npc_immunities 30>>
+<<tablerow SR npc_sr 30>>
+<<tablerow Weaknesses npc_weaknesses 30>>
+<<tablerow Speed npc_speed 30>>
+<<tablerow Melee npc_melee 50>>
+<<tablerow Ranged npc_ranged 50>>
+<<tablerow Multiattack	npc_multiattack 50>>
+<<tablerow "Offensive Abilities"	npc_offensive_abilities 50>>
+<<tablerow Space npc_space 30>>
+<<tablerow Reach npc_reach 30>>
+<<tablerow "SLA (Seperate Lines with &#124; Symbol)"	npc_sla 50>>
+<<tablerow Str npc_str 30>>
+<<tablerow Dex npc_dex 30>>
+<<tablerow Con npc_con 30>>
+<<tablerow Int npc_int 30>>
+<<tablerow Wis	npc_wis 30>>
+<<tablerow Cha	npc_cha 30>>
+<<tablerow Skills	npc_skills 50>>
+<<tablerow Feats	npc_feats 30>>
+<<tablerow Languages	npc_languages 50>>
+<<tablerow "Other Abilities"	npc_other_abilities 50>>
+<<tablerow Gear	npc_gear 30>>
+<<tablerow "Special Abilities (Seperate Lines with &#124; Symbol)"	npc_special_abilities 30>>
+</table>
 
 <<nextstep>>
 
