@@ -64,16 +64,26 @@ RawTextImport.prototype.saveField = function(fieldName, fieldValue) {
 RawTextImport.prototype.handleGenderRaceGraft = function(rb) {
 
   //Get just that line
-  var ex = /XP [\d,]*[ \n](.*)[ \n]\b(?:LG|NG|CG|LN|N|CN|LE|NE|CE)\b/.exec(rb);
-  
-  //As this is a very flexible line we are just going to split it.
-  var l = ex[1];
-  l = l.replace("\n", "");
-  l = l.split(" ");
-  
-  this.saveField("npc_gender", l[1]);
-  this.saveField("npc_race", l[2]);
-  this.saveField("npc_graftclass", l[3]);
+  var ex = /XP [\d,]*[ \n](?:(.*)[ \n])?(?:LG|NG|CG|LN|N|CN|LE|NE|CE)/.exec(rb);
+  //console.log(ex);
+
+  if(ex[1] === undefined) {
+    this.saveField("npc_gender", this.emptyfieldtext);
+    this.saveField("npc_race", this.emptyfieldtext);
+    this.saveField("npc_graftclass", this.emptyfieldtext);
+  }
+  else {
+    //As this is a very flexible line we are just going to split it.
+    var l = ex[1];
+    l = l.replace("\n", "");
+    l = l.split(" ");
+    
+    console.log(l);
+
+    this.saveField("npc_gender", l[0]);
+    this.saveField("npc_race", l[1]);
+    this.saveField("npc_graftclass", l[2]);
+  }
 };
 
 RawTextImport.prototype.handleTypeSubtype = function(rb) {
@@ -108,50 +118,55 @@ RawTextImport.prototype.handleSLA = function(rb) {
   var ex =
     /Spell-Like Abilities (.*)STATISTICS/s.exec(rb);
 
-  console.log(ex);
-  var fullstr = ex[1];
+  if(ex == null) {
+    this.saveField("npc_sla", this.emptyfieldtext);   
+  }
+  else {
+    console.log(ex);
+    var fullstr = ex[1];
 
-  var finalstr = "";
+    var finalstr = "";
 
-  var c =
-    /(\(.*\))/.exec(fullstr);
-  var cl_block = null;
-  cl_block = c[1];
-  fullstr = fullstr.replace(cl_block, "");
-  fullstr = fullstr.trim();
-
-  finalstr = finalstr + cl_block;
-
-  c =
-    /(Constant—.*)/.exec(fullstr);
-  var con_line = null;
-  if(c != null) {
-    con_line = c[1];
-    fullstr = fullstr.replace(con_line, "");
+    var c =
+      /(\(.*\))/.exec(fullstr);
+    var cl_block = null;
+    cl_block = c[1];
+    fullstr = fullstr.replace(cl_block, "");
     fullstr = fullstr.trim();
-  }
+
+    finalstr = finalstr + cl_block;
+
+    c =
+      /(Constant—.*)/.exec(fullstr);
+    var con_line = null;
+    if(c != null) {
+      con_line = c[1];
+      fullstr = fullstr.replace(con_line, "");
+      fullstr = fullstr.trim();      
+    }
   
-  c = 
-    /(At will—.*)/.exec(fullstr);
-  var at_will_line = null;
-  if(c != null) {
-    at_will_line = c[1];
-    fullstr = fullstr.replace(at_will_line, "");
-    fullstr = fullstr.trim();
-  }
+    c = 
+      /(At will—.*)/.exec(fullstr);
+    var at_will_line = null;
+    if(c != null) {
+      at_will_line = c[1];
+      fullstr = fullstr.replace(at_will_line, "");
+      fullstr = fullstr.trim();
+    }
 
-  fullstr = fullstr.replace("\n", "|");
-  finalstr = finalstr + "|" + fullstr;
+    fullstr = fullstr.replace("\n", "|");
+    finalstr = finalstr + "|" + fullstr;
 
-  if(con_line != null) {
-    finalstr = finalstr + "|" + con_line;
-  }
+    if(con_line != null) {
+      finalstr = finalstr + "|" + con_line;
+    }
 
-  if(at_will_line != null) {
-    finalstr = finalstr + "|" + at_will_line;
+    if(at_will_line != null) {
+      finalstr = finalstr + "|" + at_will_line;
+    }
+    
+    this.saveField("npc_sla", finalstr);
   }
-  
-  this.saveField("npc_sla", finalstr);
 };
 
 RawTextImport.prototype.handleOtherAbilities = function(rb) {

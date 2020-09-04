@@ -1,6 +1,6 @@
 caption: Step 2
 created: 20200903191344202
-modified: 20200904145558015
+modified: 20200904165401895
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/utility/Import NPC - Step 2
 type: text/vnd.tiddlywiki
@@ -41,7 +41,7 @@ Proceed to Step 3
 <<tablerow XP npc_xp 30>>
 <<tablerow Gender npc_gender 30>>
 <<tablerow Race	npc_race 30>>
-<<tablerow Class/Graft npc_class 30>>
+<<tablerow Class/Graft npc_graftclass 30>>
 <<tablerow Alignment npc_alignment 30>>
 <<tablerow Size	npc_size 30>>
 <<tablerow Type	npc_type 30>>
