@@ -1,0 +1,18 @@
+caption: SF_RPG_Manager
+created: 20200831203314734
+modified: 20200904195812116
+tags: $:/tags/ControlPanel
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/settings
+type: text/vnd.tiddlywiki
+
+\define render-boolean(key default)
+<$checkbox tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/config/$key$" field="text" checked="true" unchecked="false" default="$default$" />
+\end
+
+\define edit-setting(key)
+<$edit-text tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/config/$key$" field="text" tag="input" />
+\end
+
+
+|Version |{{$:/plugins/huntsfromshadow/SF_RPG_Manager!!version}} |
+|DEBUG - Import empty field as 'DEBUG NOPE' | <<render-boolean "DebugEmptyImport" false>> |

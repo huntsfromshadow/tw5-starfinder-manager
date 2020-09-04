@@ -201,11 +201,14 @@ RawTextImport.prototype.handleGear = function(rb) {
 };
 
 RawTextImport.prototype.handleSpecialAbilities = function(rb) {
-  var c = /SPECIAL ABILITIES(.*)/s.exec(rb);  
+  var c = /SPECIAL ABILITIES(.*)/is.exec(rb);  
   if(c != null) {
     var s = c[1];
     s = s.replace("\n", " ");
     this.saveField("npc_special_abilities", s);
+  }
+  else {
+    this.saveField("npc_special_abilities", this.emptyFieldText());
   }
 };
 
@@ -288,7 +291,7 @@ RawTextImport.prototype.loadKeywordList = function() {
     ["npc_skills", "Skills (.*)"],
     ["npc_feats", "Feats (.*)"],
     ["npc_languages", "Languages (.*)\\n"],
-    ["npc_other_abilities", "Other Abilities(.*)Gear"],
+    ["npc_other_abilities", "Other Abilities (.*)[ \n](Special Abilities|Gear)"],
     ["npc_gear", "Gear(.*)"],
 
     //Ecology Block
