@@ -131,7 +131,10 @@ function singleLineWithHeaders(tid, datalist, hang=false) {
 
 function spellLikeAbility(tid) {
   var retval = "";
+
+  
   if(
+    (tid.fields.npc_sla !== undefined) &&
     (tid.fields.npc_sla !== npcDebugTxt) &&
     (tid.fields.npc_sla !== "") ) {
     var d = tid.fields.npc_sla;

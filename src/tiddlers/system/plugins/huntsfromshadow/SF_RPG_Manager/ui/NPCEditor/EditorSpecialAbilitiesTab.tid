@@ -1,0 +1,18 @@
+created: 20200904222923483
+modified: 20200904222957585
+tags: 
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/EditorSpecialAbilitiesTab
+type: text/vnd.tiddlywiki
+
+\define edit-field(npcfld size) 
+<$edit-text tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportWrkSht" field=$npcfld$ size="$size$"/>
+\end
+
+\define tablerow(fldname field size)
+<tr><td width="40%"><b>$fldname$</b></td><td><<edit-field $field$ $size$ >></td></tr>
+\end
+
+!Special Abilities
+<table>
+<<tablerow "Special Abilities (Seperate Lines with &#124; Symbol)"	npc_special_abilities 30>>
+</table>
