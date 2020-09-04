@@ -1,5 +1,5 @@
-created: 20200904204840911
-modified: 20200904204841226
+created: 20200904204845734
+modified: 20200904210213783
 npc_alignment: N
 npc_aura: 
 npc_cha: +0
@@ -23,7 +23,7 @@ npc_kac: 26
 npc_languages: Auran
 npc_melee: slam +24 (4d6+11 B)
 npc_multiattack: slam +24 (4d6+11 B)
-npc_name: Elder Elemental
+npc_name: Elder Air Elemental
 npc_offensive_abilities: 
 npc_organization: 
 npc_other_abilities: Air mastery (see below), whirlwind (see page 158)
@@ -48,6 +48,7 @@ npc_weaknesses:
 npc_will: +10
 npc_wis: +0
 npc_xp: 12,800
-title: $:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportWrkSht
+title: Elder Air Elemental
 type: text/vnd.tiddlywiki
 
+{{||$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/NPCTemplate}}
