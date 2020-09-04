@@ -20,8 +20,10 @@ exports.name = "npc-display";
  */
 exports.params = [  ];
 
+var npcDebugTxt = "DEBUG NOPE";
+
 function txtOrEmpty(field, txt) {
-  if (field != "NOPE") {
+  if (field != npcDebugTxt) {
     return txt;
   }
   else {
@@ -32,23 +34,22 @@ function txtOrEmpty(field, txt) {
 function genderRaceClassBlock(tid) {
   //Figure out what is present
   if(
-    tid.fields.npc_gender != "NOPE" ||
-    tld.fields.npc_race != "NOPE" ||
-    tld.fields.npc_class != "NOPE" ) {
+    tid.fields.npc_gender != npcDebugTxt ||
+    tld.fields.npc_race != npcDebugTxt ||
+    tld.fields.npc_class != npcDebugTxt ) {
     
   }
 }
 
-function defensiveAbilitiesImmunitiesBlock(tid) {
-  console.log("in defense");
+function defensiveAbilitiesImmunitiesBlock(tid) {  
   var retval = "";
 
-  if(tid.fields.npc_defensive_abilities != "NOPE") {
+  if(tid.fields.npc_defensive_abilities != npcDebugTxt) {
     retval = retval + "<b>Defensive Abilities</b> " + 
       txtOrEmpty(tid.fields.npc_defensive_abilities, "{{!!npc_defensive_abilities}}");
   }
 
-  if(tid.fields.npc_immunities != "NOPE") {
+  if(tid.fields.npc_immunities != npcDebugTxt) {
     retval = retval + "<b>Immunities</b> " +
       txtOrEmpty(tid.fields.npc_immunities, "{{!npc_immunities}}");
   }
@@ -62,7 +63,7 @@ function defensiveAbilitiesImmunitiesBlock(tid) {
 
 function weaknessesBlock(tid) {
   console.log("In weakness");
-  if(tid.fields.npc_weaknesses != "NOPE") {
+  if(tid.fields.npc_weaknesses != npcDebugTxt) {
     return `
       <p class="no_tb_margin">
         <b>Weaknesses</b> {{!!npc_weaknesses}}
@@ -81,7 +82,7 @@ function singleLineNoHeaders(tid, datalist) {
   datalist.forEach(ele => {
     var fname = ele;
 
-    if(tid.fields[ele] != "NOPE") {
+    if(tid.fields[ele] != npcDebugTxt) {
       retval = retval + "{{!!" + ele + "}} ";
     }
   });
@@ -99,6 +100,9 @@ function singleLineNoHeaders(tid, datalist) {
 ]*/
 function singleLineWithHeaders(tid, datalist, hang=false) {
 
+  console.log(tid);
+  console.log(datalist);
+
   var retval = "";
 
   datalist.forEach(ele => {
@@ -106,7 +110,8 @@ function singleLineWithHeaders(tid, datalist, hang=false) {
     var header = ele[1];
     var post = ele[2];
   
-    if( tid.fields[fieldname] != "NOPE" ) {
+    if( (tid.fields[fieldname] != npcDebugTxt)
+        && (tid.fields[fieldname] != "") ) {
       retval = retval + " " + header + "{{!!" + 
         fieldname + "}}" + post;
     }
@@ -125,25 +130,32 @@ function singleLineWithHeaders(tid, datalist, hang=false) {
 }
 
 function spellLikeAbility(tid) {
-  var d = tid.fields.npc_sla;
-  d = d.split("|");
+  var retval = "";
+  if(
+    (tid.fields.npc_sla !== npcDebugTxt) &&
+    (tid.fields.npc_sla !== "") ) {
+    var d = tid.fields.npc_sla;
+    d = d.split("|");
 
-  var $val = `
-  <p class="no_tb_margin hang_indent">
-    <b>Spell-Like Abilities</b> (CL ${d[0]})<br/>
-  `;
+    var val = `
+    <p class="no_tb_margin hang_indent">
+      <b>Spell-Like Abilities</b> (CL ${d[0]})<br/>
+    `;
 
-  var dat = tid.fields.npc_sla;
+    var dat = tid.fields.npc_sla;
 
-  var la = dat.split("|");
-  la.shift();
+    var la = dat.split("|");
+    la.shift();
 
-  la.forEach(element => {
-    $val = $val + element + "<br />";
-  });
-  $val = $val + "</p>";
+    la.forEach(element => {
+      val = val + element + "<br />";
+    });
+    val = val + "</p>";
 
-  return $val;
+    retval = val;
+  }
+
+  return retval;
   
 }
 
@@ -195,7 +207,8 @@ function specialAbilities(tid) {
  * value.
  */
 exports.run = function() {
-  
+  var tid = this.wiki.getTiddler("$:/plugins/huntsfromshadow/SF_RPG_Manager/config/DebugEmptyImport");
+      
   var tid = this.wiki.getTiddler(
       this.getVariable("currentTiddler") );
   
