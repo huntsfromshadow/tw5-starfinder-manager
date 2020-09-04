@@ -53,13 +53,19 @@ RawTextImport.prototype.refresh = function(changedTiddlers) {
 
 RawTextImport.prototype.saveField = function(fieldName, fieldValue) {
   if(fieldValue === undefined) {
-    fieldValue = "NOPE";
-  }
-  else {  
-    this.wiki.setText(this.fieldtarget, fieldName, undefined, fieldValue.trim(), {});
-  }
+    fieldValue = this.emptyFieldText();
+  }  
+  this.wiki.setText(this.fieldtarget, fieldName, undefined, fieldValue.trim(), {});  
 };
 
+RawTextImport.prototype.emptyFieldText = function() {
+  if(this.debugMode == true) {
+    return "DEBUG NOPE";
+  }
+  else {
+    return "";
+  }
+};
 
 RawTextImport.prototype.handleGenderRaceGraft = function(rb) {
 
@@ -68,9 +74,9 @@ RawTextImport.prototype.handleGenderRaceGraft = function(rb) {
   //console.log(ex);
 
   if(ex[1] === undefined) {
-    this.saveField("npc_gender", this.emptyfieldtext);
-    this.saveField("npc_race", this.emptyfieldtext);
-    this.saveField("npc_graftclass", this.emptyfieldtext);
+    this.saveField("npc_gender", this.emptyFieldText());
+    this.saveField("npc_race", this.emptyFieldText());
+    this.saveField("npc_graftclass", this.emptyFieldText());
   }
   else {
     //As this is a very flexible line we are just going to split it.
@@ -89,8 +95,7 @@ RawTextImport.prototype.handleTypeSubtype = function(rb) {
   var ex = 
     /(?:LG|NG|CG|LN|N|CN|LE|NE|CE) (?:Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) (.*)/.exec(rb);
   
-  var l = /(.*) (\(.*\))/.exec(ex[1]);
-  console.log(l);
+  var l = /(.*) (\(.*\))/.exec(ex[1]);  
   this.saveField("npc_type", l[1]);
   this.saveField("npc_subtype", l[2]);
 }
@@ -99,16 +104,23 @@ RawTextImport.prototype.extractKeywords = function(rb) {
   this.keyword_list.forEach(elem => {
     var re = null;
 
-    re = new RegExp(elem[1]);
+    re = new RegExp(elem[1], "i");
     re = re.exec(rb);
     
+    console.log("---------");
+    console.log(re);
+
     if( re == null )
     {
-      var val = this.emptyfieldtext;      
+      var val = this.emptyFieldText();      
     }
     else {
       var val = re[1];
     }
+
+    console.log(elem[0]);
+    console.log(val);
+
     this.saveField(elem[0], val);
   });
 };
@@ -118,10 +130,9 @@ RawTextImport.prototype.handleSLA = function(rb) {
     /Spell-Like Abilities (.*)STATISTICS/s.exec(rb);
 
   if(ex == null) {
-    this.saveField("npc_sla", this.emptyfieldtext);   
+    this.saveField("npc_sla", this.emptyFieldText());   
   }
-  else {
-    console.log(ex);
+  else {    
     var fullstr = ex[1];
 
     var finalstr = "";
@@ -190,8 +201,7 @@ RawTextImport.prototype.handleGear = function(rb) {
 };
 
 RawTextImport.prototype.handleSpecialAbilities = function(rb) {
-  var c = /SPECIAL ABILITIES(.*)/s.exec(rb);
-  console.log(c);
+  var c = /SPECIAL ABILITIES(.*)/s.exec(rb);  
   if(c != null) {
     var s = c[1];
     s = s.replace("\n", " ");
@@ -201,6 +211,16 @@ RawTextImport.prototype.handleSpecialAbilities = function(rb) {
 
 
 RawTextImport.prototype.invokeAction = function(triggeringWidget,event) {
+  //First we need to grab the config to know if we are in Debug Mode
+  var tid = this.wiki.getTiddler("$:/plugins/huntsfromshadow/SF_RPG_Manager/config/DebugEmptyImport");
+    
+  if(tid !== undefined && tid.fields.text == "true") {
+    this.debugMode = true;
+  }
+  else {
+    this.debugMode = false;
+  }
+
   //Handle any data cleanup
   var rb = this.rawblock.replace("−", "-");
   //var rb = this.rawblock.replace("—", "-");
@@ -219,8 +239,7 @@ RawTextImport.prototype.invokeAction = function(triggeringWidget,event) {
   return true;
 };
 
-RawTextImport.prototype.loadKeywordList = function() {
-  this.emptyfieldtext = "NOPE";
+RawTextImport.prototype.loadKeywordList = function() {  
   this.keyword_list = [
     //Identity Block
     ["npc_name", "(.*) CR (?:1\\/8|1\\/6|1\\/4|1\\/3|1\\/2|\\d{1,2})"],
@@ -244,8 +263,8 @@ RawTextImport.prototype.loadKeywordList = function() {
     ["npc_ref", "Ref ([+|-]\\d{1,2});"],
     ["npc_will", "Will[ \n]?([^;\n]*)"],
     ["npc_defensive_abilities", "Defensive Abilities (.*);"],
-    ["npc_dr", "\\bDR\\b ([\\w\\/]*);"],  
-    ["npc_immunities", "Immunities (.*)?;"],
+    ["npc_dr", "DR ([^;]*);"],  
+    ["npc_immunities", "Immunities ([^;|\n]*)"],
     ["npc_sr", "\\bSR\\b (.*)"],
     ["npc_weaknesses", "Weaknesses (.*)\\n"],
 
