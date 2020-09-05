@@ -1,8 +1,8 @@
 caption: Step 2
 created: 20200903191344202
-modified: 20200904171129055
+modified: 20200905011227630
 tags: 
-title: $:/plugins/huntsfromshadow/SF_RPG_Manager/utility/Import NPC - Step 2
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportNPC/Import NPC - Step 2
 type: text/vnd.tiddlywiki
 
 \define act-create-staging() 
@@ -19,18 +19,22 @@ type: text/vnd.tiddlywiki
 <$edit-text tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportWrkSht" field=$npcfld$ size="$size$"/>
 \end
 
-\define nextstep()
-<$button>
-  <$action-setfield $tiddler=<<tabstate>> $field="text" $value="$:/plugins/huntsfromshadow/SF_RPG_Manager/utility/Import NPC - Step 3" />
-Proceed to Step 3
-</$button>
-\end
-
 \define tablerow(fldname field size)
 <tr><td width="40%"><b>$fldname$</b></td><td><<edit-field $field$ $size$ >></td></tr>
 \end
 
+\define multi-edit-field(npcfld size) 
+<$edit-text tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportWrkSht" field=$npcfld$ size="$size$" class="wide_editor" tag=textarea/>
+\end
+
+\define multitablerow(fldname field size)
+<tr><td width="40%"><b>$fldname$</b></td><td><<multi-edit-field $field$ $size$ >></td></tr>
+\end
+
+
+
 ''Step 2:'' 
+
 <$button actions="<<act-create-staging>> <<act-load-npc>>" >
   Load into Fields Below to Double Check
 </$button>
@@ -63,13 +67,13 @@ Proceed to Step 3
 <<tablerow SR npc_sr 30>>
 <<tablerow Weaknesses npc_weaknesses 30>>
 <<tablerow Speed npc_speed 30>>
-<<tablerow Melee npc_melee 50>>
-<<tablerow Ranged npc_ranged 50>>
+<<multitablerow Melee npc_melee 50>>
+<<multitablerow Ranged npc_ranged 50>>
 <<tablerow Multiattack	npc_multiattack 50>>
 <<tablerow "Offensive Abilities"	npc_offensive_abilities 50>>
 <<tablerow Space npc_space 30>>
 <<tablerow Reach npc_reach 30>>
-<<tablerow "SLA (Seperate Lines with &#124; Symbol)"	npc_sla 50>>
+<<multitablerow "SLA (Seperate Lines with &#124; Symbol)"	npc_sla 50>>
 <<tablerow Str npc_str 30>>
 <<tablerow Dex npc_dex 30>>
 <<tablerow Con npc_con 30>>
@@ -79,14 +83,10 @@ Proceed to Step 3
 <<tablerow Skills	npc_skills 50>>
 <<tablerow Feats	npc_feats 30>>
 <<tablerow Languages	npc_languages 50>>
-<<tablerow "Other Abilities"	npc_other_abilities 50>>
-<<tablerow Gear	npc_gear 30>>
-<<tablerow "Special Abilities (Seperate Lines with &#124; Symbol)"	npc_special_abilities 30>>
+<<multitablerow "Other Abilities"	npc_other_abilities 50>>
+<<multitablerow Gear	npc_gear 30>>
+<<multitablerow "Special Abilities (Seperate Lines with &#124; Symbol)"	npc_special_abilities 30>>
 </table>
-
-<<nextstep>>
-
-
 
 
 

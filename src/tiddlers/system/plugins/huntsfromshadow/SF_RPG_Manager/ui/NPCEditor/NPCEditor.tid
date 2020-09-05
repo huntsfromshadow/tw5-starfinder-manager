@@ -1,18 +1,18 @@
 created: 20200904214316545
-modified: 20200905005421649
+modified: 20200905011440509
 subtitle: NPC Editor
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/NPCEditor
 type: text/vnd.tiddlywiki
 
 !NPC Editor
-!! Note edits are realtime.
-
+Note Edits are Automatically saved.
 <<tabs 
 "$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/EditorIdentityTab $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/EditorDefenseTab $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/EditorOffenseTab 
 $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/EditorStatisticsTab $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/EditorSpecialAbilitiesTab" 
 "$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/EditorIdentityTab" 
 "$:/state/npceditortab" 
+"tc-vertical"
 >>
 
 
