@@ -1,15 +1,25 @@
 caption: Step 1
 created: 20200903191157492
-modified: 20200905011327662
+modified: 20200905014645522
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportNPC/Import NPC - Step 1
+tmpname: New NPC
 type: text/vnd.tiddlywiki
 
-<!-- Note button will only work when called from the Import NPC tiddler -->
+<$button>
+    <$action-createtiddler 
+        $basetitle="New NPC"
+        $savetitle="!!tmpname"				
+        text="{{||$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/NPCTemplate}}" />
+    <$action-navigate $to={{!!tmpname}} />
+    Create Empty NPC
+</$button>
+
+or
+
 ''Step 1:'' 
 
-Fill In Below
-
+__Fill In Below__
 <table>
 <tr>
 <td>
