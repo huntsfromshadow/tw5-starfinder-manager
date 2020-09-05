@@ -21,6 +21,7 @@ exports.name = "npc-display";
 exports.params = [  ];
 
 var npcDebugTxt = "DEBUG NOPE";
+var sectionUnderlineColor = "Black";
 
 function txtOrEmpty(field, txt) {
   if (field != npcDebugTxt) {
@@ -164,7 +165,8 @@ function spellLikeAbility(tid) {
 
 function defenseHeader(tid) {
   var retval = `
-  <p class="no_tb_margin section_underline" id="defense_hp_row">
+  <p class="no_tb_margin section_underline" id="defense_hp_row" 
+  style="border-bottom-color: ${sectionUnderlineColor};">
   <b>DEFENSE</b> 
   <span id="hp"><b>HP</b> {{!!npc_hp}} `;
 
@@ -181,8 +183,11 @@ function defenseHeader(tid) {
 function ecologySection(tid) {
   var retval = "";
 
-  if(tid.fields.npc_enviornment !== undefined) {
-    retval = retval + `<p class="no_tb_margin section_underline">
+  if(tid.fields.npc_enviornment !== undefined &&
+      tid.fields.npc_enviornment !== npcDebugTxt &&
+      tid.fields.npc_enviornment !== "" ) {
+    retval = retval + `<p class="no_tb_margin section_underline"
+      style="border-bottom-color: ${sectionUnderlineColor};">
     <b>Ecology</b>
       </p>`;
 
@@ -200,9 +205,11 @@ function ecologySection(tid) {
 function specialAbilities(tid) {
   var retval = "";
   if(tid.fields.npc_special_abilities !== undefined) {
-    retval = retval + '<p class="no_tb_margin section_underline" id="defense_hp_row"><b>DEFENSE</b></p>';
-
-    retval = retval + "{{!!npc_special_abilities}}";
+    retval = retval + '<p class="no_tb_margin section_underline" id="defense_hp_row" ' + 
+      `style="border-bottom-color: ${sectionUnderlineColor};"` + '><b>DEFENSE</b></p>';
+    
+    retval = retval + '<p class="no_tb_margin hang_indent">' + 
+      "{{!!npc_special_abilities}}</p>";          
   }
 
   return retval;
@@ -212,6 +219,14 @@ function specialAbilities(tid) {
  * value.
  */
 exports.run = function() {
+  tid = this.wiki.getTiddler("$:/plugins/huntsfromshadow/SF_RPG_Manager/config/StarblockSectionUnderlineColor");
+  if(tid === undefined) {    
+    sectionUnderlineColor = "Black";
+  }
+  else {
+    sectionUnderlineColor = tid.fields.text;
+  }
+
   var tid = this.wiki.getTiddler("$:/plugins/huntsfromshadow/SF_RPG_Manager/config/DebugEmptyImport");
       
   var tid = this.wiki.getTiddler(
@@ -251,7 +266,8 @@ exports.run = function() {
   ${singleLineWithHeaders(tid, [
     ["npc_weaknesses", "<b>Weaknesses</b> ", ";"],
   ])}
-  <p class="no_tb_margin section_underline">
+  <p class="no_tb_margin section_underline"
+    style="border-bottom-color: ${sectionUnderlineColor};">
       <b>OFFENSE</b>
   </p>
   ${singleLineWithHeaders(tid, [
@@ -268,7 +284,7 @@ exports.run = function() {
   ${singleLineWithHeaders(tid, [
       ["npc_offensive_abilities", "<b>Offensive Abilities</b> ", ""] ])}     
   ${spellLikeAbility(tid)}
-  <p class="no_tb_margin section_underline">
+  <p class="no_tb_margin section_underline" style="border-bottom-color: ${sectionUnderlineColor};">
       <b>STATISTICS</b>
   </p>
   ${singleLineWithHeaders(tid, [

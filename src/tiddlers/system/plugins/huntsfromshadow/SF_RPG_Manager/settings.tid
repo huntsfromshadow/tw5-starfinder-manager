@@ -1,6 +1,6 @@
 caption: SF_RPG_Manager
 created: 20200831203314734
-modified: 20200904195812116
+modified: 20200905150017722
 tags: $:/tags/ControlPanel
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/settings
 type: text/vnd.tiddlywiki
@@ -13,6 +13,34 @@ type: text/vnd.tiddlywiki
 <$edit-text tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/config/$key$" field="text" tag="input" />
 \end
 
-
 |Version |{{$:/plugins/huntsfromshadow/SF_RPG_Manager!!version}} |
-|DEBUG - Import empty field as 'DEBUG NOPE' | <<render-boolean "DebugEmptyImport" false>> |
+
+<table>
+<tr>
+    <td>DEBUG - Import empty field as 'DEBUG NOPE'</td>
+    <td>
+        <<render-boolean "DebugEmptyImport" false>></td>
+</tr>
+<tr>
+    <td>Statblock Section Underline Color</td>
+    <td>
+        <$edit-text 
+            tiddler='$:/plugins/huntsfromshadow/SF_RPG_Manager/config/StarblockSectionUnderlineColor' 
+            tag='input' placeholder='(unset)' default='Black'/>
+        <$reveal type="nomatch" state="$:/state/SF_RPG_Manager_ColorSettingReveal" 
+            text="show">
+            <$button set="$:/state/SF_RPG_Manager_ColorSettingReveal" 
+                setTo="show">Pick Color</$button>
+        </$reveal>
+        <$reveal type="match" 
+            state="$:/state/SF_RPG_Manager_ColorSettingReveal" text="show">
+            <$button set="$:/state/SF_RPG_Manager_ColorSettingReveal" 
+                setTo="hide">Hide Picker</$button>
+        </$reveal>
+    </td>
+</tr>
+</table>
+<$reveal type="match" 
+    state="$:/state/SF_RPG_Manager_ColorSettingReveal" text="show">
+    <$macrocall $name='colour-picker' actions="<$action-setfield $tiddler='$:/plugins/huntsfromshadow/SF_RPG_Manager/config/StarblockSectionUnderlineColor' $value=<<colour-picker-value>>/>"/>
+</$reveal>
