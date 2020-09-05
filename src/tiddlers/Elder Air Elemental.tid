@@ -1,5 +1,5 @@
 created: 20200904204845734
-modified: 20200904210213783
+modified: 20200905005748959
 npc_alignment: N
 npc_aura: 
 npc_cha: +0
@@ -38,7 +38,7 @@ npc_size: Huge
 npc_skills: Acrobatics +20, Athletics +20
 npc_sla: 
 npc_space: 15 ft.
-npc_special_abilities: Air Mastery (Ex): Airborne creatures take a -1 penalty to attack and damage rolls against an air elemental.
+npc_special_abilities: ''Air Mastery (Ex):'' Airborne creatures take a -1 penalty to attack and damage rolls against an air elemental.
 npc_speed: 20 ft. fly, fly 100 ft. (perfect)
 npc_sr: 
 npc_str: +8

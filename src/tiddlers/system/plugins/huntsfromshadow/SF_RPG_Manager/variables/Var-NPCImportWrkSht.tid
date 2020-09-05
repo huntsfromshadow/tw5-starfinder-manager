@@ -1,5 +1,5 @@
 created: 20200904204840911
-modified: 20200904204841226
+modified: 20200905003747370
 npc_alignment: N
 npc_aura: 
 npc_cha: +0
@@ -32,7 +32,7 @@ npc_race:
 npc_ranged: 
 npc_reach: 15 ft.
 npc_ref: +13
-npc_rp: 
+npc_rp: 12
 npc_senses: darkvision 60 ft.
 npc_size: Huge
 npc_skills: Acrobatics +20, Athletics +20

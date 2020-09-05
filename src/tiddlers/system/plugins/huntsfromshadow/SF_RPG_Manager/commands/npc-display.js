@@ -168,8 +168,10 @@ function defenseHeader(tid) {
   <b>DEFENSE</b> 
   <span id="hp"><b>HP</b> {{!!npc_hp}} `;
 
-  if(tid.fields.npc_rp !== undefined) {
-    retval = retval + "<b>RP</b> {{!!npc_rp}}";
+  if(tid.fields.npc_rp !== undefined &&
+      tid.fields.npc_rp != npcDebugTxt && 
+      tid.fields.npc_rp != "" ) {
+    retval = retval + "&nbsp;<b>RP</b> {{!!npc_rp}}";
   }
 
   retval = retval + "</span></p>";

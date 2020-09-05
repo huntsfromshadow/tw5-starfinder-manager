@@ -1,12 +1,13 @@
 created: 20200831203106349
-modified: 20200904215039438
+modified: 20200905005116266
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/templates/NPCTemplate
 type: text/vnd.tiddlywiki
 
 <<npc-display>>
 
-<$button message="tm-modal" param="$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/NPCEditor">
-Edit {{!!title}}
+<$button>
+<$action-sendmessage $message="tm-modal" $param="$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/NPCEditor" npc=<<currentTiddler>> />
+Edit {{!!title}} 
 </$button>
 

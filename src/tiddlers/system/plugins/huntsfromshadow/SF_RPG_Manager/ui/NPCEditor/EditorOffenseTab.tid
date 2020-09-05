@@ -1,8 +1,8 @@
-caption: Special Abilities
-created: 20200904222923483
-modified: 20200905005656450
+caption: Offense
+created: 20200904222613146
+modified: 20200905005630390
 tags: 
-title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/EditorSpecialAbilitiesTab
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/EditorOffenseTab
 type: text/vnd.tiddlywiki
 
 \define edit-field(npcfld size) 
@@ -21,7 +21,14 @@ type: text/vnd.tiddlywiki
 <tr><td width="40%"><b>$fldname$</b></td><td><<edit-field-multi $field$ $size$ >></td></tr>
 \end
 
-!Special Abilities
+!Statistics
 <table>
-<<multirow "Special Abilities (Seperate Lines with &#124; Symbol)"	npc_special_abilities 30>>
+<<tablerow Speed npc_speed 30>>
+<<multirow Melee npc_melee 50>>
+<<multirow Ranged npc_ranged 50>>
+<<tablerow Multiattack npc_multiattack 50>>
+<<tablerow "Offensive Abilities" npc_offensive_abilities 50>>
+<<tablerow Space npc_space 30>>
+<<tablerow Reach npc_reach 30>>
+<<multirow "SLA (Seperate Lines with &#124; Symbol)" npc_sla 50>>
 </table>

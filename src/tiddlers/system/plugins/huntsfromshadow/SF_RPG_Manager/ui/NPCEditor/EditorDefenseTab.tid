@@ -1,11 +1,12 @@
+caption: Defense
 created: 20200904222523712
-modified: 20200904222904245
+modified: 20200905005505009
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/EditorDefenseTab
 type: text/vnd.tiddlywiki
 
 \define edit-field(npcfld size) 
-<$edit-text tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportWrkSht" field=$npcfld$ size="$size$"/>
+<$edit-text tiddler=<<npc>> field=$npcfld$ size="$size$"/>
 \end
 
 \define tablerow(fldname field size)

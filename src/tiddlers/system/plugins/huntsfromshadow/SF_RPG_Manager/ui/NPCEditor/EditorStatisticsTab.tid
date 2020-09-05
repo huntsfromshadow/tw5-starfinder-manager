@@ -1,27 +1,27 @@
-created: 20200904222613146
-modified: 20200904222919213
+caption: Statistics
+created: 20200904233525836
+modified: 20200905005720820
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/EditorStatisticsTab
 type: text/vnd.tiddlywiki
 
 \define edit-field(npcfld size) 
-<$edit-text tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportWrkSht" field=$npcfld$ size="$size$"/>
+<$edit-text tiddler=<<npc>> field=$npcfld$ size="$size$"/>
+\end
+
+\define edit-field-multi(npcfld size) 
+<$edit-text tiddler=<<npc>> field=$npcfld$ size="$size$" tag=textarea class="wide_editor" />
 \end
 
 \define tablerow(fldname field size)
 <tr><td width="40%"><b>$fldname$</b></td><td><<edit-field $field$ $size$ >></td></tr>
 \end
 
-!Statistics
+\define multirow(fldname field)
+<tr><td width="40%"><b>$fldname$</b></td><td><<edit-field-multi $field$ $size$ >></td></tr>
+\end
+
 <table>
-<<tablerow Speed npc_speed 30>>
-<<tablerow Melee npc_melee 50>>
-<<tablerow Ranged npc_ranged 50>>
-<<tablerow Multiattack	npc_multiattack 50>>
-<<tablerow "Offensive Abilities"	npc_offensive_abilities 50>>
-<<tablerow Space npc_space 30>>
-<<tablerow Reach npc_reach 30>>
-<<tablerow "SLA (Seperate Lines with &#124; Symbol)"	npc_sla 50>>
 <<tablerow Str npc_str 30>>
 <<tablerow Dex npc_dex 30>>
 <<tablerow Con npc_con 30>>
@@ -31,7 +31,6 @@ type: text/vnd.tiddlywiki
 <<tablerow Skills	npc_skills 50>>
 <<tablerow Feats	npc_feats 30>>
 <<tablerow Languages	npc_languages 50>>
-<<tablerow "Other Abilities"	npc_other_abilities 50>>
-<<tablerow Gear	npc_gear 30>>
-<<tablerow "Special Abilities (Seperate Lines with &#124; Symbol)"	npc_special_abilities 30>>
+<<multirow "Other Abilities"	npc_other_abilities 50>>
+<<multirow Gear	npc_gear 30>>
 </table>
