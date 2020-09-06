@@ -267,12 +267,12 @@ RawTextImport.prototype.loadKeywordList = function() {
     ["npc_kac", "KAC (\\d{1,2})\n"],
     ["npc_fort", "Fort ([+|-]\\d{1,2});"],
     ["npc_ref", "Ref ([+|-]\\d{1,2});"],
-    ["npc_will", "Will[ \n]?([^;\n]*)"],
+    ["npc_will", "Will[ \\n]?([^;\\n]*)"],
     ["npc_defensive_abilities", "Defensive Abilities (.*);"],
     ["npc_dr", "DR ([^;]*);"],  
-    ["npc_immunities", "Immunities[ |\n]([^;]*?)(?:;|Weaknesses)"],
+    ["npc_immunities", "Immunities[ |\\n]([^;]*?)(?:;|Weaknesses)"],
     ["npc_sr", "\\bSR\\b (.*)"],
-    ["npc_weaknesses", "Weaknesses (.*)\\n"],
+    ["npc_weaknesses", "Weaknesses ((?:\\s|\\S)*)OFFENSE"],
 
     //Offense Block
     ["npc_speed", "Speed (.*)\\n"],
@@ -294,7 +294,7 @@ RawTextImport.prototype.loadKeywordList = function() {
     ["npc_skills", "Skills ((?:.|\n)*)Languages"],
     ["npc_feats", "Feats (.*)"],
     ["npc_languages", "Languages (.*)\\n"],
-    ["npc_other_abilities", "Other Abilities (.*)[ \n](?:Special Abilities|Gear|ECOLOGY)"],
+    ["npc_other_abilities", "Other Abilities (.*)[ \n](?:Special Abilities|Gear|ECOLOGY|TACTICS)"],
     ["npc_gear", "Gear(.*)"],
 
     //Ecology Block
