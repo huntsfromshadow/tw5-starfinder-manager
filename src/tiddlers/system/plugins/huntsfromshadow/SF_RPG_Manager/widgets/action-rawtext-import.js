@@ -107,8 +107,8 @@ RawTextImport.prototype.extractKeywords = function(rb) {
     re = new RegExp(elem[1], "i");
     re = re.exec(rb);
     
-    console.log("---------");
-    console.log(re);
+    //console.log("---------");
+    //console.log(re);
 
     if( re == null )
     {
@@ -118,8 +118,11 @@ RawTextImport.prototype.extractKeywords = function(rb) {
       var val = re[1];
     }
 
-    console.log(elem[0]);
-    console.log(val);
+    //Do a \n cleanup
+    val = val.replace("\n", " ");
+
+    //console.log(elem[0]);
+    //console.log(val);
 
     this.saveField(elem[0], val);
   });
@@ -267,7 +270,7 @@ RawTextImport.prototype.loadKeywordList = function() {
     ["npc_will", "Will[ \n]?([^;\n]*)"],
     ["npc_defensive_abilities", "Defensive Abilities (.*);"],
     ["npc_dr", "DR ([^;]*);"],  
-    ["npc_immunities", "Immunities ([^;|\n]*)"],
+    ["npc_immunities", "Immunities[ |\n]([^;]*?)(?:;|Weaknesses)"],
     ["npc_sr", "\\bSR\\b (.*)"],
     ["npc_weaknesses", "Weaknesses (.*)\\n"],
 
@@ -284,14 +287,14 @@ RawTextImport.prototype.loadKeywordList = function() {
     //Statistics Block
     ["npc_str", "Str ([+|-]\\d{1,2});"],
     ["npc_dex", "Dex ([+|-]\\d{1,2});"],
-    ["npc_con", "Con ([+|-]\\d{1,2});"],
+    ["npc_con", "Con ([^;]*);"],
     ["npc_int", "Int ([+|-]\\d{1,2});"],
     ["npc_wis", "Wis ([+|-]\\d{1,2});"],
     ["npc_cha", "Cha ([+|-]\\d{1,2})"],
-    ["npc_skills", "Skills (.*)"],
+    ["npc_skills", "Skills ((?:.|\n)*)Languages"],
     ["npc_feats", "Feats (.*)"],
     ["npc_languages", "Languages (.*)\\n"],
-    ["npc_other_abilities", "Other Abilities (.*)[ \n](Special Abilities|Gear)"],
+    ["npc_other_abilities", "Other Abilities (.*)[ \n](?:Special Abilities|Gear|ECOLOGY)"],
     ["npc_gear", "Gear(.*)"],
 
     //Ecology Block

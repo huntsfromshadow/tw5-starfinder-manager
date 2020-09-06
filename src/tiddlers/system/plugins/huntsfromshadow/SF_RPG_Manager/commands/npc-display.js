@@ -205,11 +205,15 @@ function ecologySection(tid) {
 function specialAbilities(tid) {
   var retval = "";
   if(tid.fields.npc_special_abilities !== undefined) {
+
     retval = retval + '<p class="no_tb_margin section_underline" id="defense_hp_row" ' + 
-      `style="border-bottom-color: ${sectionUnderlineColor};"` + '><b>DEFENSE</b></p>';
+      `style="border-bottom-color: ${sectionUnderlineColor};"` + '><b>SPECIAL ABILITIES</b></p>';
     
-    retval = retval + '<p class="no_tb_margin hang_indent">' + 
-      "{{!!npc_special_abilities}}</p>";          
+    var d = tid.fields.npc_special_abilities.split("|");
+    d.forEach(element => {
+      retval = retval + '<p class="no_tb_margin hang_indent">' + 
+      element + "</p>";            
+    });    
   }
 
   return retval;
@@ -259,6 +263,7 @@ exports.run = function() {
       ["npc_ref", "<b>Ref</b>", ";"], 
       ["npc_will", "<b>Will</b>", ""]])}
   ${singleLineWithHeaders(tid, [
+    ["npc_defensive_abilities", "<b>Defensive Abilities</b> ", ";"],
     ["npc_dr", "<b>DR</b> ", ";"],
     ["npc_immunities", "<b>Immunities</b> ", ";"],
     ["npc_sr", "<b>SR</b> ", ""]
