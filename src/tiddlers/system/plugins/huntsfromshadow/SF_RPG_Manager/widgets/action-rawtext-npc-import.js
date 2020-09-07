@@ -1,6 +1,6 @@
 /*\
 created: 20200902162043469
-title: $:/plugins/huntsfromshadow/SF_RPG_Manager/widgets/action-rawtext-import.js
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/widgets/action-rawtext-npc-import.js
 type: application/javascript
 modified: 20200902162100908
 tags: 
@@ -15,7 +15,7 @@ module-type: widget
 var Widget = require("$:/core/modules/widgets/widget.js").widget;
 
 /* Creates a new <$foo> widget. */
-var RawTextImport = function(parseTreeNode, options) {
+var RawTextNPCImport = function(parseTreeNode, options) {
   this.initialise(parseTreeNode, options);
   this.loadKeywordList();
 };
@@ -23,16 +23,16 @@ var RawTextImport = function(parseTreeNode, options) {
 /* "Inherits" from the Widget base "class" in order to get all
  * the basic widget functionality.
  */
-RawTextImport.prototype = new Widget();
+RawTextNPCImport.prototype = new Widget();
 
 /* Renders this widget into the DOM. */
-RawTextImport.prototype.render = function(parent,nextSibling) {
+RawTextNPCImport.prototype.render = function(parent,nextSibling) {
   this.computeAttributes();
   this.execute();
 };
 
 /* Computes the internal state of this widget. */
-RawTextImport.prototype.execute = function() {
+RawTextNPCImport.prototype.execute = function() {
   this.npcname = this.getAttribute("$npcname");
   this.rawblock = this.getAttribute("$rawblock");
   this.fieldtarget = this.getAttribute("$fieldtarget");
@@ -42,7 +42,7 @@ RawTextImport.prototype.execute = function() {
  * true if either this widget itself or one of its children
  * needs to be re-rendered.
  */
-RawTextImport.prototype.refresh = function(changedTiddlers) {
+RawTextNPCImport.prototype.refresh = function(changedTiddlers) {
   var changedAttributes = this.computeAttributes();
 	if($tw.utils.count(changedAttributes) > 0) {
 		this.refreshSelf();
@@ -51,14 +51,14 @@ RawTextImport.prototype.refresh = function(changedTiddlers) {
   return this.refreshChildren(changedTiddlers);  
 };
 
-RawTextImport.prototype.saveField = function(fieldName, fieldValue) {
+RawTextNPCImport.prototype.saveField = function(fieldName, fieldValue) {
   if(fieldValue === undefined) {
     fieldValue = this.emptyFieldText();
   }  
   this.wiki.setText(this.fieldtarget, fieldName, undefined, fieldValue.trim(), {});  
 };
 
-RawTextImport.prototype.emptyFieldText = function() {
+RawTextNPCImport.prototype.emptyFieldText = function() {
   if(this.debugMode == true) {
     return "DEBUG NOPE";
   }
@@ -67,7 +67,7 @@ RawTextImport.prototype.emptyFieldText = function() {
   }
 };
 
-RawTextImport.prototype.handleGenderRaceGraft = function(rb) {
+RawTextNPCImport.prototype.handleGenderRaceGraft = function(rb) {
 
   //Get just that line
   var ex = /XP [\d,]*[ \n](?:(.*)[ \n])?(?:LG|NG|CG|LN|N|CN|LE|NE|CE)/.exec(rb);
@@ -90,7 +90,7 @@ RawTextImport.prototype.handleGenderRaceGraft = function(rb) {
   }
 };
 
-RawTextImport.prototype.handleTypeSubtype = function(rb) {
+RawTextNPCImport.prototype.handleTypeSubtype = function(rb) {
   //Get the line
   var ex = 
     /(?:LG|NG|CG|LN|N|CN|LE|NE|CE) (?:Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) (.*)/.exec(rb);
@@ -100,7 +100,7 @@ RawTextImport.prototype.handleTypeSubtype = function(rb) {
   this.saveField("npc_subtype", l[2]);
 }
 
-RawTextImport.prototype.extractKeywords = function(rb) {  
+RawTextNPCImport.prototype.extractKeywords = function(rb) {  
   this.keyword_list.forEach(elem => {
     var re = null;
 
@@ -128,7 +128,7 @@ RawTextImport.prototype.extractKeywords = function(rb) {
   });
 };
 
-RawTextImport.prototype.handleSLA = function(rb) {
+RawTextNPCImport.prototype.handleSLA = function(rb) {
   var ex =
     /Spell-Like Abilities (.*)STATISTICS/s.exec(rb);
 
@@ -182,7 +182,7 @@ RawTextImport.prototype.handleSLA = function(rb) {
   }
 };
 
-RawTextImport.prototype.handleOtherAbilities = function(rb) {
+RawTextNPCImport.prototype.handleOtherAbilities = function(rb) {
 
   var c = /Other Abilities (.*)Gear/s.exec(rb);
 
@@ -193,7 +193,7 @@ RawTextImport.prototype.handleOtherAbilities = function(rb) {
   }
 };
 
-RawTextImport.prototype.handleGear = function(rb) {
+RawTextNPCImport.prototype.handleGear = function(rb) {
   var c = /Gear (.*)ECOLOGY/s.exec(rb);
 
   if(c != null) {
@@ -203,7 +203,7 @@ RawTextImport.prototype.handleGear = function(rb) {
   }
 };
 
-RawTextImport.prototype.handleSpecialAbilities = function(rb) {
+RawTextNPCImport.prototype.handleSpecialAbilities = function(rb) {
   var c = /SPECIAL ABILITIES(.*)/is.exec(rb);  
   if(c != null) {
     var s = c[1];
@@ -216,7 +216,7 @@ RawTextImport.prototype.handleSpecialAbilities = function(rb) {
 };
 
 
-RawTextImport.prototype.invokeAction = function(triggeringWidget,event) {
+RawTextNPCImport.prototype.invokeAction = function(triggeringWidget,event) {
   //First we need to grab the config to know if we are in Debug Mode
   var tid = this.wiki.getTiddler("$:/plugins/huntsfromshadow/SF_RPG_Manager/config/DebugEmptyImport");
     
@@ -245,7 +245,7 @@ RawTextImport.prototype.invokeAction = function(triggeringWidget,event) {
   return true;
 };
 
-RawTextImport.prototype.loadKeywordList = function() {  
+RawTextNPCImport.prototype.loadKeywordList = function() {  
   this.keyword_list = [
     //Identity Block
     ["npc_name", "(.*) CR (?:1\\/8|1\\/6|1\\/4|1\\/3|1\\/2|\\d{1,2})"],
@@ -308,6 +308,6 @@ RawTextImport.prototype.loadKeywordList = function() {
 
 
 /* Finally exports the widget constructor. */
-exports["action-sf-rawtext-import"] = RawTextImport;
+exports["action-sf-rawtext-npc-import"] = RawTextNPCImport;
 
 })();

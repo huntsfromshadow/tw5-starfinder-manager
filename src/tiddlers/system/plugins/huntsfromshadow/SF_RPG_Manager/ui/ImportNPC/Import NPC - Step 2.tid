@@ -10,7 +10,7 @@ type: text/vnd.tiddlywiki
 \end
 
 \define act-load-npc() 
-<$action-sf-rawtext-import 
+<$action-sf-rawtext-trap-import 
   $npcname={{$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportName}} $rawblock={{$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportRawBlock}} $fieldtarget="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportWrkSht" 
   />
 \end

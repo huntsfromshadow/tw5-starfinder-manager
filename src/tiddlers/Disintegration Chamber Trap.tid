@@ -1,0 +1,15 @@
+created: 20200907000213859
+modified: 20200907002421934
+title: Disintegration Chamber Trap
+trap_cr: 14
+trap_disable: Engineering DC 36 (disable beam)
+trap_effect: disintegration beam (14d12 A); Fortitude DC 22 reduces damage to 4d12 A; onset delay (1 round)
+trap_name: DISINTEGRATION CHAMBER TRAP
+trap_perception: DC 41
+trap_reset: 1 minute Effect disintegration beam (14d12 A)
+trap_trigger: location
+trap_type: technological
+trap_xp: 38,400
+type: text/vnd.tiddlywiki
+
+{{||$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/TrapTemplate}}

@@ -1,0 +1,19 @@
+caption: Step 3
+created: 20200906231048986
+modified: 20200906231106392
+tags: 
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportTrap/Import Trap - Step 3
+type: text/vnd.tiddlywiki
+
+''Step 3:''
+
+<$button>
+    <$action-createtiddler 
+        $basetitle={{$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-TrapImportName}}
+        $savetitle="!!tmpname"
+				$template="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-TrapImportWrkSht"
+        text="{{||$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/TrapTemplate}}"
+				$overwrite="yes" />
+    <$action-navigate $to={{!!tmpname}} />
+    Import NPC
+</$button>

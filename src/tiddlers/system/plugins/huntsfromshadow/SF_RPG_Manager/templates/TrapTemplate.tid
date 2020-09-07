@@ -1,0 +1,16 @@
+created: 20200907000230346
+modified: 20200907001115438
+tags: 
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/templates/TrapTemplate
+type: text/vnd.tiddlywiki
+
+<<trap-display>>
+
+<$button>
+<$action-sendmessage 
+    $message="tm-modal" 
+    $param="$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/TrapEditor/TrapEditor" 
+    trap=<<currentTiddler>> />
+Edit {{!!title}} 
+</$button>
+
