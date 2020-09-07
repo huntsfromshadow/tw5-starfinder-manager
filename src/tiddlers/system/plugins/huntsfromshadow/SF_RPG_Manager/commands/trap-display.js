@@ -123,7 +123,10 @@ exports.run = function() {
     ["trap_reset", "<b>Reset</b> ", ";"],    
   ])}    
   ${singleLineWithHeaders(tid, [
-    ["trap_effect", "<b>Effect</b> ", ""]], true)}  
+    ["trap_effect", "<b>Effect</b> ", ""]], true)} 
+  <br />  
+    ${singleLineWithHeaders(tid, [
+      ["trap_source", "<b>Source</b> ", ""] ], true)}        
 </div>`;
 
   return outval;

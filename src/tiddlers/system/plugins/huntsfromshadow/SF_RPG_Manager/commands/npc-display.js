@@ -311,6 +311,9 @@ exports.run = function() {
     ["npc_gear", "<b>Gear</b> ", ""] ], true)}      
   ${ecologySection(tid)}
   ${specialAbilities(tid)}
+  <br />  
+  ${singleLineWithHeaders(tid, [
+    ["npc_source", "<b>Source</b> ", ""] ], true)}      
 </div>`;
 
   return outval;

@@ -1,5 +1,5 @@
 created: 20200906004235611
-modified: 20200906004318459
+modified: 20200907124904021
 npc_alignment: N
 npc_aura: 
 npc_cha: +2
@@ -37,6 +37,7 @@ npc_senses: darkvision 60 ft., low-light vision
 npc_size: Medium
 npc_skills: Athletics +22, Intimidate +17
 npc_sla: 
+npc_source: Test Book 1
 npc_space: 
 npc_special_abilities: Forester’s Frenzy (Ex) When a loggerbot makes a full attack, it can make up to three attacks instead of two. Each of these attacks takes a –6 penalty instead of a –4 penalty.|Nanite Repair (Ex) A loggerbot’s nanites heal it, restoring a number of Hit Points per hour equal to its CR. Once per day as a full action, the robot can restore 6d8 Hit Points to itself or any touched construct with the technological subtype.
 npc_speed: 30 ft.

@@ -1,6 +1,6 @@
 caption: Step 2
 created: 20200903191344202
-modified: 20200905011227630
+modified: 20200907124853905
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportNPC/Import NPC - Step 2
 type: text/vnd.tiddlywiki
@@ -88,6 +88,10 @@ type: text/vnd.tiddlywiki
 <<multitablerow "Special Abilities (Seperate Lines with &#124; Symbol)"	npc_special_abilities 30>>
 </table>
 
+''Fields not importable from Statblock''
+<table>
+<<tablerow "From Source" npc_source 30>>
+</table>
 
 
 

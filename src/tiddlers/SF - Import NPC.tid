@@ -1,15 +1,7 @@
-created: 20200903191112916
-modified: 20200906004331815
+created: 20200907114718575
+modified: 20200907114745294
 tags: 
 title: SF - Import NPC
-tmpname: Loggerbots
 type: text/vnd.tiddlywiki
 
-!Import Starfinder NPC
-
-!!Overview
-Import a starfinder NPC from a copy and paste stat block.
-Note this will try to do it's best but you'll need to double check the fields.
-
-<<tabs "[[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportNPC/Import NPC - Step 1]] [[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportNPC/Import NPC - Step 2]] [[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportNPC/Import NPC - Step 3]]" [[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportNPC/Import NPC - Step 1]] "$:/state/sf_rpg_man_importnpc_tab">>
-
+{{$:/plugins/huntsfromshadow/SF_RPG_Manager/ImportNPC/SF - Import NPC}}

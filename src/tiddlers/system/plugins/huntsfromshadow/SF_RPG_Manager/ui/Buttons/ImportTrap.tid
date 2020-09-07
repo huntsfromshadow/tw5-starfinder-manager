@@ -1,0 +1,25 @@
+created: 20200907122317523
+description: Import NPC
+modified: 20200907123522065
+tags: $:/tags/PageControls
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/Buttons/ImportTrap
+type: text/vnd.tiddlywiki
+
+\define actions()
+<$action-navigate $to="SF - Import Trap" />
+\end
+
+<$wikify name="text" text="Import Trap">
+<$wikify name="title" text="Import Trap">
+<$wikify name="tooltip" text="Import Trap">
+<$button actions=<<actions>> class=<<tv-config-toolbar-class>> tooltip=<<tooltip>>>
+<$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+{{$:/plugins/huntsfromshadow/SF_RPG_Manager/images/ImportTrap-SVG}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+<span class="tc-btn-text"><$text text=<<text>>/></span>
+</$list>
+</$button>
+</$wikify>
+</$wikify>
+</$wikify>

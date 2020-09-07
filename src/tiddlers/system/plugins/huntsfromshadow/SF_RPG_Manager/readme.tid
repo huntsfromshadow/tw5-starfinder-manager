@@ -1,11 +1,68 @@
 created: 20200831202408657
-modified: 20200904014010451
+modified: 20200907124539752
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/readme
 type: text/vnd.tiddlywiki
 
-This plugin helps you store information about Starfinder Campagisn.
-Specifically it helps formating and importing NPC blocks for GM notes.
+Manage //Starfinder// campaigns with [[TiddlyWiki|https://tiddlywiki.com]].
 
-!!Usefull Tiddlers
-* [[SF - Import NPC]]
+! Thanks
+Spcial thanks for Ben Webber's ~DnD tiddlywiki for examples and code I could work from. Was a lot of help. [[https://github.com/benwebber/tiddlywiki-dnd]]
+
+! Install
+
+[[Manually install|https://tiddlywiki.com/#Manually%20installing%20a%20plugin]] the plugin by dragging this link to your ~TiddlyWiki:
+
+<$list
+  filter="[<transclusion>prefix[{$:/plugins/huntsfromshadow/SF_RPG_Manager/README|$:/plugins/huntsfromshadow/SF_RPG_Manager/README|||}]]"
+  emptyMessage="[[$:/plugins/huntsfromshadow/SF_RPG_Manager]]"
+>
+{{$:/plugins/huntsfromshadow/SF_RPG_Manager||$:/core/ui/Components/plugin-info}}
+</$list>
+
+Then save and refresh your ~TiddlyWiki.
+
+! Quick Start
+
+!! Import / Create a new creature
+
+<!-- Set variables to render button as it appears in the toolbar. -->
+<$vars tv-config-toolbar-text="yes" tv-config-toolbar-class="">
+Enable the {{$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/Buttons/ImportNPC}} tool to import new npcs from a copy and paste statblock, or create an empty npc tiddler ready for you to fill in.
+</$vars>
+
+See [[Living Hologram]] and [[Elder Air Elemental]] as an example.
+
+!! Import / Create a new trap
+
+<!-- Set variables to render button as it appears in the toolbar. -->
+<$vars tv-config-toolbar-text="yes" tv-config-toolbar-class="">
+Enable the {{$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/Buttons/ImportTrap}} tool to create new spell tiddlers with a single click.
+</$vars>
+
+See [[Disintegration Chamber Trap]] as an example.
+
+! Configuration
+
+Navigate to the plugin info tiddler [[$:/plugins/huntsfromshadow/SF_RPG_Manager]], then go to the ''Settings'' tab.
+
+! Code Details
+For those that want to extend or alter the plugin's code here are some details. Leaving off anything that is very self explanatory (stylessheets, variables, states).
+
+!! Overview
+* All code is under $:plugins/huntsfromshadow/SF_RPG_Manager. Only things that should be in non shadowed tiddlers are the user's campaign data.
+* All entities (npcs, traps) has their data stored in fields on the tiddler.
+
+!! Code Breakdown
+!!! Macros
+* [[npc-display.js|$:/plugins/huntsfromshadow/SF_RPG_Manager/commands/npc-display.js]] is a global javascript macro that handles displaying the npc in a standard Starfinder format. It loads the data from the tiddler fields.
+* [[trap-display.js|$:/plugins/huntsfromshadow/SF_RPG_Manager/commands/npc-display.js]] is a global javascript macro that handles displaying the npc in a standard Starfinder format. It loads the data from the tiddler fields.
+* Quite a few files have local macros to help assist layout of tables and fields. They will be at the top of the tiddler.
+!!! Templates
+* NPCTemplate standardizes the display of an npc and has the logic to trigger the edit modals.
+* TrapTemplate standardizes the display of a trap and has the logic to trigger the edit modals.
+!!! UI
+* Code for the NPC Editor and Trap Editor is located under ~$:/plugins/huntsfromshadow/SF_RPG_Manager/ui
+!!! Widgets
+* [[action-rawtext-npc-import.js|$:/plugins/huntsfromshadow/SF_RPG_Manager/widgets/action-rawtext-npc-import.js]] is the widget that handles the actual translation from statblock to NPC.
+* [[action-rawtext-trap-import.js|$:/plugins/huntsfromshadow/SF_RPG_Manager/widgets/action-rawtext-trap-import.js]] is the widget that handles the actual translation from statblock to trap.
