@@ -4,6 +4,7 @@ This is a plugin for TiddlyWiki 5 to help manage a
 Starfinder Campaign.
 
 # Demo
+https://huntsfromshadow.github.io/TW5_StarfinderRPGManager/index.html
 
 # Installing
 Details can be found on the demo.
