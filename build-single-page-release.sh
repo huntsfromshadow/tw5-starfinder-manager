@@ -8,8 +8,7 @@ tiddlers=(
     "Elder Air Elemental.tid"
     "Living Hologram.tid"
     "SF - Import NPC.tid"
-    "SF - Import Trap.tid"
-    "Plugin Kickstarter.tid"
+    "SF - Import Trap.tid"    
     "system/SiteTitle.tid"
     "system/SiteSubtitle.tid"
     "system/DefaultTiddlers.tid" )
@@ -31,12 +30,14 @@ cp "${PLUGIN_FILE}" "./SF_RPG_Manager_v${VERSION}.tid"
 
 # Setup the new empty wiki
 tiddlywiki tmp --init server
-tiddlywiki tmp --import "${PLUGIN_FILE}" "application/x-tiddler"
 for t in "${tiddlers[@]}"
 do
     fp="${TIDDLER_ROOT}/${t}"
     tiddlywiki tmp --import "${fp}" "application/x-tiddler"
 done
+tiddlywiki tmp --import "${PLUGIN_FILE}" "application/x-tiddler"
 
 # Do final build
-#tiddlywiki tmp --rendertiddler "$:/core/save/all" "./index.html" "text/plain"
+tiddlywiki tmp --build index
+
+cp tmp/output/index.html ./
