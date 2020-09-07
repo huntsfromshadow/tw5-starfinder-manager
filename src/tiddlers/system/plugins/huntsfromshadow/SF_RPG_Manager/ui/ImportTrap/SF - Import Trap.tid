@@ -1,0 +1,15 @@
+created: 20200907145436293
+modified: 20200907150826228
+tags: 
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportTrap/SF - Import Trap
+tmpname: Pit Trap
+type: text/vnd.tiddlywiki
+
+!Import Starfinder Trap
+
+!!Overview
+Import a starfinder Trap from a copy and paste stat block.
+Note this will try to do it's best but you'll need to double check the fields.
+
+<<tabs "[[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportTrap/Import Trap - Step 1]] [[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportTrap/Import Trap - Step 2]] [[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportTrap/Import Trap - Step 3]]" [[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportTrap/Import Trap - Step 1]] "$:/state/sf_rpg_man_importtrap_tab">>
+

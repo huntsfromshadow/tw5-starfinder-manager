@@ -1,6 +1,6 @@
 caption: Step 3
 created: 20200906231048986
-modified: 20200906231106392
+modified: 20200907150657575
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportTrap/Import Trap - Step 3
 type: text/vnd.tiddlywiki
@@ -13,7 +13,8 @@ type: text/vnd.tiddlywiki
         $savetitle="!!tmpname"
 				$template="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-TrapImportWrkSht"
         text="{{||$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/TrapTemplate}}"
+				tags="Trap"
 				$overwrite="yes" />
     <$action-navigate $to={{!!tmpname}} />
-    Import NPC
+    Import Trap
 </$button>

@@ -1,4 +1,4 @@
-caption: Special Abilities
+caption: Special Abilities and Source
 created: 20200904222923483
 modified: 20200905005656450
 tags: 
@@ -24,4 +24,5 @@ type: text/vnd.tiddlywiki
 !Special Abilities
 <table>
 <<multirow "Special Abilities (Seperate Lines with &#124; Symbol)"	npc_special_abilities 30>>
+<<tablerow "From Source" npc_source 30>>
 </table>

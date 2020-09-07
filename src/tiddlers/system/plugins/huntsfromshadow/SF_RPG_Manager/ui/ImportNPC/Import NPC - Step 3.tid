@@ -1,6 +1,6 @@
 caption: Step 3
 created: 20200903191838246
-modified: 20200905010120009
+modified: 20200907150257211
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportNPC/Import NPC - Step 3
 type: text/vnd.tiddlywiki
@@ -13,6 +13,7 @@ type: text/vnd.tiddlywiki
         $savetitle="!!tmpname"
 				$template="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportWrkSht"
         text="{{||$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/NPCTemplate}}"
+				tags="NPC"
 				$overwrite="yes" />
     <$action-navigate $to={{!!tmpname}} />
     Import NPC

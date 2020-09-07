@@ -1,45 +1,5 @@
 created: 20200902155633863
-modified: 20200906002848181
+modified: 20200907154814384
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportRawBlock
 type: text/vnd.tiddlywiki
 
-LOGGERBOTS (3) CR 9
-XP 6,400 each
-N Medium construct (technological)
-Init +4; Senses darkvision 60 ft., low-light vision;
-Perception +17
-DEFENSE HP 145 EACH
-EAC 22; KAC 24
-Fort +9; Ref +9; Will +6
-Defensive Abilities integrated weapons; Immunities
-construct immunities
-Weaknesses vulnerable to critical hits, vulnerable to
-electricity
-OFFENSE
-Speed 30 ft.
-Melee integrated sintered handaxe +22 (2d6+15 S; critical
-knockdown)
-Offensive Abilities forester’s frenzy
-STATISTICS
-Str +6; Dex +4; Con —; Int +3; Wis +0; Cha +2
-Skills Athletics +22, Intimidate +17
-Languages Common
-Other Abilities nanite repair, unliving
-TACTICS
-During Combat The loggerbots charge at the PCs and
-attack with their integrated axes, using forester’s frenzy
-whenever possible.
-Morale Unless the PCs reboot the robots by accessing
-the console in area A3, the loggerbots follow
-their new programming to defend the sivv facility
-until destroyed.
-SPECIAL ABILITIES
-Forester’s Frenzy (Ex) When a loggerbot makes a full
-attack, it can make up to three attacks instead of two.
-Each of these attacks takes a –6 penalty instead of a
-–4 penalty.
-Nanite Repair (Ex) A loggerbot’s nanites heal it, restoring a
-number of Hit Points per hour equal to its CR. Once per
-day as a full action, the robot can restore 6d8 Hit Points
-to itself or any touched construct with the technological
-subtype.

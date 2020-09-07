@@ -1,11 +1,17 @@
 created: 20200831202408657
-modified: 20200904013650364
+modified: 20200907151704896
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/license
 type: text/vnd.tiddlywiki
 
-Feel free to use and remix.
-Just make it clear it's a fork.
+! Starfinder 
+This Plugin uses trademarks and/or copyrights owned by [[Paizo Inc.|http://www.paizo.com]], used under Paizo's Community Use Policy ([[paizo.com/communityuse|http://paizo.com/communityuse]]). We are expressly prohibited from charging you to use or access this content. This Plugin is not published, endorsed, or specifically approved by Paizo. For more information about Paizo Inc. and Paizo products, visit paizo.com.
 
-Starfinder and the Starfinder RPG are owned by Paizo Publishing.
-This project uses only information avaialble from their public information on Archive of Nethys.
+! MIT License 
+Copyright 2020 huntsfromshadow
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

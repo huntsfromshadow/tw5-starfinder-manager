@@ -1,6 +1,6 @@
 caption: Step 2
 created: 20200906231022836
-modified: 20200906232041611
+modified: 20200907142937941
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportTrap/Import Trap - Step 2
 type: text/vnd.tiddlywiki
@@ -51,7 +51,10 @@ type: text/vnd.tiddlywiki
 <<multitablerow Effect trap_effect 30>>
 </table>
 
-
+''Fields not importable from Statblock''
+<table>
+<<tablerow "From Source" trap_source 30>>
+</table>
 
 
 

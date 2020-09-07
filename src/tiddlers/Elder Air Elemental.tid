@@ -1,5 +1,5 @@
 created: 20200904204845734
-modified: 20200907124940657
+modified: 20200907150803072
 npc_alignment: N
 npc_aura: 
 npc_cha: +0
@@ -49,6 +49,7 @@ npc_weaknesses:
 npc_will: +10
 npc_wis: +0
 npc_xp: 12,800
+tags: NPC
 title: Elder Air Elemental
 type: text/vnd.tiddlywiki
 

@@ -1,6 +1,6 @@
 caption: Step 1
 created: 20200906230957518
-modified: 20200906231539087
+modified: 20200907150132816
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportTrap/Import Trap - Step 1
 tmpname: New NPC
@@ -10,7 +10,7 @@ type: text/vnd.tiddlywiki
     <$action-createtiddler 
         $basetitle="New Trap"
         $savetitle="!!tmpname"				
-        text="{{||$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/TrapTemplate}}" />
+        text="{{||$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/TrapTemplate}}" tags="Trap" />
     <$action-navigate $to={{!!tmpname}} />
     Create Empty Trap
 </$button>

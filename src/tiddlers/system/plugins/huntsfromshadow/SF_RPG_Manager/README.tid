@@ -1,7 +1,7 @@
 created: 20200831202408657
-modified: 20200907124539752
+modified: 20200907150357814
 tags: 
-title: $:/plugins/huntsfromshadow/SF_RPG_Manager/readme
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/README
 type: text/vnd.tiddlywiki
 
 Manage //Starfinder// campaigns with [[TiddlyWiki|https://tiddlywiki.com]].
@@ -40,7 +40,7 @@ See [[Living Hologram]] and [[Elder Air Elemental]] as an example.
 Enable the {{$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/Buttons/ImportTrap}} tool to create new spell tiddlers with a single click.
 </$vars>
 
-See [[Disintegration Chamber Trap]] as an example.
+See [[Pit Trap]] as an example.
 
 ! Configuration
 

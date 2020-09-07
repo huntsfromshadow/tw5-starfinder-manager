@@ -35,6 +35,7 @@ Note Edits are Automatically saved.
 <<tablerow Trigger trap_trigger 30>>
 <<tablerow Reset trap_reset 30>>
 <<multirow Effect trap_effect 30>>
+<<tablerow "From Source" trap_source 30>>
 </table>
 
 

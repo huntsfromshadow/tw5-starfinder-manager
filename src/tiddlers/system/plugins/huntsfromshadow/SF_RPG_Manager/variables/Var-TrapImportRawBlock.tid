@@ -1,13 +1,12 @@
 created: 20200906231437540
-modified: 20200906231437594
+modified: 20200907141447916
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-TrapImportRawBlock
 type: text/vnd.tiddlywiki
 
-DISINTEGRATION CHAMBER TRAP CR 14
-XP 38,400
-Type technological; Perception DC 41; Disable Engineering
-DC 36 (disable beam)
-Trigger location; Reset 1 minute
-Effect disintegration beam (14d12 A); Fortitude DC 22
-reduces damage to 4d12 A; onset delay (1 round);
-multiple targets (all targets in area B1)
+PIT TRAP CR 1/2
+XP 200
+Type analog; Perception DC 17; Disable Engineering DC 12
+(open trap door) or DC 18 (jam trap door shut)
+Trigger location; Reset manual
+Effect 20-ft.-deep pit (2d6 falling damage); Reflex DC 11 avoids;
+multiple targets (all targets in a 10-ft.-square area)

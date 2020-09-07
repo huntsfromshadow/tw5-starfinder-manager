@@ -1,5 +1,5 @@
 created: 20200906000008873
-modified: 20200906001049243
+modified: 20200907150810768
 npc_alignment: CE
 npc_aura: 
 npc_cha: +4
@@ -48,6 +48,7 @@ npc_weaknesses: tethered
 npc_will: +9
 npc_wis: +1
 npc_xp: 4,800
+tags: NPC
 title: Living Hologram
 type: text/vnd.tiddlywiki
 

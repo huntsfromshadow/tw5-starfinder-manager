@@ -1,6 +1,7 @@
-created: 20200907142946966
-modified: 20200907143018919
-title: $:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-TrapImportWrkSht
+created: 20200907150826041
+modified: 20200907150826250
+tags: Trap
+title: Pit Trap
 trap_cr: 1/2
 trap_disable: Engineering DC 12 (open trap door) or DC 18 (jam trap door shut)
 trap_effect: 20-ft.-deep pit (2d6 falling damage); Reflex DC 11 avoids; multiple targets (all targets in a 10-ft.-square area)
@@ -13,3 +14,4 @@ trap_type: analog
 trap_xp: 200
 type: text/vnd.tiddlywiki
 
+{{||$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/TrapTemplate}}
