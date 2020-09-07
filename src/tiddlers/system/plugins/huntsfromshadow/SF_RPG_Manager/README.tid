@@ -1,5 +1,5 @@
 created: 20200831202408657
-modified: 20200907150357814
+modified: 20200907193737636
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/README
 type: text/vnd.tiddlywiki
@@ -9,7 +9,10 @@ Manage //Starfinder// campaigns with [[TiddlyWiki|https://tiddlywiki.com]].
 ! Thanks
 Spcial thanks for Ben Webber's ~DnD tiddlywiki for examples and code I could work from. Was a lot of help. [[https://github.com/benwebber/tiddlywiki-dnd]]
 
-! Install
+! Download This Wiki
+If you want to just use this version download a copy of this file at [[https://huntsfromshadow.github.io/TW5_StarfinderRPGManager/index.html]]
+
+! Install in your own ~TiddlyWiki
 
 [[Manually install|https://tiddlywiki.com/#Manually%20installing%20a%20plugin]] the plugin by dragging this link to your ~TiddlyWiki:
 
@@ -21,6 +24,10 @@ Spcial thanks for Ben Webber's ~DnD tiddlywiki for examples and code I could wor
 </$list>
 
 Then save and refresh your ~TiddlyWiki.
+
+! Source Repository
+The source repository for this code is located at
+[[https://github.com/huntsfromshadow/tw5-starfinder-manager]].
 
 ! Quick Start
 
