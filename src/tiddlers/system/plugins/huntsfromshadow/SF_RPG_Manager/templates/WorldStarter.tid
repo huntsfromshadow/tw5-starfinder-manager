@@ -1,0 +1,19 @@
+created: 20200909221107854
+modified: 20200909222631902
+tags: 
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/templates/WorldStarter
+type: text/vnd.tiddlywiki
+
+!! //World Blurb//
+
+"""
+''Diameter:'' Fill Me In
+''Mass:'' Fill Me In
+''Gravity:'' Fill Me In
+''Location:'' Fill Me In
+''System:'' Fill Me In
+''Atmosphere:'' Fill Me In
+''Day:'' Fill Me In; ''Year:'' Fill Me In
+"""
+
+!! Notes
