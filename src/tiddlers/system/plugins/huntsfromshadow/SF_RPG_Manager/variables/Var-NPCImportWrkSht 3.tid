@@ -1,5 +1,5 @@
-created: 20200910235244819
-modified: 20200910235244848
+created: 20200910235316479
+modified: 20200910235316499
 npc_alignment: CE
 npc_aura: 
 npc_cha: +3
@@ -21,7 +21,7 @@ npc_init: +3
 npc_int: +1
 npc_kac: 24
 npc_languages: Abyssal, Celestial, Draconic; telepathy
-npc_melee: numbing taclash +20 (5d4 S plus irradiation) or
+npc_melee: numbing taclash +20 (5d4 S plus irradiation) or bite +20 (2d10+16 S plus irradiation)
 npc_multiattack: 
 npc_name: PREXIAN MUTANTSPAWN
 npc_offensive_abilities: 

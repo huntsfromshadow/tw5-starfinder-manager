@@ -277,7 +277,7 @@ RawTextNPCImport.prototype.loadKeywordList = function() {
 
     //Offense Block
     ["npc_speed", "Speed (.*)\\n"],
-    ["npc_melee", "Melee (.*)\\n"],
+    ["npc_melee", "Melee ([\\s|\\S]*?)(?:Ranged [\\s|\\S]*)?Space"],
     ["npc_multiattack", "Multiattack (.*)\\n"],
     ["npc_ranged", "Ranged (.*)"],
     ["npc_space", "Space (.*);"],
