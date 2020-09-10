@@ -1,6 +1,6 @@
 caption: Step 2
 created: 20200903191344202
-modified: 20200907124853905
+modified: 20200910192559428
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportNPC/Import NPC - Step 2
 type: text/vnd.tiddlywiki
@@ -10,7 +10,7 @@ type: text/vnd.tiddlywiki
 \end
 
 \define act-load-npc() 
-<$action-sf-rawtext-trap-import 
+<$action-sf-rawtext-npc-import 
   $npcname={{$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportName}} $rawblock={{$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportRawBlock}} $fieldtarget="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportWrkSht" 
   />
 \end
