@@ -217,8 +217,14 @@ RawTextNPCImport.prototype.handleSpecialAbilities = function(rb) {
 
 
 RawTextNPCImport.prototype.invokeAction = function(triggeringWidget,event) {
+  console.log("In raw text");
+
   //First we need to grab the config to know if we are in Debug Mode
   var tid = this.wiki.getTiddler("$:/plugins/huntsfromshadow/SF_RPG_Manager/config/DebugEmptyImport");
+
+  console.log(this.npcname);
+  console.log(this.rawblock);
+  console.log(this.fieldtarget);
     
   if(tid !== undefined && tid.fields.text == "true") {
     this.debugMode = true;

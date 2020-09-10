@@ -1,0 +1,20 @@
+created: 20200910114151246
+modified: 20200910182157216
+tags: 
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/CreateItem/CreateItem
+type: text/vnd.tiddlywiki
+
+! Create an Item with the following options.
+<table>
+<tr><td>Item Type</td><td>Item Levels</td></tr>
+<tr><td>
+<$select tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItemType" multiple>
+<option>Consumable</option>
+<option>Weapon</option>
+<option>Armor</option>
+</$select> </td>
+<td></td>
+</tr>
+</table>
+
+
