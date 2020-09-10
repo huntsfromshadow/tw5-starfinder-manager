@@ -1,5 +1,5 @@
-created: 20200910235641377
-modified: 20200910235641397
+created: 20200910235746213
+modified: 20200910235746236
 npc_alignment: CE
 npc_aura: 
 npc_cha: +3
@@ -29,7 +29,7 @@ npc_organization: solitary, pair, or infection (3–8)
 npc_other_abilities: 
 npc_perception: +20
 npc_race: 
-npc_ranged: +18)
+npc_ranged: 
 npc_reach: 5 ft. (10 ft. with numbing taclash)
 npc_ref: +10
 npc_resistances: cold 10, fire 10
