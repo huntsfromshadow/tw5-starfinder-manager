@@ -166,7 +166,7 @@ function spellLikeAbility(tid) {
 function defenseHeader(tid) {
   var retval = `
   <p class="no_tb_margin section_underline" id="defense_hp_row" 
-  style="border-bottom-color: ${sectionUnderlineColor};">
+  style="border-bottom-color: ${sectionUnderlineColor}; padding-top: 7px; }">
   <b>DEFENSE</b> 
   <span id="hp"><b>HP</b> {{!!npc_hp}} `;
 
@@ -187,8 +187,8 @@ function ecologySection(tid) {
       tid.fields.npc_enviornment !== npcDebugTxt &&
       tid.fields.npc_enviornment !== "" ) {
     retval = retval + `<p class="no_tb_margin section_underline"
-      style="border-bottom-color: ${sectionUnderlineColor};">
-    <b>Ecology</b>
+      style="border-bottom-color: ${sectionUnderlineColor}; padding-top: 7px; }">
+    <b>ECOLOGY</b>
       </p>`;
 
     retval = retval + singleLineWithHeaders(tid, [
@@ -207,7 +207,7 @@ function specialAbilities(tid) {
   if(tid.fields.npc_special_abilities !== undefined) {
 
     retval = retval + '<p class="no_tb_margin section_underline" id="defense_hp_row" ' + 
-      `style="border-bottom-color: ${sectionUnderlineColor};"` + '><b>SPECIAL ABILITIES</b></p>';
+      `style="border-bottom-color: ${sectionUnderlineColor}; padding-top: 7px; }"` + '><b>SPECIAL ABILITIES</b></p>';
     
     var d = tid.fields.npc_special_abilities.split("|");
     d.forEach(element => {
@@ -272,7 +272,7 @@ exports.run = function() {
     ["npc_weaknesses", "<b>Weaknesses</b> ", ";"],
   ])}
   <p class="no_tb_margin section_underline"
-    style="border-bottom-color: ${sectionUnderlineColor};">
+    style="border-bottom-color: ${sectionUnderlineColor}; padding-top: 7px; }">
       <b>OFFENSE</b>
   </p>
   ${singleLineWithHeaders(tid, [
@@ -289,7 +289,7 @@ exports.run = function() {
   ${singleLineWithHeaders(tid, [
       ["npc_offensive_abilities", "<b>Offensive Abilities</b> ", ""] ])}     
   ${spellLikeAbility(tid)}
-  <p class="no_tb_margin section_underline" style="border-bottom-color: ${sectionUnderlineColor};">
+  <p class="no_tb_margin section_underline" style="border-bottom-color: ${sectionUnderlineColor}; padding-top: 7px; }">
       <b>STATISTICS</b>
   </p>
   ${singleLineWithHeaders(tid, [
