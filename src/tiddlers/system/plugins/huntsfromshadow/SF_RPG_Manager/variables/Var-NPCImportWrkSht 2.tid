@@ -1,11 +1,11 @@
-created: 20200910233916742
-modified: 20200910233916766
+created: 20200910234418785
+modified: 20200910234418802
 npc_alignment: CE
 npc_aura: 
 npc_cha: +3
 npc_con: +8
 npc_cr: 11
-npc_defensive_abilities: amorphous; DR 10/good
+npc_defensive_abilities: amorphous
 npc_dex: +3
 npc_dr: 10/good
 npc_eac: 23
@@ -32,6 +32,7 @@ npc_race:
 npc_ranged: +18)
 npc_reach: 5 ft. (10 ft. with numbing taclash)
 npc_ref: +10
+npc_resistances: cold 10, fire 10
 npc_rp: 
 npc_senses: darkvision 60 ft., blindsense (scent) 60 ft.
 npc_size: Medium

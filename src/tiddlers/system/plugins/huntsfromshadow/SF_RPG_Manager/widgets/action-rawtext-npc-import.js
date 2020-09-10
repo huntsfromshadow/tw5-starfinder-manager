@@ -271,6 +271,7 @@ RawTextNPCImport.prototype.loadKeywordList = function() {
     ["npc_defensive_abilities", "Defensive Abilities ([^;]*);"],
     ["npc_dr", "DR ([^;]*);"],  
     ["npc_immunities", "Immunities[ |\\n]([^;]*?)(?:;|Weaknesses)"],
+    ["npc_resistances", "Resistances ([^;]*);"],
     ["npc_sr", "\\bSR\\b (.*)"],
     ["npc_weaknesses", "Weaknesses ((?:\\s|\\S)*)OFFENSE"],
 

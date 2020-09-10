@@ -64,6 +64,7 @@ type: text/vnd.tiddlywiki
 <<tablerow "Defensive Abilities" npc_defensive_abilities 30>>
 <<tablerow DR npc_dr 30>>
 <<tablerow Immunities npc_immunities 30>>
+<<tablerow Resistances npc_resistances 30>>
 <<tablerow SR npc_sr 30>>
 <<tablerow Weaknesses npc_weaknesses 30>>
 <<tablerow Speed npc_speed 30>>

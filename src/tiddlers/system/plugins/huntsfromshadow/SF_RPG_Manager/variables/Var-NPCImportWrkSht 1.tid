@@ -1,11 +1,11 @@
-created: 20200910233916742
-modified: 20200910233916766
+created: 20200910233945346
+modified: 20200910233945363
 npc_alignment: CE
 npc_aura: 
 npc_cha: +3
 npc_con: +8
 npc_cr: 11
-npc_defensive_abilities: amorphous; DR 10/good
+npc_defensive_abilities: amorphous
 npc_dex: +3
 npc_dr: 10/good
 npc_eac: 23
