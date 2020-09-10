@@ -1,19 +1,19 @@
-created: 20200909215026601
-modified: 20200909230437830
+created: 20200910114248029
 description: Create New World
+modified: 20200910114323029
 tags: $:/tags/PageControls
-title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/Buttons/NewWorld
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/Buttons/CreateItem
 type: text/vnd.tiddlywiki
 
 \define actions()
-<$action-sendmessage $message="tm-new-tiddler" title="New World" 
+<$action-sendmessage $message="tm-new-tiddler" title="New Item" 
 tags="World"
 text={{$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/WorldStarter}} />
 \end
 
-<$wikify name="text" text="Create World">
-  <$wikify name="title" text="Create World">
-    <$wikify name="tooltip" text="Import World">
+<$wikify name="text" text="New Item">
+  <$wikify name="title" text="New Item">
+    <$wikify name="tooltip" text="New Item">
       <$button actions=<<actions>> class=<<tv-config-toolbar-class>> tooltip=<<tooltip>>>
         <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
           {{$:/plugins/huntsfromshadow/SF_RPG_Manager/images/World-SVG}}

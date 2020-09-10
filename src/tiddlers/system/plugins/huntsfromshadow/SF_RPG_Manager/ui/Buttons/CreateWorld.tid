@@ -1,0 +1,27 @@
+created: 20200909215026601
+description: Create New World
+modified: 20200910114005740
+tags: $:/tags/PageControls
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/Buttons/CreateWorld
+type: text/vnd.tiddlywiki
+
+\define actions()
+<$action-sendmessage $message="tm-new-tiddler" title="New World" 
+tags="World"
+text={{$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/WorldStarter}} />
+\end
+
+<$wikify name="text" text="Create World">
+  <$wikify name="title" text="Create World">
+    <$wikify name="tooltip" text="Create World">
+      <$button actions=<<actions>> class=<<tv-config-toolbar-class>> tooltip=<<tooltip>>>
+        <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+          {{$:/plugins/huntsfromshadow/SF_RPG_Manager/images/World-SVG}}
+        </$list>
+        <$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+          <span class="tc-btn-text"><$text text=<<text>>/></span>
+        </$list>
+      </$button>
+    </$wikify>
+  </$wikify>
+</$wikify>

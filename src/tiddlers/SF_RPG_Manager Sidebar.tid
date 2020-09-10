@@ -1,0 +1,18 @@
+caption: SFRPG
+created: 20200910113219494
+list-before: $:/core/ui/SideBar/Tools
+modified: 20200910114104613
+tags: $:/tags/SideBar
+title: SF_RPG_Manager Sidebar
+type: text/vnd.tiddlywiki
+
+!!Create Entries
+<$vars tv-config-toolbar-text="yes" tv-config-toolbar-class="">
+{{$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/Buttons/ImportNPC}} </$vars>
+
+<$vars tv-config-toolbar-text="yes" tv-config-toolbar-class="">
+{{$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/Buttons/ImportTrap}} </$vars>
+
+<$vars tv-config-toolbar-text="yes" tv-config-toolbar-class="">
+{{$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/Buttons/CreateWorld}} </$vars>
+
