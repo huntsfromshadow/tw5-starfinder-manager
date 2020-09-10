@@ -1,0 +1,29 @@
+created: 20200910235549851
+modified: 20200910235549879
+npc_alignment: CE
+npc_aura: 
+npc_cr: 11
+npc_defensive_abilities: amorphous
+npc_dr: 10/good
+npc_eac: 23
+npc_fort: +14
+npc_hp: 155
+npc_immunities: acid, disease, electricity, poison
+npc_init: +3
+npc_kac: 24
+npc_melee: numbing taclash +20 (5d4 S plus irradiation) or bite +20 (2d10+16 S plus irradiation)
+npc_name: PREXIAN MUTANTSPAWN
+npc_perception: +20
+npc_ref: +10
+npc_resistances: cold 10, fire 10
+npc_rp: 
+npc_senses: darkvision 60 ft., blindsense (scent) 60 ft.
+npc_size: Medium
+npc_speed: 10 ft., fly 40 ft. (Ex, average)
+npc_sr: 22
+npc_weaknesses: 
+npc_will: +12
+npc_xp: 12,800
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportWrkSht
+type: text/vnd.tiddlywiki
+
