@@ -1,54 +1,43 @@
 created: 20200902155633863
-modified: 20200910192632279
+modified: 20200910233218513
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportRawBlock
 type: text/vnd.tiddlywiki
 
-LIVING HOLOGRAM CR 8
-XP 4,800
-CE Medium construct (incorporeal, technological)
-Init +6; Senses darkvision 60 ft., low-light vision;
-Perception +16
-DEFENSE HP 115
-EAC 20; KAC 21
-Fort +5; Ref +5; Will +9
-Defensive Abilities incorporeal, rejuvenation; Immunities
-construct immunities
-Weaknesses tethered
+PREXIAN MUTANTSPAWN CR 11
+XP 12,800
+CE Medium outsider (chaotic, evil, extraplanar)
+Init +3; Senses darkvision 60 ft., blindsense (scent) 60 ft.;
+Perception +20
+DEFENSE HP 155
+EAC 23; KAC 24
+Fort +14; Ref +10; Will +12
+Defensive Abilities amorphous; DR 10/good; Immunities
+acid, disease, electricity, poison; Resistances cold 10,
+fire 10; SR 22
 OFFENSE
-Speed fly 30 ft. (Su, perfect)
-Melee hardlight slam +18 (1d12+8 B; critical dazzled [DC 18])
-Spell-Like Abilities (CL 8th)
-At will—holographic image (1st level, DC 16)
+Speed 10 ft., fly 40 ft. (Ex, average)
+Melee numbing taclash +20 (5d4 S plus irradiation) or
+bite +20 (2d10+16 S plus irradiation)
+Space 5 ft.; Reach 5 ft. (10 ft. with numbing taclash)
+Spell-Like Abilities (CL 11th; ranged +18)
+1/day—confusion (DC 22)
+3/day— irradiate (DC 21), ray of exhaustion (DC 21)
+At will—inflict pain (DC 20), mind thrust (2nd level,
+DC 20), teleport (self plus 5 bulk of objects only)
 STATISTICS
-Str +0; Dex +6; Con —; Int +2; Wis +1; Cha +4
-Skills Acrobatics +21 (+29 to fly), Bluff +16, Computers +21,
-Culture +16, Stealth +21
-Languages one language determined by original creator
-Other Abilities freeze, unliving
+Str +5; Dex +3; Con +8; Int +1; Wis +2; Cha +3
+Skills Acrobatics +20, Bluff +20, Intimidate +20,
+Mysticism +20, Sense Motive +20
+Languages Abyssal, Celestial, Draconic; telepathy
+100 ft.
+Gear numbing taclash with 2 batteries (20 charges each)
 ECOLOGY
-Environment any
-Organization solitary
+Environment any (Abyss)
+Organization solitary, pair, or infection (3–8)
 SPECIAL ABILITIES
-Freeze (Ex) A living hologram can hold perfectly still so
-that it appears to be a normal hologram. It can take 20
-on Stealth checks to hide in plain sight as a hologram
-(usually among other holograms).
-Hardlight Slam (Ex) As an attack, a living hologram can
-temporarily cause its fist (or a melee weapon, if it has
-been programmed to have one) to become substantial.
-This functions as a natural weapon that deals
-bludgeoning damage. On a critical hit, the attack creates
-a bright flash of light, and the target must succeed at a
-DC 18 Reflex save or be dazzled for 1 round.
-Rejuvenation (Ex) In most cases, it is difficult to completely
-destroy a living hologram in combat. A living hologram
-reduced to 0 Hit Points vanishes, though its corrupted
-projector reconstructs it in 1d4 hours. The only way
-to permanently destroy a living hologram is to find
-its projector and either repair or destroy it. Living
-holograms are aware that their existences are tied to
-their projectors and protect the machinery at all costs.
-Tethered (Ex) A living hologram can’t travel more
-than 100 feet from its projector. If it is ever forced
-to do so, it is immediately destroyed, though only
-temporarily (see rejuvenation above).
+Irradiation (Su) A creature bitten by a prexian mutantspawn
+or wounded by a melee weapon a mutantspawn carries
+must succeed at a DC 20 Fortitude save or be
+exposed to a sudden pulse of supernatural radiation.
+This functions as medium radiation that affects
+only the mutantspawn’s target
