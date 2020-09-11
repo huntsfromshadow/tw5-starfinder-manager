@@ -1,11 +1,11 @@
-created: 20200910233916742
-modified: 20200910233916766
+created: 20200911002129048
+modified: 20200911002130060
 npc_alignment: CE
 npc_aura: 
 npc_cha: +3
 npc_con: +8
 npc_cr: 11
-npc_defensive_abilities: amorphous; DR 10/good
+npc_defensive_abilities: amorphous
 npc_dex: +3
 npc_dr: 10/good
 npc_eac: 23
@@ -21,7 +21,7 @@ npc_init: +3
 npc_int: +1
 npc_kac: 24
 npc_languages: Abyssal, Celestial, Draconic; telepathy
-npc_melee: numbing taclash +20 (5d4 S plus irradiation) or
+npc_melee: numbing taclash +20 (5d4 S plus irradiation) or bite +20 (2d10+16 S plus irradiation)
 npc_multiattack: 
 npc_name: PREXIAN MUTANTSPAWN
 npc_offensive_abilities: 
@@ -29,18 +29,20 @@ npc_organization: solitary, pair, or infection (3–8)
 npc_other_abilities: 
 npc_perception: +20
 npc_race: 
-npc_ranged: +18)
+npc_ranged: 
 npc_reach: 5 ft. (10 ft. with numbing taclash)
 npc_ref: +10
+npc_resistances: cold 10, fire 10
 npc_rp: 
 npc_senses: darkvision 60 ft., blindsense (scent) 60 ft.
 npc_size: Medium
 npc_skills: Acrobatics +20, Bluff +20, Intimidate +20, Mysticism +20, Sense Motive +20
-npc_sla: (CL 11th; ranged +18)|1/day—confusion (DC 22)|3/day— irradiate (DC 21), ray of exhaustion (DC 21)
-
-DC 20), teleport (self plus 5 bulk of objects only)|At will—inflict pain (DC 20), mind thrust (2nd level,
+npc_sla: 11th; ranged +18|1/day—confusion (DC 22) | 3/day— irradiate (DC 21), ray of exhaustion (DC 21)
+At will—inflict pain (DC 20), mind thrust (2nd level,
+DC 20), teleport (self plus 5 bulk of objects only)
+npc_source: Alien Archive 2 pg. 35
 npc_space: 5 ft.
-npc_special_abilities: Irradiation (Su) A creature bitten by a prexian mutantspawn
+npc_special_abilities: | Irradiation (Su) A creature bitten by a prexian mutantspawn
 or wounded by a melee weapon a mutantspawn carries
 must succeed at a DC 20 Fortitude save or be
 exposed to a sudden pulse of supernatural radiation.
@@ -55,6 +57,8 @@ npc_weaknesses:
 npc_will: +12
 npc_wis: +2
 npc_xp: 12,800
-title: $:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportWrkSht
+tags: NPC
+title: Prexian Mutantspawn
 type: text/vnd.tiddlywiki
 
+{{||$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/NPCTemplate}}

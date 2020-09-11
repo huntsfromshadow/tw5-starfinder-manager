@@ -86,6 +86,8 @@ type: text/vnd.tiddlywiki
 <<tablerow Languages	npc_languages 50>>
 <<multitablerow "Other Abilities"	npc_other_abilities 50>>
 <<multitablerow Gear	npc_gear 30>>
+<<tablerow Enviornment npc_enviornment 30>>
+<<tablerow Organization npc_organization 30>>
 <<multitablerow "Special Abilities (Seperate Lines with &#124; Symbol)"	npc_special_abilities 30>>
 </table>
 

@@ -151,7 +151,7 @@ RawTextNPCImport.prototype.handleSLA = function(rb) {
     cl_block = cl_block.replace(")", "");
     finalstr = finalstr + cl_block;
 
-    fullstr = fullstr.replace("\n", "\n|");
+    fullstr = fullstr.replace("\n", " | ");
     finalstr = finalstr + "|" + fullstr;
 
     this.saveField("npc_sla", finalstr);
@@ -180,10 +180,10 @@ RawTextNPCImport.prototype.handleGear = function(rb) {
 };
 
 RawTextNPCImport.prototype.handleSpecialAbilities = function(rb) {
-  var c = /SPECIAL ABILITIES(.*)/is.exec(rb);  
+  var c = /SPECIAL ABILITIES([\s|\S]*)/is.exec(rb);  
   if(c != null) {
     var s = c[1];
-    s = s.replace("\n", " ");
+    s = s.replace("\n", " | ");
     this.saveField("npc_special_abilities", s);
   }
   else {
