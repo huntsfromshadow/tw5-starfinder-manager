@@ -30,5 +30,5 @@ type: text/vnd.tiddlywiki
 <<tablerow "Offensive Abilities" npc_offensive_abilities 50>>
 <<tablerow Space npc_space 30>>
 <<tablerow Reach npc_reach 30>>
-<<multirow "SLA (Seperate Lines with &#124; Symbol)" npc_sla 50>>
+<<multirow "SLA (Seperate Lines with @ Symbol)" npc_sla 50>>
 </table>

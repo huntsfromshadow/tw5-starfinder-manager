@@ -139,7 +139,7 @@ function spellLikeAbility(tid) {
     (tid.fields.npc_sla !== npcDebugTxt) &&
     (tid.fields.npc_sla !== "") ) {
     var d = tid.fields.npc_sla;
-    d = d.split("|");
+    d = d.split("@");
 
     var val = `
     <p class="no_tb_margin hang_indent">
@@ -148,7 +148,7 @@ function spellLikeAbility(tid) {
 
     var dat = tid.fields.npc_sla;
 
-    var la = dat.split("|");
+    var la = dat.split("@");
     la.shift();
 
     la.forEach(element => {
@@ -209,7 +209,7 @@ function specialAbilities(tid) {
     retval = retval + '<p class="no_tb_margin section_underline" id="defense_hp_row" ' + 
       `style="border-bottom-color: ${sectionUnderlineColor}; padding-top: 7px; }"` + '><b>SPECIAL ABILITIES</b></p>';
     
-    var d = tid.fields.npc_special_abilities.split("|");
+    var d = tid.fields.npc_special_abilities.split("@");
     d.forEach(element => {
       retval = retval + '<p class="no_tb_margin hang_indent">' + 
       element + "</p>";            

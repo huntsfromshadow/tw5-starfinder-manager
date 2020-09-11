@@ -24,6 +24,6 @@ type: text/vnd.tiddlywiki
 <table>
 <<tablerow Enviornment npc_enviornment 30>>
 <<tablerow Organization npc_organization 30>>
-<<multirow "Special Abilities (Seperate Lines with &#124; Symbol)"	npc_special_abilities 30>>
+<<multirow "Special Abilities (Seperate Lines with @ Symbol)"	npc_special_abilities 30>>
 <<tablerow "From Source" npc_source 30>>
 </table>

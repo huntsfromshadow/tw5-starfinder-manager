@@ -86,7 +86,7 @@ module-type: widget
       }
   
       //Do a \n cleanup
-      val = val.replace("\n", " ");
+      val = val.replace(/\n/gi, " ");
   
       //console.log(elem[0]);
       //console.log(val);
@@ -107,7 +107,7 @@ module-type: widget
     }
   
     //Handle any data cleanup
-    var rb = this.rawblock.replace("−", "-");
+    var rb = this.rawblock.replace(/−/gi, "-");
     //var rb = this.rawblock.replace("—", "-");
   
     //First lets handle all the data that can be keword grabbed

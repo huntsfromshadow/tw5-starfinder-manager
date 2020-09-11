@@ -81,7 +81,7 @@ RawTextNPCImport.prototype.handleGenderRaceGraft = function(rb) {
   else {
     //As this is a very flexible line we are just going to split it.
     var l = ex[1];
-    l = l.replace("\n", "");
+    l = l.replace(/\n/gi, "");
     l = l.split(" ");
     
     this.saveField("npc_gender", l[0]);
@@ -119,7 +119,7 @@ RawTextNPCImport.prototype.extractKeywords = function(rb) {
     }
 
     //Do a \n cleanup
-    val = val.replace("\n", " ");
+    val = val.replace(/\n/gi, " ");
 
     //console.log(elem[0]);
     //console.log(val);
@@ -151,8 +151,11 @@ RawTextNPCImport.prototype.handleSLA = function(rb) {
     cl_block = cl_block.replace(")", "");
     finalstr = finalstr + cl_block;
 
-    fullstr = fullstr.replace("\n", " | ");
-    finalstr = finalstr + "|" + fullstr;
+    console.log(finalstr);
+    console.log(fullstr);
+
+    fullstr = fullstr.replace(/\n/gi, " @ ");
+    finalstr = finalstr + "@" + fullstr;
 
     this.saveField("npc_sla", finalstr);
   }
@@ -164,7 +167,7 @@ RawTextNPCImport.prototype.handleOtherAbilities = function(rb) {
 
   if(c != null) {
     var othera = c[1];
-    othera = othera.replace("\r", " ");
+    othera = othera.replace(/\n/gi, " ");
     this.saveField("npc_other_abilities", othera);
   }
 };
@@ -174,7 +177,7 @@ RawTextNPCImport.prototype.handleGear = function(rb) {
 
   if(c != null) {
     var othera = c[1];
-    othera = othera.replace("\r", " ");
+    othera = othera.replace(/\n/gi, " ");
     this.saveField("npc_gear", othera);
   }
 };
@@ -183,7 +186,7 @@ RawTextNPCImport.prototype.handleSpecialAbilities = function(rb) {
   var c = /SPECIAL ABILITIES([\s|\S]*)/is.exec(rb);  
   if(c != null) {
     var s = c[1];
-    s = s.replace("\n", " | ");
+    s = s.replace(/\n/gi, " @ ");
     this.saveField("npc_special_abilities", s);
   }
   else {
@@ -204,7 +207,7 @@ RawTextNPCImport.prototype.invokeAction = function(triggeringWidget,event) {
   }
 
   //Handle any data cleanup
-  var rb = this.rawblock.replace("−", "-");
+  var rb = this.rawblock.replace(/−/gi, "-");
   //var rb = this.rawblock.replace("—", "-");
 
   //First lets handle all the data that can be keword grabbed
@@ -268,7 +271,7 @@ RawTextNPCImport.prototype.loadKeywordList = function() {
     ["npc_int", "Int ([+|-]\\d{1,2});"],
     ["npc_wis", "Wis ([+|-]\\d{1,2});"],
     ["npc_cha", "Cha ([+|-]\\d{1,2})"],
-    ["npc_skills", "Skills ((?:.|\n)*)Languages"],
+    ["npc_skills", "Skills ((?:.|\\n)*)Languages"],
     ["npc_feats", "Feats (.*)"],
     ["npc_languages", "Languages (.*)\\n"],
     ["npc_other_abilities", "Other Abilities (.*)[ \n](?:Special Abilities|Gear|ECOLOGY|TACTICS)"],
