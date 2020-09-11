@@ -1,0 +1,67 @@
+created: 20200910114151246
+field: item_usage
+modified: 20200911210421259
+tags: 
+tiddler: $:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/CreateItem
+type: text/vnd.tiddlywiki
+
+\define actions(itemType itemGroup)
+<$action-sf-create-item $worksheet="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" 
+    $itemType="$itemType$" $itemGroup="$itemGroup$" $savetitle="!!tmpname" />
+<$action-navigate $to={{!!tmpname}} />
+\end
+
+\define clearFieldsActions()
+<$action-setfield $field="item_ammunition_type" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_bulk" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_capacity" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_critical" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_damage" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_handness" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_item_charges_cartridges" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_category" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_levels" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_melee_type" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_name" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_other" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_price" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_range" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_ranged_type" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_special" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_usage" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_source" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+\end
+
+\define edit-field(npcfld size) 
+<$edit-text tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" field=$npcfld$ size="$size$"/>
+\end
+
+\define multi-edit-field(npcfld size) 
+<$edit-text tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" field=$npcfld$ size="$size$" class="wide_editor" tag=textarea/>
+\end
+
+\define tablerow(fldname field size=30)
+<tr><td width="40%"><b>$fldname$</b></td><td><<edit-field $field$ $size$ >></td></tr>
+\end
+
+\define multiline-tablerow(fldname field size=30)
+<tr><td width="40%"><b>$fldname$</b></td><td><<multi-edit-field $field$ $size$ >></td></tr>
+\end
+
+\define local-sf-select-helper(caption field options multiple=no table=yes)
+<<sf-select-helper "$caption$" "$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" $field$ "$options$" $multiple$ $table$ >>
+\end
+
+<$button actions=<<clearFieldsActions>> >
+Clear Fields
+</$button>
+
+! Create an Item with the following details - Choose Tab Type
+<<tabs "[[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/weapon_tabs/CreateItemTab-Weapon]] [[CreateItemTab-Armor]]" [[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/weapon_tabs/CreateItemTab-Weapon]] "$:/state/sf_rpg_man_createitem_type_tab" retain:"yes">>
+
+
+
+
+
+

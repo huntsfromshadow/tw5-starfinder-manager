@@ -37,7 +37,7 @@ The source repository for this code is located at
 
 <!-- Set variables to render button as it appears in the toolbar. -->
 <$vars tv-config-toolbar-text="yes" tv-config-toolbar-class="">
-Enable the {{$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/Buttons/ImportNPC}} tool to import new npcs from a copy and paste statblock, or create an empty npc tiddler ready for you to fill in.
+Enable the {{$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/buttons/ImportNPC}} tool to import new npcs from a copy and paste statblock, or create an empty npc tiddler ready for you to fill in.
 </$vars>
 
 See [[Living Hologram]] and [[Elder Air Elemental]] as an example.
@@ -46,7 +46,7 @@ See [[Living Hologram]] and [[Elder Air Elemental]] as an example.
 
 <!-- Set variables to render button as it appears in the toolbar. -->
 <$vars tv-config-toolbar-text="yes" tv-config-toolbar-class="">
-Enable the {{$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/Buttons/ImportTrap}} tool to create new spell tiddlers with a single click.
+Enable the {{$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/buttons/ImportTrap}} tool to create new spell tiddlers with a single click.
 </$vars>
 
 See [[Pit Trap]] as an example.

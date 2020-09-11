@@ -7,7 +7,7 @@ type: text/vnd.tiddlywiki
 <<npc-display>>
 
 <$button>
-<$action-sendmessage $message="tm-modal" $param="$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/NPCEditor" npc=<<currentTiddler>> />
+<$action-sendmessage $message="tm-modal" $param="$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/npc_editor/NPCEditor" npc=<<currentTiddler>> />
 Edit {{!!title}} 
 </$button>
 

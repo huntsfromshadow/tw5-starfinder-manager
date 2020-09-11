@@ -1,0 +1,8 @@
+caption: Weapon
+created: 20200911184952097
+modified: 20200911210402279
+tags: 
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/weapon_tabs/CreateItemTab-Weapon
+type: text/vnd.tiddlywiki
+
+<<tabs "[[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/weapon_tabs/CreateItemTab-WeaponType-Melee]] [[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/weapon_tabs/CreateItemTab-WeaponType-Ranged]] [[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/weapon_tabs/CreateItemTab-WeaponType-Ammunition]] [[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/weapon_tabs/CreateItemTab-WeaponType-SolarionWeapon]] [[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/weapon_tabs/CreateItemTab-WeaponType-Grenade]]" [[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/weapon_tabs/CreateItemTab-WeaponType-Melee]] "$:/state/sf_rpg_man_createitem_weapon_type_tab" retain:"yes" >>

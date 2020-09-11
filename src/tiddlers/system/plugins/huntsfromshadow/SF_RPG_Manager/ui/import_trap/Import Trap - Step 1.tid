@@ -1,0 +1,34 @@
+caption: Step 1
+created: 20200906230957518
+modified: 20200911152222015
+tags: 
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/import_trap/Import Trap - Step 1
+tmpname: New NPC
+type: text/vnd.tiddlywiki
+
+<$button>
+    <$action-createtiddler 
+        $basetitle="New Trap"
+        $savetitle="!!tmpname"				
+        text="{{||$:/plugins/huntsfromshadow/SF_RPG_Manager/templates/TrapTemplate}}" tags="Trap" />
+    <$action-navigate $to={{!!tmpname}} />
+    Create Empty Trap
+</$button>
+
+or
+
+''Step 1:'' 
+
+__Fill In Below__
+<table>
+<tr>
+<td>
+Trap (Tiddler) Name:</td>
+<td><$edit-text tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-TrapImportName"  placeholder="NPC Trap Name" size="30" tag="input" /></td>
+</tr>
+<tr>
+<td>Plain Text Statblock:</td>
+<td><$edit-text tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-TrapImportRawBlock"  tag="textarea"   class="wide_editor" /></td></tr>
+</table>
+
+<<nextstep>>

@@ -8,11 +8,11 @@ type: text/vnd.tiddlywiki
 
 !!Create Entries
 <$vars tv-config-toolbar-text="yes" tv-config-toolbar-class="">
-{{$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/Buttons/ImportNPC}} </$vars>
+{{$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/buttons/ImportNPC}} </$vars>
 
 <$vars tv-config-toolbar-text="yes" tv-config-toolbar-class="">
-{{$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/Buttons/ImportTrap}} </$vars>
+{{$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/buttons/ImportTrap}} </$vars>
 
 <$vars tv-config-toolbar-text="yes" tv-config-toolbar-class="">
-{{$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/Buttons/CreateWorld}} </$vars>
+{{$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/buttons/CreateWorld}} </$vars>
 

@@ -9,7 +9,7 @@ type: text/vnd.tiddlywiki
 <$button>
 <$action-sendmessage 
     $message="tm-modal" 
-    $param="$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/TrapEditor/TrapEditor" 
+    $param="$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/trap_editor/TrapEditor" 
     trap=<<currentTiddler>> />
 Edit {{!!title}} 
 </$button>
