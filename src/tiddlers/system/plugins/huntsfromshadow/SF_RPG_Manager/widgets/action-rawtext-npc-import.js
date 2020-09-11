@@ -143,41 +143,17 @@ RawTextNPCImport.prototype.handleSLA = function(rb) {
     var c =
       /(\(.*\))/.exec(fullstr);
     var cl_block = null;
-    cl_block = c[1];
+    cl_block = c[1];    
     fullstr = fullstr.replace(cl_block, "");
     fullstr = fullstr.trim();
 
+    cl_block = cl_block.replace("(CL ", "");
+    cl_block = cl_block.replace(")", "");
     finalstr = finalstr + cl_block;
 
-    c =
-      /(Constant—.*)/.exec(fullstr);
-    var con_line = null;
-    if(c != null) {
-      con_line = c[1];
-      fullstr = fullstr.replace(con_line, "");
-      fullstr = fullstr.trim();      
-    }
-  
-    c = 
-      /(At will—.*)/.exec(fullstr);
-    var at_will_line = null;
-    if(c != null) {
-      at_will_line = c[1];
-      fullstr = fullstr.replace(at_will_line, "");
-      fullstr = fullstr.trim();
-    }
-
-    fullstr = fullstr.replace("\n", "|");
+    fullstr = fullstr.replace("\n", "\n|");
     finalstr = finalstr + "|" + fullstr;
 
-    if(con_line != null) {
-      finalstr = finalstr + "|" + con_line;
-    }
-
-    if(at_will_line != null) {
-      finalstr = finalstr + "|" + at_will_line;
-    }
-    
     this.saveField("npc_sla", finalstr);
   }
 };
