@@ -152,7 +152,7 @@ function spellLikeAbility(tid) {
     la.shift();
 
     la.forEach(element => {
-      val = val + element + "<br />";
+      val = val + "<div>" + element + "</div>";
     });
     val = val + "</p>";
 
@@ -294,11 +294,11 @@ exports.run = function() {
   </p>
   ${singleLineWithHeaders(tid, [
     ["npc_str", "<b>Str</b> ", ";"],
-    ["npc_dex", "<b>Dex</b>", ";"], 
-    ["npc_con", "<b>Con</b>", ";"],
+    ["npc_dex", "<b>Dex</b> ", ";"], 
+    ["npc_con", "<b>Con</b> ", ";"],
     ["npc_int", "<b>Int</b> ", ";"],
-    ["npc_wis", "<b>Wis</b>", ";"], 
-    ["npc_cha", "<b>Cha</b>", ""] ])}
+    ["npc_wis", "<b>Wis</b> ", ";"], 
+    ["npc_cha", "<b>Cha</b> ", ""] ])}
   ${singleLineWithHeaders(tid, [
     ["npc_skills", "<b>Skills</b> ", ""] ], true)}
   ${singleLineWithHeaders(tid, [
