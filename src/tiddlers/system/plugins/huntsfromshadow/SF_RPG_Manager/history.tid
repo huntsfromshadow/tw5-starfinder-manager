@@ -1,9 +1,10 @@
 created: 20200831202408656
-modified: 20200910193927788
+modified: 20200911022718475
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/history
 type: text/vnd.tiddlywiki
 
+* ''1.0.7'' -- (9/10/2020) Lots of bug fixes and npc display. (Github has full details).
 * ''1.0.6'' -- (9/10/2020) Fix to bug that stopped NPCs from parsing.
 * ''1.0.5'' -- (9/9/2020) Some cleanup to README and New Planet Button
 * ''1.0.4'' -- (9/7/2020) Release to public

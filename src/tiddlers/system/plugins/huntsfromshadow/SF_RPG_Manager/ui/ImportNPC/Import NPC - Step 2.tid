@@ -1,6 +1,6 @@
 caption: Step 2
 created: 20200903191344202
-modified: 20200910192559428
+modified: 20200911012924777
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/ImportNPC/Import NPC - Step 2
 type: text/vnd.tiddlywiki
@@ -64,16 +64,17 @@ type: text/vnd.tiddlywiki
 <<tablerow "Defensive Abilities" npc_defensive_abilities 30>>
 <<tablerow DR npc_dr 30>>
 <<tablerow Immunities npc_immunities 30>>
+<<tablerow Resistances npc_resistances 30>>
 <<tablerow SR npc_sr 30>>
 <<tablerow Weaknesses npc_weaknesses 30>>
 <<tablerow Speed npc_speed 30>>
 <<multitablerow Melee npc_melee 50>>
 <<multitablerow Ranged npc_ranged 50>>
 <<tablerow Multiattack	npc_multiattack 50>>
-<<tablerow "Offensive Abilities"	npc_offensive_abilities 50>>
 <<tablerow Space npc_space 30>>
+<<tablerow "Offensive Abilities"	npc_offensive_abilities 50>>
 <<tablerow Reach npc_reach 30>>
-<<multitablerow "SLA (Seperate Lines with &#124; Symbol)"	npc_sla 50>>
+<<multitablerow "SLA (Seperate Lines with @ Symbol)"	npc_sla 50>>
 <<tablerow Str npc_str 30>>
 <<tablerow Dex npc_dex 30>>
 <<tablerow Con npc_con 30>>
@@ -85,7 +86,9 @@ type: text/vnd.tiddlywiki
 <<tablerow Languages	npc_languages 50>>
 <<multitablerow "Other Abilities"	npc_other_abilities 50>>
 <<multitablerow Gear	npc_gear 30>>
-<<multitablerow "Special Abilities (Seperate Lines with &#124; Symbol)"	npc_special_abilities 30>>
+<<tablerow Enviornment npc_enviornment 30>>
+<<tablerow Organization npc_organization 30>>
+<<multitablerow "Special Abilities (Seperate Lines with @ Symbol)"	npc_special_abilities 30>>
 </table>
 
 ''Fields not importable from Statblock''

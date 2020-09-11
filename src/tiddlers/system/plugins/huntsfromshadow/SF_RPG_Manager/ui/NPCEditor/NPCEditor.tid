@@ -1,5 +1,5 @@
 created: 20200904214316545
-modified: 20200905011440509
+modified: 20200910232143043
 subtitle: NPC Editor
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/NPCEditor
@@ -12,7 +12,6 @@ Note Edits are Automatically saved.
 $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/EditorStatisticsTab $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/EditorSpecialAbilitiesTab" 
 "$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/NPCEditor/EditorIdentityTab" 
 "$:/state/npceditortab" 
-"tc-vertical"
 >>
 
 

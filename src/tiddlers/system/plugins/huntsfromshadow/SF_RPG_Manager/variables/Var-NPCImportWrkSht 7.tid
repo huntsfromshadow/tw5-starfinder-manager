@@ -1,0 +1,54 @@
+created: 20200911021205076
+modified: 20200911021205094
+npc_alignment: 
+npc_aura: 
+npc_cha: 
+npc_con: 
+npc_cr: 
+npc_defensive_abilities: 
+npc_dex: 
+npc_dr: 
+npc_eac: 
+npc_enviornment: 
+npc_feats: 
+npc_fort: 
+npc_gear: 
+npc_gender: 
+npc_graftclass: 
+npc_hp: 
+npc_immunities: 
+npc_init: 
+npc_int: 
+npc_kac: 
+npc_languages: 
+npc_melee: 
+npc_multiattack: 
+npc_name: 
+npc_offensive_abilities: 
+npc_organization: 
+npc_other_abilities: 
+npc_perception: 
+npc_race: 
+npc_ranged: 
+npc_reach: 
+npc_ref: 
+npc_resistances: 
+npc_rp: 
+npc_senses: 
+npc_size: 
+npc_skills: 
+npc_sla: 
+npc_space: 
+npc_special_abilities: 
+npc_speed: 
+npc_sr: 
+npc_str: 
+npc_subtype: 
+npc_type: 
+npc_weaknesses: 
+npc_will: 
+npc_wis: 
+npc_xp: 
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportWrkSht
+type: text/vnd.tiddlywiki
+

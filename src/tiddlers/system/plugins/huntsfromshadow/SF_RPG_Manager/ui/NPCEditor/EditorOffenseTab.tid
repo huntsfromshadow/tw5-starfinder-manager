@@ -27,8 +27,8 @@ type: text/vnd.tiddlywiki
 <<multirow Melee npc_melee 50>>
 <<multirow Ranged npc_ranged 50>>
 <<tablerow Multiattack npc_multiattack 50>>
-<<tablerow "Offensive Abilities" npc_offensive_abilities 50>>
 <<tablerow Space npc_space 30>>
+<<tablerow "Offensive Abilities" npc_offensive_abilities 50>>
 <<tablerow Reach npc_reach 30>>
-<<multirow "SLA (Seperate Lines with &#124; Symbol)" npc_sla 50>>
+<<multirow "SLA (Seperate Lines with @ Symbol)" npc_sla 50>>
 </table>

@@ -139,7 +139,7 @@ function spellLikeAbility(tid) {
     (tid.fields.npc_sla !== npcDebugTxt) &&
     (tid.fields.npc_sla !== "") ) {
     var d = tid.fields.npc_sla;
-    d = d.split("|");
+    d = d.split("@");
 
     var val = `
     <p class="no_tb_margin hang_indent">
@@ -148,11 +148,11 @@ function spellLikeAbility(tid) {
 
     var dat = tid.fields.npc_sla;
 
-    var la = dat.split("|");
+    var la = dat.split("@");
     la.shift();
 
     la.forEach(element => {
-      val = val + element + "<br />";
+      val = val + "<div>" + element + "</div>";
     });
     val = val + "</p>";
 
@@ -166,7 +166,7 @@ function spellLikeAbility(tid) {
 function defenseHeader(tid) {
   var retval = `
   <p class="no_tb_margin section_underline" id="defense_hp_row" 
-  style="border-bottom-color: ${sectionUnderlineColor};">
+  style="border-bottom-color: ${sectionUnderlineColor}; padding-top: 7px; }">
   <b>DEFENSE</b> 
   <span id="hp"><b>HP</b> {{!!npc_hp}} `;
 
@@ -187,8 +187,8 @@ function ecologySection(tid) {
       tid.fields.npc_enviornment !== npcDebugTxt &&
       tid.fields.npc_enviornment !== "" ) {
     retval = retval + `<p class="no_tb_margin section_underline"
-      style="border-bottom-color: ${sectionUnderlineColor};">
-    <b>Ecology</b>
+      style="border-bottom-color: ${sectionUnderlineColor}; padding-top: 7px; }">
+    <b>ECOLOGY</b>
       </p>`;
 
     retval = retval + singleLineWithHeaders(tid, [
@@ -207,9 +207,9 @@ function specialAbilities(tid) {
   if(tid.fields.npc_special_abilities !== undefined) {
 
     retval = retval + '<p class="no_tb_margin section_underline" id="defense_hp_row" ' + 
-      `style="border-bottom-color: ${sectionUnderlineColor};"` + '><b>SPECIAL ABILITIES</b></p>';
+      `style="border-bottom-color: ${sectionUnderlineColor}; padding-top: 7px; }"` + '><b>SPECIAL ABILITIES</b></p>';
     
-    var d = tid.fields.npc_special_abilities.split("|");
+    var d = tid.fields.npc_special_abilities.split("@");
     d.forEach(element => {
       retval = retval + '<p class="no_tb_margin hang_indent">' + 
       element + "</p>";            
@@ -272,7 +272,7 @@ exports.run = function() {
     ["npc_weaknesses", "<b>Weaknesses</b> ", ";"],
   ])}
   <p class="no_tb_margin section_underline"
-    style="border-bottom-color: ${sectionUnderlineColor};">
+    style="border-bottom-color: ${sectionUnderlineColor}; padding-top: 7px; }">
       <b>OFFENSE</b>
   </p>
   ${singleLineWithHeaders(tid, [
@@ -289,16 +289,16 @@ exports.run = function() {
   ${singleLineWithHeaders(tid, [
       ["npc_offensive_abilities", "<b>Offensive Abilities</b> ", ""] ])}     
   ${spellLikeAbility(tid)}
-  <p class="no_tb_margin section_underline" style="border-bottom-color: ${sectionUnderlineColor};">
+  <p class="no_tb_margin section_underline" style="border-bottom-color: ${sectionUnderlineColor}; padding-top: 7px; }">
       <b>STATISTICS</b>
   </p>
   ${singleLineWithHeaders(tid, [
     ["npc_str", "<b>Str</b> ", ";"],
-    ["npc_dex", "<b>Dex</b>", ";"], 
-    ["npc_con", "<b>Con</b>", ";"],
+    ["npc_dex", "<b>Dex</b> ", ";"], 
+    ["npc_con", "<b>Con</b> ", ";"],
     ["npc_int", "<b>Int</b> ", ";"],
-    ["npc_wis", "<b>Wis</b>", ";"], 
-    ["npc_cha", "<b>Cha</b>", ""] ])}
+    ["npc_wis", "<b>Wis</b> ", ";"], 
+    ["npc_cha", "<b>Cha</b> ", ""] ])}
   ${singleLineWithHeaders(tid, [
     ["npc_skills", "<b>Skills</b> ", ""] ], true)}
   ${singleLineWithHeaders(tid, [
