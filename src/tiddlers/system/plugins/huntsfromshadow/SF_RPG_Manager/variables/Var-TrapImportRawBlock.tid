@@ -1,12 +1,5 @@
 created: 20200906231437540
-modified: 20200907141447916
+modified: 20200911022535574
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-TrapImportRawBlock
 type: text/vnd.tiddlywiki
 
-PIT TRAP CR 1/2
-XP 200
-Type analog; Perception DC 17; Disable Engineering DC 12
-(open trap door) or DC 18 (jam trap door shut)
-Trigger location; Reset manual
-Effect 20-ft.-deep pit (2d6 falling damage); Reflex DC 11 avoids;
-multiple targets (all targets in a 10-ft.-square area)

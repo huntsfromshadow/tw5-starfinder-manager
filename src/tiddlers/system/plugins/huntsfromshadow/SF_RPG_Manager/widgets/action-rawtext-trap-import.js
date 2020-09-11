@@ -123,9 +123,9 @@ module-type: widget
       ["trap_xp", "XP ([\\d,]*)"],
       ["trap_type", "Type ([^;]*);"],
       ["trap_perception", "Perception ([^;]*);"],
-      ["trap_disable", "Disable ([^;]*);?Trigger"],
+      ["trap_disable", "Disable([\\s|\\S]*)Trigger"],
       ["trap_trigger", "Trigger ([^;]*);"],
-      ["trap_reset", "Reset ([^;]*);"],
+      ["trap_reset", "Reset ([^;]*);?Effect"],
       ["trap_effect", "Effect ([\\s|\\S]*)"]
     ];
   }
