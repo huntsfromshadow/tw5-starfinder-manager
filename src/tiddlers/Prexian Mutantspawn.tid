@@ -1,5 +1,5 @@
 created: 20200911002258719
-modified: 20200911002259409
+modified: 20200911003342843
 npc_alignment: CE
 npc_aura: 
 npc_cha: +3
@@ -37,16 +37,9 @@ npc_rp:
 npc_senses: darkvision 60 ft., blindsense (scent) 60 ft.
 npc_size: Medium
 npc_skills: Acrobatics +20, Bluff +20, Intimidate +20, Mysticism +20, Sense Motive +20
-npc_sla: 11th; ranged +18|1/day—confusion (DC 22) | 3/day— irradiate (DC 21), ray of exhaustion (DC 21)
-At will—inflict pain (DC 20), mind thrust (2nd level,
-DC 20), teleport (self plus 5 bulk of objects only)
+npc_sla: 11th; ranged +18|1/day—confusion (DC 22) | 3/day— irradiate (DC 21), ray of exhaustion (DC 21)|At will—inflict pain (DC 20), mind thrust (2nd level, DC 20), teleport (self plus 5 bulk of objects only)
 npc_space: 5 ft.
-npc_special_abilities: | Irradiation (Su) A creature bitten by a prexian mutantspawn
-or wounded by a melee weapon a mutantspawn carries
-must succeed at a DC 20 Fortitude save or be
-exposed to a sudden pulse of supernatural radiation.
-This functions as medium radiation that affects
-only the mutantspawn’s target
+npc_special_abilities: Irradiation (Su) A creature bitten by a prexian mutantspawn or wounded by a melee weapon a mutantspawn carries must succeed at a DC 20 Fortitude save or be exposed to a sudden pulse of supernatural radiation. This functions as medium radiation that affects only the mutantspawn’s target.
 npc_speed: 10 ft., fly 40 ft. (Ex, average)
 npc_sr: 22
 npc_str: +5
