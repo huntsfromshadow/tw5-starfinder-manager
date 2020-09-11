@@ -73,7 +73,7 @@ RawTextNPCImport.prototype.handleGenderRaceGraft = function(rb) {
   var ex = /XP [\d,]*[ \n](?:(.*)[ \n])?(?:LG|NG|CG|LN|N|CN|LE|NE|CE)/.exec(rb);
   //console.log(ex);
 
-  if(ex[1] === undefined) {
+  if(ex === null || ex[1] === undefined) {
     this.saveField("npc_gender", this.emptyFieldText());
     this.saveField("npc_race", this.emptyFieldText());
     this.saveField("npc_graftclass", this.emptyFieldText());
@@ -95,9 +95,21 @@ RawTextNPCImport.prototype.handleTypeSubtype = function(rb) {
   var ex = 
     /(?:LG|NG|CG|LN|N|CN|LE|NE|CE) (?:Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) (.*)/.exec(rb);
   
-  var l = /(.*) (\(.*\))/.exec(ex[1]);  
-  this.saveField("npc_type", l[1]);
-  this.saveField("npc_subtype", l[2]);
+  if(ex === null) {
+    this.saveField("npc_type", this.emptyFieldText());
+    this.saveField("npc_subtype", this.emptyFieldText());  
+  }
+  else {
+    var l = /(.*) (\(.*\))/.exec(ex[1]);  
+    if(l === null) {
+      this.saveField("npc_type", this.emptyFieldText());
+      this.saveField("npc_subtype", this.emptyFieldText());  
+    }
+    else {
+      this.saveField("npc_type", l[1]);
+      this.saveField("npc_subtype", l[2]);
+    }
+  }
 }
 
 RawTextNPCImport.prototype.extractKeywords = function(rb) {  

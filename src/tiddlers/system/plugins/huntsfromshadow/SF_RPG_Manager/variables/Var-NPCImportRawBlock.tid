@@ -1,56 +1,5 @@
 created: 20200902155633863
-modified: 20200911014535596
+modified: 20200911021200242
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-NPCImportRawBlock
 type: text/vnd.tiddlywiki
 
-NANOTECH GOLEM CR 14
-XP 38,400
-N Large construct (magical, technological)
-Init +8; Senses all-around vision, darkvision 60 ft.,
-low-light vision; Perception +25
-DEFENSE HP 250
-EAC 29; KAC 29 (47 against combat maneuvers)
-Fort +12; Ref +16; Will +10
-Defensive Abilities regeneration 10 (acid or fire),
-swarmlike, unflankable; Immunities construct
-immunities, magic
-OFFENSE
-Speed 40 ft., fly 40 ft. (Su, perfect)
-Melee nanite filament +27 (4d6+20 S or P;
-critical severe wound [DC 20])
-Ranged nanite scattershot +27
-(4d12+14 P)
-Space 10 ft.; Reach 10 ft. (15 ft. with
-nanite filament)
-Offensive Abilities nanite cloud
-STATISTICS
-Str +6; Dex +8; Con —; Int —; Wis +0; Cha –2
-Other Abilities comm, mindless, unliving
-ECOLOGY
-Environment any
-Organization solitary or gang (2–4)
-SPECIAL ABILITIES
-All-Around Vision (Ex) A nanotech golem sees
-in all directions at once.
-Comm (Ex) See page 66.
-Magic Immunity (Ex) See page 66.
-Nanite Cloud (Ex) Nanites swarm within
-5 feet of the nanotech golem, and the golem
-can enter an opponent’s space, provoking an
-attack of opportunity from that foe. At the end
-of each of the golem’s turns, each creature within 5 feet of
-the golem or sharing its space takes 8d6 piercing damage
-and is nauseated for 1 round. A successful DC 20
-Fortitude saving throw halves the damage and
-negates the condition.
-Nanite Scattershot (Ex) As an attack, a nanotech
-golem can unleash a stream of nanite particles at a single
-target as a kinetic attack with a range increment of 90 feet.
-Swarmlike (Ex) A nanotech golem is immune to critical hits, as
-well as entangled, flat-footed, off-kilter, off-target, pinned,
-prone, and staggered effects. It takes only half damage
-from any attack or effect that targets only one creature.
-Automatic fire must hit the golem as if it were three targets
-to deal full damage to it. In addition, the golem can move
-through openings 1 inch wide without squeezing, and it can
-squeeze to move through microscopic openings.
