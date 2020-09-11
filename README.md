@@ -13,3 +13,7 @@ Details can be found on the demo.
 
 This repo uses the Third Flow plugin development enviornment.
 
+# Enhancment Requests and Bug fixes
+
+Please use the github issues.
+

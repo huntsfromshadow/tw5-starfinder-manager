@@ -3,12 +3,12 @@ core-version: >= 5.1.22
 created: 20200831202346219
 description: Manager to help GMs organize data for a Starfinder campaign.
 list: README license history settings
-modified: 20200909230946350
+modified: 20200911022726569
 plugin-type: plugin
 source: https://github.com/huntsfromshadow/tw5-starfinder-manager
 tags: 
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager
 type: application/json
-version: 1.0.5
+version: 1.0.7
 
 {"tiddlers": {}}

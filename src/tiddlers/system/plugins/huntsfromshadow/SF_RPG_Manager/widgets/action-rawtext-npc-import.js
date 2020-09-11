@@ -73,7 +73,7 @@ RawTextNPCImport.prototype.handleGenderRaceGraft = function(rb) {
   var ex = /XP [\d,]*[ \n](?:(.*)[ \n])?(?:LG|NG|CG|LN|N|CN|LE|NE|CE)/.exec(rb);
   //console.log(ex);
 
-  if(ex[1] === undefined) {
+  if(ex === null || ex[1] === undefined) {
     this.saveField("npc_gender", this.emptyFieldText());
     this.saveField("npc_race", this.emptyFieldText());
     this.saveField("npc_graftclass", this.emptyFieldText());
@@ -81,7 +81,7 @@ RawTextNPCImport.prototype.handleGenderRaceGraft = function(rb) {
   else {
     //As this is a very flexible line we are just going to split it.
     var l = ex[1];
-    l = l.replace("\n", "");
+    l = l.replace(/\n/gi, "");
     l = l.split(" ");
     
     this.saveField("npc_gender", l[0]);
@@ -95,9 +95,21 @@ RawTextNPCImport.prototype.handleTypeSubtype = function(rb) {
   var ex = 
     /(?:LG|NG|CG|LN|N|CN|LE|NE|CE) (?:Fine|Diminutive|Tiny|Small|Medium|Large|Huge|Gargantuan|Colossal) (.*)/.exec(rb);
   
-  var l = /(.*) (\(.*\))/.exec(ex[1]);  
-  this.saveField("npc_type", l[1]);
-  this.saveField("npc_subtype", l[2]);
+  if(ex === null) {
+    this.saveField("npc_type", this.emptyFieldText());
+    this.saveField("npc_subtype", this.emptyFieldText());  
+  }
+  else {
+    var l = /(.*) (\(.*\))/.exec(ex[1]);  
+    if(l === null) {
+      this.saveField("npc_type", this.emptyFieldText());
+      this.saveField("npc_subtype", this.emptyFieldText());  
+    }
+    else {
+      this.saveField("npc_type", l[1]);
+      this.saveField("npc_subtype", l[2]);
+    }
+  }
 }
 
 RawTextNPCImport.prototype.extractKeywords = function(rb) {  
@@ -119,7 +131,7 @@ RawTextNPCImport.prototype.extractKeywords = function(rb) {
     }
 
     //Do a \n cleanup
-    val = val.replace("\n", " ");
+    val = val.replace(/\n/gi, " ");
 
     //console.log(elem[0]);
     //console.log(val);
@@ -143,41 +155,20 @@ RawTextNPCImport.prototype.handleSLA = function(rb) {
     var c =
       /(\(.*\))/.exec(fullstr);
     var cl_block = null;
-    cl_block = c[1];
+    cl_block = c[1];    
     fullstr = fullstr.replace(cl_block, "");
     fullstr = fullstr.trim();
 
+    cl_block = cl_block.replace("(CL ", "");
+    cl_block = cl_block.replace(")", "");
     finalstr = finalstr + cl_block;
 
-    c =
-      /(Constant—.*)/.exec(fullstr);
-    var con_line = null;
-    if(c != null) {
-      con_line = c[1];
-      fullstr = fullstr.replace(con_line, "");
-      fullstr = fullstr.trim();      
-    }
-  
-    c = 
-      /(At will—.*)/.exec(fullstr);
-    var at_will_line = null;
-    if(c != null) {
-      at_will_line = c[1];
-      fullstr = fullstr.replace(at_will_line, "");
-      fullstr = fullstr.trim();
-    }
+    console.log(finalstr);
+    console.log(fullstr);
 
-    fullstr = fullstr.replace("\n", "|");
-    finalstr = finalstr + "|" + fullstr;
+    fullstr = fullstr.replace(/\n/gi, " @ ");
+    finalstr = finalstr + "@" + fullstr;
 
-    if(con_line != null) {
-      finalstr = finalstr + "|" + con_line;
-    }
-
-    if(at_will_line != null) {
-      finalstr = finalstr + "|" + at_will_line;
-    }
-    
     this.saveField("npc_sla", finalstr);
   }
 };
@@ -188,7 +179,7 @@ RawTextNPCImport.prototype.handleOtherAbilities = function(rb) {
 
   if(c != null) {
     var othera = c[1];
-    othera = othera.replace("\r", " ");
+    othera = othera.replace(/\n/gi, " ");
     this.saveField("npc_other_abilities", othera);
   }
 };
@@ -198,16 +189,16 @@ RawTextNPCImport.prototype.handleGear = function(rb) {
 
   if(c != null) {
     var othera = c[1];
-    othera = othera.replace("\r", " ");
+    othera = othera.replace(/\n/gi, " ");
     this.saveField("npc_gear", othera);
   }
 };
 
 RawTextNPCImport.prototype.handleSpecialAbilities = function(rb) {
-  var c = /SPECIAL ABILITIES(.*)/is.exec(rb);  
+  var c = /SPECIAL ABILITIES([\s|\S]*)/is.exec(rb);  
   if(c != null) {
     var s = c[1];
-    s = s.replace("\n", " ");
+    s = s.replace(/\n/gi, " @ ");
     this.saveField("npc_special_abilities", s);
   }
   else {
@@ -234,7 +225,7 @@ RawTextNPCImport.prototype.invokeAction = function(triggeringWidget,event) {
   }
 
   //Handle any data cleanup
-  var rb = this.rawblock.replace("−", "-");
+  var rb = this.rawblock.replace(/−/gi, "-");
   //var rb = this.rawblock.replace("—", "-");
 
   //First lets handle all the data that can be keword grabbed
@@ -270,34 +261,35 @@ RawTextNPCImport.prototype.loadKeywordList = function() {
     ["npc_hp", "HP (\\d{1,3})"],
     ["npc_rp", "RP (\\d{1,2})"],
     ["npc_eac", "EAC (\\d{1,2});"],
-    ["npc_kac", "KAC (\\d{1,2})\n"],
+    ["npc_kac", "KAC (\\d{1,2}[\\s|\\S]*?)Fort"],
     ["npc_fort", "Fort ([+|-]\\d{1,2});"],
     ["npc_ref", "Ref ([+|-]\\d{1,2});"],
     ["npc_will", "Will[ \\n]?([^;\\n]*)"],
-    ["npc_defensive_abilities", "Defensive Abilities (.*);"],
+    ["npc_defensive_abilities", "Defensive Abilities ([^;]*);"],
     ["npc_dr", "DR ([^;]*);"],  
-    ["npc_immunities", "Immunities[ |\\n]([^;]*?)(?:;|Weaknesses)"],
+    ["npc_immunities", "Immunities[ |\\n]([^;]*?)(?:;|Weaknesses|OFFENSE)"],
+    ["npc_resistances", "Resistances ([^;]*);"],
     ["npc_sr", "\\bSR\\b (.*)"],
     ["npc_weaknesses", "Weaknesses ((?:\\s|\\S)*)OFFENSE"],
 
     //Offense Block
     ["npc_speed", "Speed (.*)\\n"],
-    ["npc_melee", "Melee (.*)\\n"],
+    ["npc_melee", "Melee ([\\s|\\S]*?)(?:Ranged [\\s|\\S]*)?Space"],
     ["npc_multiattack", "Multiattack (.*)\\n"],
-    ["npc_ranged", "Ranged (.*)"],
+    ["npc_ranged", "Ranged ([\\s|\\S]*)?Space"],  
     ["npc_space", "Space (.*);"],
     ["npc_reach", "Reach (.*)\\n"],    
     ["npc_offensive_abilities", "Offensive Abilities (.*)"],    
       //SLAs have to be their own custom function
 
     //Statistics Block
-    ["npc_str", "Str ([+|-]\\d{1,2});"],
-    ["npc_dex", "Dex ([+|-]\\d{1,2});"],
+    ["npc_str", "Str ([+|-|–]\\d{1,2});"],
+    ["npc_dex", "Dex ([+|-|–]\\d{1,2});"],
     ["npc_con", "Con ([^;]*);"],
-    ["npc_int", "Int ([+|-]\\d{1,2});"],
-    ["npc_wis", "Wis ([+|-]\\d{1,2});"],
-    ["npc_cha", "Cha ([+|-]\\d{1,2})"],
-    ["npc_skills", "Skills ((?:.|\n)*)Languages"],
+    ["npc_int", "Int ([^;]*);"],
+    ["npc_wis", "Wis ([+|-|–]\\d{1,2});"],   
+    ["npc_cha", "Cha ([+|-|–]\\d{1,2})"],
+    ["npc_skills", "Skills ((?:.|\\n)*)Languages"],
     ["npc_feats", "Feats (.*)"],
     ["npc_languages", "Languages (.*)\\n"],
     ["npc_other_abilities", "Other Abilities (.*)[ \n](?:Special Abilities|Gear|ECOLOGY|TACTICS)"],

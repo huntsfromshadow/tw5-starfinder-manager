@@ -1,15 +1,14 @@
-created: 20200907142946966
-modified: 20200907143018919
+created: 20200911022539447
+modified: 20200911022539458
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-TrapImportWrkSht
-trap_cr: 1/2
-trap_disable: Engineering DC 12 (open trap door) or DC 18 (jam trap door shut)
-trap_effect: 20-ft.-deep pit (2d6 falling damage); Reflex DC 11 avoids; multiple targets (all targets in a 10-ft.-square area)
-trap_name: PIT TRAP
-trap_perception: DC 17
-trap_reset: manual Effect 20-ft.-deep pit (2d6 falling damage)
-trap_source: Core Rulebook
-trap_trigger: location
-trap_type: analog
-trap_xp: 200
+trap_cr: 
+trap_disable: 
+trap_effect: 
+trap_name: 
+trap_perception: 
+trap_reset: 
+trap_trigger: 
+trap_type: 
+trap_xp: 
 type: text/vnd.tiddlywiki
 
