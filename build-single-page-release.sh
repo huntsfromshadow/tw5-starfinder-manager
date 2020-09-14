@@ -6,9 +6,7 @@ tiddlers=(
     "README.tid"
     "Pit Trap.tid"
     "Elder Air Elemental.tid"
-    "Living Hologram.tid"
-    "Mk1 Spell Reflector"
-    "Enginerunner Armor"
+    "Living Hologram.tid"        
     "system/SiteTitle.tid"
     "system/SiteSubtitle.tid"
     "system/DefaultTiddlers.tid" )
