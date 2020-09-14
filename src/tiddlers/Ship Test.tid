@@ -1,0 +1,31 @@
+created: 20200914174103235
+modified: 20200914174615932
+tags: 
+title: Ship Test
+type: text/vnd.tiddlywiki
+
+"""
+SIVV DEFNESE DRONE  TIER 11
+medium explorer
+''Speed'' 12; Maneuverability average (turn 2)
+''AC'' 29; ''TL'' 28
+''HP'' 75; ''DT -; ''CT'' 15
+''Shields' heavy 240 (forward 60, port 60, starboard 60, aft 60)
+''Attack (Forward)'' persistent particle beam (10d6)
+''Attack (Starboard)'' particle beam (8d6)
+''Attack (Port)'' particle beam (8d6)
+''Attack (Turret)'' heavy nuclear missile launcher (10d8)
+''Power Core Nova Ultra'' (300 PCU); Drift Engine none; Systems basic long-range sensors, mk 8 armor, mk 8 defenses, mk 4 duonode computer, security (self-destruct system), upgraded heavy weapon mount (forward), upgraded heavy weapon mount (port), upgraded heavy weapon mount (starboard), upgraded heavy weapon mount (turret)
+''Modifiers'' +4 any two checks per round, +2 Computers (sensors only); ''Complement'' automated
+CREW
+On-Board Computer Computers +25 (12 ranks), Engineering
++20 (12 ranks), gunnery +16 (12th level), Piloting +20
+(12 ranks)
+SPECIAL ABILITIES
+Automated (Ex) A sivv defense drone has no crew, though
+it has an on-board computer that can perform most
+crew actions. The on-board computer can perform only
+two crew actions per round (in the engineer, gunner,
+pilot, and science officer roles). When a sivv defense
+drone takes a critical damage effect, it instead loses
+5 Hull Points
