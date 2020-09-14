@@ -7,8 +7,8 @@ tiddlers=(
     "Pit Trap.tid"
     "Elder Air Elemental.tid"
     "Living Hologram.tid"
-    "SF - Import NPC.tid"
-    "SF - Import Trap.tid"    
+    "Mk1 Spell Reflector"
+    "Enginerunner Armor"
     "system/SiteTitle.tid"
     "system/SiteSubtitle.tid"
     "system/DefaultTiddlers.tid" )
