@@ -1,0 +1,22 @@
+created: 20200914164347932
+modified: 20200914164347965
+tags: Item
+title: Enginerunner Armor
+type: text/vnd.tiddlywiki
+
+"""
+''Name:'' Enginerunner Armor
+''Price:'' 120,900
+''Category:'' Heavy
+''EAC Bonus:'' +21
+''KAC Bonus:'' +22
+''Maximum DEX Bonus:'' +4
+''Armor Penalty Check:'' -
+''Speed Adjustment:'' -
+''Upgrade Slots:'' 5
+''Bulk:'' 2
+
+''Other:'' The ysoki popularized this seemingly lightweight but incredibly durable heavy armor. Small squares of dense metal lie between two layers of reinforced fiber weave, giving the appearance of a padded flight suit but offering considerably more protection.
+
+''Source:'' Core pg. 198
+"""

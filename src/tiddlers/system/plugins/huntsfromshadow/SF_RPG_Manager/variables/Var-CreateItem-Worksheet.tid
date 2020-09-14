@@ -1,8 +1,21 @@
 created: 20200911153951169
 field: item_usage
+item_armor_check_penalty: -
+item_bulk: 2
+item_category: Heavy
+item_eac: +21
+item_kac: +22
+item_levels: 15
+item_maximum_dex_bonus: +4
+item_name: Enginerunner Armor
+item_other: The ysoki popularized this seemingly lightweight but incredibly durable heavy armor. Small squares of dense metal lie between two layers of reinforced fiber weave, giving the appearance of a padded flight suit but offering considerably more protection.
+item_price: 120,900
+item_source: Core pg. 198
+item_speed_adjustment: -
 item_type: item_weapon
+item_upgrade_slots: 5
 item_weapon_group: basic-melee
-modified: 20200911205813413
+modified: 20200914163136393
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet
 type: text/vnd.tiddlywiki
 

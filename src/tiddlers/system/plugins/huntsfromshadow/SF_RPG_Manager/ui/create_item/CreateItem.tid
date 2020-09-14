@@ -1,9 +1,10 @@
 created: 20200910114151246
 field: item_usage
-modified: 20200911210421259
+modified: 20200914164347325
 tags: 
 tiddler: $:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/CreateItem
+tmpname: Enginerunner Armor
 type: text/vnd.tiddlywiki
 
 \define actions(itemType itemGroup)
@@ -31,6 +32,13 @@ type: text/vnd.tiddlywiki
 <$action-setfield $field="item_special" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
 <$action-setfield $field="item_usage" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
 <$action-setfield $field="item_source" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_armor_type" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_eac" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_kac" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_maximum_dex_bonus" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_armor_check_penalty" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_speed_adjustment" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
+<$action-setfield $field="item_upgrade_slots" $tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" />
 \end
 
 \define edit-field(npcfld size) 
@@ -58,7 +66,7 @@ Clear Fields
 </$button>
 
 ! Create an Item with the following details - Choose Tab Type
-<<tabs "[[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/weapon_tabs/CreateItemTab-Weapon]] [[CreateItemTab-Armor]]" [[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/weapon_tabs/CreateItemTab-Weapon]] "$:/state/sf_rpg_man_createitem_type_tab" retain:"yes">>
+<<tabs "[[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/weapon_tabs/CreateItemTab-Weapon]] [[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/armor_tabs/CreateItemTab-Armor]]" [[$:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/weapon_tabs/CreateItemTab-Weapon]] "$:/state/sf_rpg_man_createitem_type_tab" retain:"yes">>
 
 
 

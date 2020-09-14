@@ -87,7 +87,8 @@ module-type: widget
       "Critical": this.checkForEmpty(tid.fields.item_critical),
       "Bulk": this.checkForEmpty(tid.fields.item_bulk),
       "Special": this.checkForEmpty(tid.fields.item_special),
-      "Other": this.checkForEmpty(tid.fields.item_other)
+      "Other": ["\n", `''Other:'' ${this.checkForEmpty(tid.fields.item_other)}`, "\n"],
+      "Source": this.checkForEmpty(tid.fields.item_source),
       };    
   };
 
@@ -105,7 +106,8 @@ module-type: widget
       "Usage": this.checkForEmpty(tid.fields.item_usage),
       "Bulk": this.checkForEmpty(tid.fields.item_bulk),
       "Special": this.checkForEmpty(tid.fields.item_special),
-      "Other": this.checkForEmpty(tid.fields.item_other)
+      "Other": ["\n", `''Other:'' ${this.checkForEmpty(tid.fields.item_other)}`, "\n"],
+      "Source": this.checkForEmpty(tid.fields.item_source),
       };
   };
 
@@ -118,7 +120,8 @@ module-type: widget
       "Charges/Cartridges": this.checkForEmpty(tid.fields.item_item_charges_cartridges),
       "Bulk": this.checkForEmpty(tid.fields.item_bulk),
       "Special": this.checkForEmpty(tid.fields.item_special),
-      "Other": this.checkForEmpty(tid.fields.item_other)
+      "Other": ["\n", `''Other:'' ${this.checkForEmpty(tid.fields.item_other)}`, "\n"],
+      "Source": this.checkForEmpty(tid.fields.item_source),
       }
     )  
   };
@@ -132,7 +135,8 @@ module-type: widget
       "Critical": this.checkForEmpty(tid.fields.item_critical),
       "Bulk": this.checkForEmpty(tid.fields.item_bulk),
       "Special": this.checkForEmpty(tid.fields.item_special),
-      "Other": this.checkForEmpty(tid.fields.item_other)
+      "Other": ["\n", `''Other:'' ${this.checkForEmpty(tid.fields.item_other)}`, "\n"],
+      "Source": this.checkForEmpty(tid.fields.item_source),
       };    
   };
 
@@ -145,17 +149,42 @@ module-type: widget
       "Capacity": this.checkForEmpty(tid.fields.item_capacity), 
       "Bulk": this.checkForEmpty(tid.fields.item_bulk),
       "Special": this.checkForEmpty(tid.fields.item_special),
-      "Other": this.checkForEmpty(tid.fields.item_other)
+      "Other": ["\n", `''Other:'' ${this.checkForEmpty(tid.fields.item_other)}`, "\n"],
+      "Source": this.checkForEmpty(tid.fields.item_source),
       }
+  };
+
+  ActionCreateItem.prototype.buildArmor = function(tid) {
+    return {      
+      "Name": this.checkForEmpty(tid.fields.item_name),
+      "Price": this.checkForEmpty(tid.fields.item_price),
+      "Category": this.checkForEmpty(tid.fields.item_category),
+      "EAC Bonus": this.checkForEmpty(tid.fields.item_eac),
+      "KAC Bonus": this.checkForEmpty(tid.fields.item_kac),
+      "Maximum DEX Bonus": this.checkForEmpty(tid.fields.item_maximum_dex_bonus),
+      "Armor Penalty Check": this.checkForEmpty(tid.fields.item_armor_check_penalty),
+      "Speed Adjustment": this.checkForEmpty(tid.fields.item_speed_adjustment),
+      "Upgrade Slots": this.checkForEmpty(tid.fields.item_upgrade_slots),
+      "Bulk": this.checkForEmpty(tid.fields.item_bulk),      
+      "Other": ["\n", `''Other:'' ${this.checkForEmpty(tid.fields.item_other)}`, "\n"],
+      "Source": this.checkForEmpty(tid.fields.item_source),
+    }
   };
 
   ActionCreateItem.prototype.buildText = function(arr) {
     var retval = "";
 
     retval = retval + '"""\n';
-    for (var key in arr) {
+    for (var key in arr) {      
       var value = arr[key];
-      retval = retval + `''${key}:'' ${value}\n`;
+      if(Array.isArray(value)) {
+        retval = retval + value.join("") + "\n";
+      }
+      else {
+        retval = retval + `''${key}:'' ${value}\n`;
+      }
+      console.log("---");
+      console.log(retval);
     }
     retval = retval + '"""\n';
     return retval;
@@ -217,7 +246,9 @@ module-type: widget
             break;
         }
         break;
-    
+      case "armor":
+        itemArr = this.buildArmor(tid);
+        break;
       default:
         itemArr = [];
         break;
