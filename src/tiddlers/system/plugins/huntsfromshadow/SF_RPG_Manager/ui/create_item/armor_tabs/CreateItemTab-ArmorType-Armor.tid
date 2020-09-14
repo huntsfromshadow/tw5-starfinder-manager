@@ -1,0 +1,53 @@
+caption: Armor
+created: 20200914160401361
+modified: 20200914165124073
+tags: 
+title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/armor_tabs/CreateItemTab-ArmorType-Armor
+type: text/vnd.tiddlywiki
+
+<!-- Macros are coming from top level tiddler of the macro chain -->
+<table>
+<<tablerow "Name" item_name>>
+<tr>
+    <td><b>Levels</b></td>
+    <td>
+        <$select tiddler="$:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet" field="item_levels">
+            <option value="1">Lvl 1</option>
+            <option value="2">Lvl 2</option>
+            <option value="3">Lvl 3</option>
+            <option value="4">Lvl 4</option>
+            <option value="5">Lvl 5</option>
+            <option value="6">Lvl 6</option>
+            <option value="7">Lvl 7</option>
+            <option value="8">Lvl 8</option>
+            <option value="9">Lvl 9</option>
+            <option value="10">Lvl 10</option>
+            <option value="11">Lvl 11</option>
+            <option value="12">Lvl 12</option>
+            <option value="13">Lvl 13</option>
+            <option value="14">Lvl 14</option>
+            <option value="15">Lvl 15</option>
+            <option value="16">Lvl 16</option>
+            <option value="17">Lvl 17</option>
+            <option value="18">Lvl 18</option>
+            <option value="19">Lvl 19</option>
+            <option value="20">Lvl 20</option>            
+        </$select>
+    </td>
+</tr>
+<<tablerow "Price" item_price>>
+<<local-sf-select-helper "Armor Type" "item_category" "Light Heavy">>
+<<tablerow "EAC Bonus" item_eac>>
+<<tablerow "KAC Bonus" item_kac>>
+<<tablerow "Maximum DEX Bonus" item_maximum_dex_bonus>>
+<<tablerow "Armor Penalty Check" item_armor_check_penalty>>
+<<tablerow "Speed Adjustment" item_speed_adjustment>>
+<<tablerow "Upgrade Slots" item_upgrade_slots>>
+<<tablerow "Bulk" item_bulk>>
+<<multiline-tablerow "Other" item_other>>
+<<tablerow "Source" item_source>>
+</table>
+
+<$button actions=<<actions "armor" "armor">>>
+Create Armor
+</$button>

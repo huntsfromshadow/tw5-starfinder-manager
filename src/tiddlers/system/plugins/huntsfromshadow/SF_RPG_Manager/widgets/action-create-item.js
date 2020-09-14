@@ -81,7 +81,7 @@ module-type: widget
       "Melee Type": this.checkForEmpty(tid.fields.item_melee_type),
       "Handness": this.checkForEmpty(tid.fields.item_handness),
       "Name": this.checkForEmpty(tid.fields.item_name),
-      "Level(s)": this.checkForEmpty(tid.fields.item_level),
+      "Level(s)": this.checkForEmpty(tid.fields.item_levels),
       "Price": this.checkForEmpty(tid.fields.item_price),
       "Damage": this.checkForEmpty(tid.fields.item_damage),
       "Critical": this.checkForEmpty(tid.fields.item_critical),
@@ -97,7 +97,7 @@ module-type: widget
       "Melee Type": this.checkForEmpty(tid.fields.item_ranged_type),
       "Handness": this.checkForEmpty(tid.fields.item_handness),
       "Name": this.checkForEmpty(tid.fields.item_name),
-      "Level(s)": this.checkForEmpty(tid.fields.item_level),
+      "Level(s)": this.checkForEmpty(tid.fields.item_levels),
       "Price": this.checkForEmpty(tid.fields.item_price),
       "Damage": this.checkForEmpty(tid.fields.item_damage),
       "Range":this.checkForEmpty(tid.fields.item_range),      
@@ -115,7 +115,7 @@ module-type: widget
     return this.arrayGen( {
       "Ammunition Type": this.checkForEmpty(tid.fields.item_ammunition_type),     
       "Name": this.checkForEmpty(tid.fields.item_name),
-      "Level(s)": this.checkForEmpty(tid.fields.item_level),
+      "Level(s)": this.checkForEmpty(tid.fields.item_levels),
       "Price": this.checkForEmpty(tid.fields.item_price),
       "Charges/Cartridges": this.checkForEmpty(tid.fields.item_item_charges_cartridges),
       "Bulk": this.checkForEmpty(tid.fields.item_bulk),
@@ -129,7 +129,7 @@ module-type: widget
   ActionCreateItem.prototype.buildSolarian = function(tid) {
     return {      
       "Name": this.checkForEmpty(tid.fields.item_name),
-      "Level(s)": this.checkForEmpty(tid.fields.item_level),
+      "Level(s)": this.checkForEmpty(tid.fields.item_levels),
       "Price": this.checkForEmpty(tid.fields.item_price),
       "Damage": this.checkForEmpty(tid.fields.item_damage),
       "Critical": this.checkForEmpty(tid.fields.item_critical),
@@ -143,7 +143,7 @@ module-type: widget
   ActionCreateItem.prototype.buildGrenade = function(tid) {
     return {
       "Name": this.checkForEmpty(tid.fields.item_name),
-      "Level(s)": this.checkForEmpty(tid.fields.item_level),
+      "Level(s)": this.checkForEmpty(tid.fields.item_levels),
       "Price": this.checkForEmpty(tid.fields.item_price),      
       "Range": this.checkForEmpty(tid.fields.item_range),     
       "Capacity": this.checkForEmpty(tid.fields.item_capacity), 
@@ -157,6 +157,7 @@ module-type: widget
   ActionCreateItem.prototype.buildArmor = function(tid) {
     return {      
       "Name": this.checkForEmpty(tid.fields.item_name),
+      "Level(s)": this.checkForEmpty(tid.fields.item_levels),
       "Price": this.checkForEmpty(tid.fields.item_price),
       "Category": this.checkForEmpty(tid.fields.item_category),
       "EAC Bonus": this.checkForEmpty(tid.fields.item_eac),
@@ -166,6 +167,19 @@ module-type: widget
       "Speed Adjustment": this.checkForEmpty(tid.fields.item_speed_adjustment),
       "Upgrade Slots": this.checkForEmpty(tid.fields.item_upgrade_slots),
       "Bulk": this.checkForEmpty(tid.fields.item_bulk),      
+      "Other": ["\n", `''Other:'' ${this.checkForEmpty(tid.fields.item_other)}`, "\n"],
+      "Source": this.checkForEmpty(tid.fields.item_source),
+    }
+  };
+
+  ActionCreateItem.prototype.buildArmorUpgrade = function(tid) {    
+    return {      
+      "Name": this.checkForEmpty(tid.fields.item_name),
+      "Level(s)": this.checkForEmpty(tid.fields.item_levels),
+      "Price": this.checkForEmpty(tid.fields.item_price),
+      "Slots": this.checkForEmpty(tid.fields.item_slots),
+      "Armor Type": this.checkForEmpty(tid.fields.item_armor_type),
+      "Bulk": this.checkForEmpty(tid.fields.item_bulk),
       "Other": ["\n", `''Other:'' ${this.checkForEmpty(tid.fields.item_other)}`, "\n"],
       "Source": this.checkForEmpty(tid.fields.item_source),
     }
@@ -247,17 +261,21 @@ module-type: widget
         }
         break;
       case "armor":
-        itemArr = this.buildArmor(tid);
-        break;
+        switch(this.itemGroup) {
+          case "armor":
+            itemArr = this.buildArmor(tid);
+            break;
+          case "upgrade":
+            itemArr = this.buildArmorUpgrade(tid);
+            break;
+        }
+      break;      
       default:
         itemArr = [];
         break;
     }
 
-    console.log(itemArr);
-
     var fTxt = this.buildText(itemArr);
-    console.log(fTxt);
     
     var tiddler = this.wiki.addTiddler(
       new $tw.Tiddler(         

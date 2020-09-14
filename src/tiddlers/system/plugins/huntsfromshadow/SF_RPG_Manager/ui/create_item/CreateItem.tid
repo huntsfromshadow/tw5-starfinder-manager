@@ -1,10 +1,10 @@
 created: 20200910114151246
 field: item_usage
-modified: 20200914164347325
+modified: 20200914170311283
 tags: 
 tiddler: $:/plugins/huntsfromshadow/SF_RPG_Manager/variables/Var-CreateItem-Worksheet
 title: $:/plugins/huntsfromshadow/SF_RPG_Manager/ui/create_item/CreateItem
-tmpname: Enginerunner Armor
+tmpname: Mk1 Spell Reflector
 type: text/vnd.tiddlywiki
 
 \define actions(itemType itemGroup)
